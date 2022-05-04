@@ -26,6 +26,7 @@ configuring hardware and software
 - Managed 20 Windows and Linux servers with 99.9% uptime
 - Migrated from on-premises Active Directory and Exchange to Azure AD and Microsoft 365
 - Worked with vendor partners on cable runs and equipment installations
+
 ### Technician County of Chester Apr 2015-Apr 2016
 - Provided desktop support for 900+ users across dozens of departments Certificates
 
