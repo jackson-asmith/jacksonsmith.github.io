@@ -3,12 +3,12 @@
 
 Skilled infrastructure engineer with experience in networking, systems administration, and programming. As an infrastructure analyst for the Chester County Library System, managed websites running IIS and nginx, two dozen servers, and a core public facing application. Wrote PowerShell and Ruby scripts and tools to automate tasks. Worked closely with vendors and internal stakeholders to reduce misconfigurations almost 100%.
 
-### Operations Engineer | Lincoln Investment Apr 2022-Present
+### Operations Engineer | Lincoln Investment; Remote - Apr 2022-Present
 
 - Responsible for complex IT environment spanning more than 300 offices across the US
 - Manage ~500 Windows servers and 150 CentOS Servers
 
-### Network Analyst | Chester County Library System Feb 2019-Apr 2022
+### Network Analyst | Chester County Library System; Remote - Feb 2019-Apr 2022
 
 - Maintained network of 20+ Windows and Linux servers with 99.9% uptime
 - Automated configuration with PowerShell on the Windows side and Ruby on the Linux side, eliminating production
@@ -21,18 +21,18 @@ internally and by partners at Dell before factory-built machines ship which save
 configuring hardware and software
 - Trained and provided ongoing mentorship for two new system administrators
 
-### Service Analyst | County of Chester Oct 2016-Feb 2019
+### Service Analyst | County of Chester; West Chester, PA - Oct 2016-Feb 2019
 
 - Built tools for common administrative tasks such as log parsing, reporting, and resource utilization with Ruby and PowerShell identifying issues 70% faster, solving 20% more tickets than peers, while maintaining highest customer satisfaction ratings
 - Maintained day to day software and application systems for 2500 users (VMware Horizon Client, Windows, and Linux)
 - Tested software updates in VMware vSphere and worked with application owners reducing release times 75%
 
-### IT Consultant | Robert Half Technology Feb 2016-Oct 2016
+### IT Consultant | Robert Half Technology; Philadelphia, PA - Feb 2016-Oct 2016
 - Managed 20 Windows and Linux servers with 99.9% uptime
 - Migrated from on-premises Active Directory and Exchange to Azure AD and Microsoft 365
 - Worked with vendor partners on cable runs and equipment installations
 
-### Technician | County of Chester Apr 2015-Apr 2016
+### Technician | County of Chester; West Chester, PA - Apr 2015-Apr 2016
 - Provided desktop support for 900+ users across dozens of departments Certificates
 
 ## Certificates
