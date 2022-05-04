@@ -1,5 +1,5 @@
 # Jackson Smith
-[jackson@jacksonasmith.com](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
+[Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
 Skilled infrastructure engineer with experience in networking, systems administration, and programming. As an infrastructure analyst for the Chester County Library System, managed websites running IIS and nginx, two dozen servers, and a core public facing application. Wrote PowerShell and Ruby scripts and tools to automate tasks. Worked closely with vendors and internal stakeholders to reduce misconfigurations almost 100%.
 
