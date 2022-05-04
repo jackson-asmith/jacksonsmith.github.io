@@ -1,37 +1,43 @@
-## Welcome to GitHub Pages
+# Jackson Smith
+[jackson@jacksonasmith.com](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
-You can use the [editor on GitHub](https://github.com/jackson-asmith/jacksonsmith.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Skilled infrastructure engineer with experience in networking, systems administration, and programming. As an infrastructure analyst for the Chester County Library System, managed websites running IIS and nginx, two dozen servers, and a core public facing application. Wrote PowerShell and Ruby scripts and tools to automate tasks. Worked closely with vendors and internal stakeholders to reduce misconfigurations almost 100%.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Chester County Library System Network Analyst Feb 2019-Present
 
-### Markdown
+- Maintained network of 20+ Windows and Linux servers with 99.9% uptime
+- Automated configuration with PowerShell on the Windows side and Ruby on the Linux side, eliminating production
+misconfigurations
+- Taught reference librarians basic HTML and CSS empowering them to own content updates, reducing site update request
+time from 3-5 days to same day turn around
+- Product owner for EnvisionWare (a core library application) which manages public computing infrastructure
+- Refactored hardware provisioning with driverless images built in VMware vSphere with PowerShell and PowerCLI, tested
+internally and by partners at Dell before factory-built machines ship which saved 12 person months a year spent manually
+configuring hardware and software
+- Trained and provided ongoing mentorship for two new system administrators
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Service Analyst County of Chester Oct 2016-Feb 2019
 
-```markdown
-Syntax highlighted code block
+- Built tools for common administrative tasks such as log parsing, reporting, and resource utilization with Ruby and PowerShell identifying issues 70% faster, solving 20% more tickets than peers, while maintaining highest customer satisfaction ratings
+- Maintained day to day software and application systems for 2500 users (VMware Horizon Client, Windows, and Linux)
+- Tested software updates in VMware vSphere and worked with application owners reducing release times 75%
 
-# Header 1
-## Header 2
-### Header 3
+### IT Consultant Robert Half Technology Feb 2016-Oct 2016
+- Managed 20 Windows and Linux servers with 99.9% uptime
+- Migrated from on-premises Active Directory and Exchange to Azure AD and Microsoft 365
+- Worked with vendor partners on cable runs and equipment installations
+### Technician County of Chester Apr 2015-Apr 2016
+- Provided desktop support for 900+ users across dozens of departments Certificates
 
-- Bulleted
-- List
+## Certificates
+- Google IT Support Professional Certificate
 
-1. Numbered
-2. List
+## Projects
+- Present annual security course
+- Setup and manage a scalable Debian cluster running Rocket.Chat using Chef, Prometheus, and Grafana to manage a node.js
+and nginx frontend and a mongoDB backend
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jackson-asmith/jacksonsmith.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Education
+- Bachelor of Arts, Political Science
+- Minors: GIS and History
+- West Chester University
