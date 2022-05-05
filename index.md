@@ -1,3 +1,5 @@
+![Oh look, it's Jackson](https://avatars.githubusercontent.com/u/42005615?v=4)
+
 # Jackson Smith
 [Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
