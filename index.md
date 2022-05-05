@@ -43,6 +43,35 @@ configuring hardware and software
 - Setup and manage a scalable Debian cluster running Rocket.Chat using Chef, Prometheus, and Grafana to manage a node.js
 and nginx frontend and a mongoDB backend
 
+## Skills
+#### Technical: 
+
+Operating Systems:
+
+    Linux: Debian, CentOS, RHEL 
+    Unix: macOS versions 10-12.3, openBSD, FreeBSD
+    Windows: more than 400 years experience baby!
+
+Directory Services:
+
+    Active Directory
+    389 Directory Service
+
+Virtualization:
+
+    VMware
+    HyperV
+
+Languages:
+
+    Bash: config and utility scripts < 100 lines
+    PowerShell: utility scripts, tools < 500 lines, advanced functions, modules
+    Ruby: utility scripts, probes/parsers, extending bash fucntionality
+    Query Languages: enough to query CIM, WMI, etc. which use devivatives of ANSI SQL
+
+#### Personal:
+Public speaking, active listening, critical thinking, reading, flexibility, running, sound effects
+
 ## Education
 - Bachelor of Arts, Political Science
 - Minors: GIS and History
