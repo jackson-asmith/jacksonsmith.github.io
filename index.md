@@ -1,5 +1,4 @@
 # Jackson Smith
-
 [Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
 Skilled infrastructure engineer with experience in networking, systems administration, and programming. I automate the boring stuff--_like system builds, configurations, and maintenance_--for teams so people can focus things that matter. I write PowerShell and Ruby programs for a variety of users and coordinate with vendors and internal stakeholders to reduce misconfigurations almost 100%.
