@@ -1,6 +1,4 @@
-## Who is?
-
-## Jackson Smith
+# Jackson Smith
 
 [Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
