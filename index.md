@@ -26,7 +26,7 @@ configuring hardware and software
 ### Service Analyst | County of Chester; West Chester, PA -- Oct 2016-Feb 2019
 
 - Built tools for common administrative tasks such as log parsing, reporting, and resource utilization with Ruby and PowerShell identifying issues 70% faster, solving 20% more tickets than peers, while maintaining highest customer satisfaction ratings
-- Supported and troubleshoot day to day software and application systems for 2500 users (VMware Horizon Client, Windows, and Linux)
+- Supported and troubleshot day to day software and application systems for 2500 users (VMware Horizon Client, Windows, and Linux)
 - Tested software updates in VMware vSphere and worked with application owners reducing release times 75%
 
 ### IT Consultant | Robert Half Technology; Philadelphia, PA -- Feb 2016-Oct 2016
