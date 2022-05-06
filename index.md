@@ -49,23 +49,23 @@ and nginx frontend and a mongoDB backend
 ## Skills
 #### Technical: 
 
-Operating Systems:
+##### Operating Systems:
 
     Linux: Debian, CentOS, RHEL 
     Unix: macOS versions 10-12.3, openBSD, FreeBSD
     Windows: more than 400 years experience baby! NT 3.1-10 Server 2003-2022
 
-Boot managers:
+##### Boot managers:
 
     GNU GRUB
     BOOTMGR
     PXE
 
-Init Systems:
+##### Init Systems:
 
     SystemD
 
-Package Managers:
+##### Package Managers:
 
     apt
     dpkg
@@ -73,39 +73,39 @@ Package Managers:
     yum
     chocolatey/nuget/winget (Windows)
 
-Automation Orchestration:
+##### Automation Orchestration:
 
     Chef (but familiar with Ansible, Puppet, and Salt)
 
-Directory Services:
+##### Directory Services:
 
     Active Directory
     389 Directory Service
 
-Hypervisors:
+##### Hypervisors:
 
     VMware
     HyperV
     VirtualBox
 
-Monitoring:
+##### Monitoring:
 
     Grafana
     Logstash
     Prometheus (used in conjunction with Grafana)
     syslog (rsyslog)
 
-Databases:
+##### Databases:
 
     MySQL
     MongoDB
 
-Webservers:
+##### Webservers:
 
     Apache httpd
     NGINX
 
-Load Balancers, Proxies, and VPNs:
+##### Load Balancers, Proxies, and VPNs:
 
     NGINX
     HAProxy
@@ -113,14 +113,14 @@ Load Balancers, Proxies, and VPNs:
     GlobalProtect
     OpenVPN
 
-Public Cloud Infrastructure:
+##### Public Cloud Infrastructure:
 
     AWS
     Azure
     Digital Ocean
     Linode
 
-Local Development Tools:
+##### Local Development Tools:
 
     strace/truss
     vim
@@ -130,14 +130,14 @@ Local Development Tools:
     Valgrind
     VirtualBox
 
-Languages:
+##### Languages:
 
     Bash: config and utility scripts < 100 lines
     PowerShell: utility scripts, tools < 500 lines, advanced functions, modules
     Ruby: utility scripts, probes/parsers, extending bash functionality
     Query Languages: enough to query CIM, WMI, etc. which use derivatives of ANSI SQL
 
-Misc Software:
+##### Misc Software:
 
     Ticketing systems
     GitHub
