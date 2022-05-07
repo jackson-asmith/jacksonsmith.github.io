@@ -36,7 +36,7 @@ configuring hardware and software
 - Worked with vendor partners on cable runs and equipment installations
 
 ### Technician | County of Chester; West Chester, PA -- Apr 2015-Apr 2016
-- Provided desktop support for 900+ users across dozens of departments Certificates
+- Provided desktop support for 900+ users across dozens of departments
 
 ## Certificates
 - Google IT Support Professional Certificate
