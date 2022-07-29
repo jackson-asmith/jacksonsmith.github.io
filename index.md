@@ -3,12 +3,18 @@
 # Jackson Smith
 [Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
-Skilled infrastructure engineer with experience in networking, systems administration, and programming. I automate the boring stuff--_like system builds, configurations, and maintenance_--for teams so people can focus things that matter. I write PowerShell and Ruby programs for a variety of users and coordinate with vendors and internal stakeholders to reduce misconfigurations almost 100%.
+Skilled infrastructure engineer with experience in networking, systems administration, and programming. I automate the boring stuff--_like builds, configurations, and maintenance_--for teams so people can focus things that matter. I work on largescale infrastructure projects with development, operations, security, and management teams designing and building resilient systems.
 
 ### Operations Engineer | Lincoln Investment; Remote -- Apr 2022-Present
 
 - Responsible for large complex IT environment spanning more than 300 offices across the US
-- Manage ~500 Windows servers and 150 CentOS Servers
+- Manage ~350 Windows servers and 400 CentOS, OpenSUSE, and RHEL Servers
+- Design/Implement complex distributed systems
+- Establish/recommend policies on system use and services
+- Automate repeated tasks allowing teams to scale with organization growth
+- Mentor, train, and share knowledge with peers
+- Work under general direction of senior management
+- Evaluate and recommend purchases
 
 ### Network Analyst | Chester County Library System; Remote -- Feb 2019-Apr 2022
 
@@ -52,8 +58,8 @@ and nginx frontend and a mongoDB backend
 ##### Operating Systems:
 
     Linux: Debian, CentOS, RHEL 
-    Unix: macOS versions 10-12.3, openBSD, FreeBSD
-    Windows: more than 400 years experience baby! NT 3.1-10 Server 2003-2022
+    Unix: macOS versions 10-13, openBSD, FreeBSD
+    Windows: more than 400 years experience! NT 3.1-11 Server 2003-2022
 
 ##### Boot managers:
 
@@ -75,12 +81,13 @@ and nginx frontend and a mongoDB backend
 
 ##### Automation Orchestration:
 
-    Chef (but familiar with Ansible, Puppet, and Salt)
+    Ansible, Chef (familiar with Puppet and Salt)
 
 ##### Directory Services:
 
     Active Directory
     389 Directory Service
+    Samba
 
 ##### Hypervisors:
 
@@ -117,8 +124,6 @@ and nginx frontend and a mongoDB backend
 
     AWS
     Azure
-    Digital Ocean
-    Linode
 
 ##### Local Development Tools:
 
@@ -139,7 +144,8 @@ and nginx frontend and a mongoDB backend
 
 ##### Misc Software:
 
-    Ticketing systems
+    Ticketing and project management systems
+    BitBucket
     GitHub
     Slack/Rocket.Chat/Teams
 
