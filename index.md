@@ -99,7 +99,7 @@ and nginx frontend and a mongoDB backend
 
     Grafana
     Logstash
-    NewRelic
+    New Relic
     Prometheus (used in conjunction with Grafana)
     syslog (rsyslog)
 
