@@ -1,6 +1,6 @@
-<!--![Oh look, it's Jackson](https://avatars.githubusercontent.com/u/42005615?v=4)-->
+[Oh look, it's Jackson](https://avatars.githubusercontent.com/u/42005615?v=4)
 
-# Jackson Smith
+# About me
 [Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
 Skilled infrastructure engineer with experience in networking, systems administration, and programming. I automate the boring stuff--_like builds, configurations, and maintenance_--for teams so people can focus on things that matter. I work on large-scale infrastructure projects with development, operations, security, and management teams designing and building resilient systems.
