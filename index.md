@@ -1,5 +1,3 @@
-# Hi I'm Jackson
-
 ![Oh look, it's Jackson](https://avatars.githubusercontent.com/u/42005615?v=4)
 
 ## About me
