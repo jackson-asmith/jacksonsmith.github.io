@@ -87,7 +87,9 @@ and nginx frontend and a mongoDB backend
 
 ### Automation Orchestration
 
-    Ansible, Chef (familiar with Puppet and Salt)
+    Ansible
+    Chef
+    (familiar with Puppet and Salt)
 
 ### Directory Services
 
