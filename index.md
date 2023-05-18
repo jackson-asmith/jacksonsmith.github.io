@@ -1,6 +1,9 @@
+# Hi I'm Jackson
+
 ![Oh look, it's Jackson](https://avatars.githubusercontent.com/u/42005615?v=4)
 
-# About me
+## About me
+
 [Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
 Skilled infrastructure engineer with experience in networking, systems administration, and programming. I automate the boring stuff--_like builds, configurations, and maintenance_--for teams so people can focus on things that matter. I work on large-scale infrastructure projects with development, operations, security, and management teams designing and building resilient systems.
@@ -36,42 +39,45 @@ configuring hardware and software
 - Tested software updates in VMware vSphere and worked with application owners reducing release times 75%
 
 ### IT Consultant | Robert Half Technology; Philadelphia, PA -- Feb 2016-Oct 2016
+
 - Administered complex site spanning several offices in Philadelphia
 - Managed Windows and Linux servers with 99.9% uptime
 - Migrated from on-premises Active Directory and Exchange to Azure AD and Microsoft 365
 - Worked with vendor partners on cable runs and equipment installations
 
 ### Technician | County of Chester; West Chester, PA -- Apr 2015-Apr 2016
+
 - Provided desktop support for 900+ users across dozens of departments
 
 ## Certificates
+
 - Google IT Support Professional Certificate
 
 ## Projects
+
 - Present annual security course
 - Setup and manage a scalable Debian cluster running Rocket.Chat using Chef, Prometheus, and Grafana to manage a node.js
 and nginx frontend and a mongoDB backend
 
-## Skills
-#### Technical: 
+## Technical Skills
 
-##### Operating Systems:
+### Operating Systems
 
     Linux: Debian, CentOS, RHEL 
     Unix: macOS versions 10-13, openBSD, FreeBSD
     Windows: more than 400 years experience! NT 3.1-11 Server 2003-2022
 
-##### Boot managers:
+### Boot managers
 
     GNU GRUB
     BOOTMGR
     PXE
 
-##### Init Systems:
+### Init Systems
 
     SystemD
 
-##### Package Managers:
+### Package Managers
 
     apt
     dpkg
@@ -79,23 +85,23 @@ and nginx frontend and a mongoDB backend
     yum
     chocolatey/nuget/winget (Windows)
 
-##### Automation Orchestration:
+### Automation Orchestration
 
     Ansible, Chef (familiar with Puppet and Salt)
 
-##### Directory Services:
+### Directory Services
 
     Active Directory
     389 Directory Service
     Samba
 
-##### Hypervisors:
+### Hypervisors
 
     VMware
     HyperV
     VirtualBox
 
-##### Monitoring:
+### Monitoring
 
     Grafana
     Logstash
@@ -103,18 +109,18 @@ and nginx frontend and a mongoDB backend
     Prometheus (used in conjunction with Grafana)
     syslog (rsyslog)
 
-##### Databases:
+### Databases
 
     SQL
     MongoDB
 
-##### Webservers:
+### Webservers
 
     Apache httpd
     IIS
     NGINX
 
-##### Load Balancers, Proxies, and VPNs:
+### Load Balancers, Proxies, and VPNs
 
     NGINX
     HAProxy
@@ -122,12 +128,12 @@ and nginx frontend and a mongoDB backend
     GlobalProtect
     OpenVPN
 
-##### Public Cloud Infrastructure:
+### Public Cloud Infrastructure
 
     AWS
     Azure
 
-##### Local Development Tools:
+### Local Development Tools
 
     strace/truss
     vim
@@ -137,22 +143,25 @@ and nginx frontend and a mongoDB backend
     Valgrind
     VirtualBox
 
-##### Languages:
+### Languages
 
     Bash: config and utility scripts < 100 lines
     PowerShell: utility scripts, tools < 500 lines, advanced functions, modules
     Ruby: utility scripts, probes/parsers, extending bash functionality
     Query Languages: enough to query CIM, WMI, etc. which use derivatives of ANSI SQL
 
-##### Misc Software:
+### Misc Software
 
     Ticketing and project management systems
+    Jira
     BitBucket
     GitHub
     Slack/Rocket.Chat/Teams
 
-#### Personal:
+## Soft Skills
+
 Public speaking, active listening, critical thinking, reading, flexibility, running, sound effects
 
 ## Education
+
 - Bachelor's West Chester University
