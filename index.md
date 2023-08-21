@@ -9,13 +9,12 @@ Skilled infrastructure engineer with experience in networking, systems administr
 ### Operations Engineer | Lincoln Investment; Remote -- Apr 2022-Present
 
 - Responsible for large complex IT environment spanning more than 300 offices across the US
-- Manage ~350 Windows servers and 400 CentOS, OpenSUSE, and RHEL Servers
+- Insource patching of Linux and Windows servers, reducing cumulative monthly vulnerabilities 30% and saving company $400,000 a year
 - Design/Implement complex distributed systems
 - Establish/recommend policies on system use and services
 - Automate repeated tasks allowing teams to scale with organization growth
 - Mentor, train, and share knowledge with peers
 - Work under general direction of senior management
-- Evaluate and recommend purchases
 
 ### Network Analyst | Chester County Library System; Remote -- Feb 2019-Apr 2022
 
