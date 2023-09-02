@@ -23,7 +23,6 @@ Skilled infrastructure engineer with experience in networking, systems administr
 misconfigurations
 - Taught reference librarians basic HTML and CSS empowering them to own content updates, reducing site update request
 time from 3-5 days to same day turn around
-- Product owner for EnvisionWare (a core library application) which manages public computing infrastructure (access, time vending, payment processing, etc.)
 - Refactored hardware provisioning with driverless images built in VMware vSphere with PowerShell and PowerCLI, tested
 internally and by partners at Dell before factory-built machines ship which saved 12 person months a year spent manually
 configuring hardware and software
