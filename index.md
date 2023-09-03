@@ -8,11 +8,10 @@ Skilled infrastructure engineer with experience in networking, systems administr
 
 ### Operations Engineer | Lincoln Investment; Remote -- Apr 2022-Present
 
-- Responsible for large complex IT environment spanning more than 300 offices across the US
-- Insource patching of Linux and Windows servers, reducing cumulative monthly vulnerabilities 30% and saving company $400,000 a year
-- Design/Implement complex distributed systems
-- Establish/recommend policies on system use and services
-- Automate repeated tasks allowing teams to scale with organization growth
+- Responsible for large complex hybrid-cloud spanning multiple datacenters and Azure serving more than 300 offices across the US
+- Insource patching of Linux and Windows servers, reducing cumulative monthly vulnerabilities 30% and cost by $400,000 a year
+- Automate repeated tasks such as software deployment and system reporting allowing teams to scale with organization growth
+- Design and maintain software defined datacenters running bare metal hypervisors on enterprise hardware
 - Mentor, train, and share knowledge with peers
 - Work under general direction of senior management
 
@@ -23,6 +22,7 @@ Skilled infrastructure engineer with experience in networking, systems administr
 misconfigurations
 - Taught reference librarians basic HTML and CSS empowering them to own content updates, reducing site update request
 time from 3-5 days to same day turn around
+- Performed network assessment resulting in replacement of end of life Cisco WLC with Cisco Meraki which eliminated complexity and annual reduced licensing costs
 - Refactored hardware provisioning with driverless images built in VMware vSphere with PowerShell and PowerCLI, tested
 internally and by partners at Dell before factory-built machines ship which saved 12 person months a year spent manually
 configuring hardware and software
@@ -52,8 +52,7 @@ configuring hardware and software
 ## Projects
 
 - Present annual security course
-- Setup and manage a scalable Debian cluster running Rocket.Chat using Chef, Prometheus, and Grafana to manage a node.js
-and nginx frontend and a mongoDB backend
+- Designed and deployed a Rocket.Chat instance hosted on public cloud running on a Debian cluster using a Node.js and nginx frontend and MongoDB backend provisioned with Ruby and shell (formerly Chef) monitored via Prometheus and Grafana
 
 ## Technical Skills
 
