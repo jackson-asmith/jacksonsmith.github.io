@@ -1,3 +1,5 @@
+<meta name="description" content="The personal website of Jackson Smith, an infrastructure engineer with a passion for building resilient systems so everyone else can focus on doing their best work.">
+
 ![Oh look, it's Jackson](https://avatars.githubusercontent.com/u/42005615?v=4)
 
 ## About me
