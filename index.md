@@ -8,16 +8,16 @@
 
 Skilled infrastructure engineer with experience in networking, systems administration, and programming. I automate the boring stuff--_like builds, configurations, and maintenance_--for teams so people can focus on things that matter. I work on large-scale infrastructure projects with development, operations, security, and management teams designing and building resilient systems.
 
-### Operations Engineer | Lincoln Investment; Remote -- Apr 2022-Present
+### Operations Engineer | Lincoln Investment; Remote -- April 2022-Present
 
-- Responsible for large complex hybrid-cloud spanning multiple datacenters and Azure serving more than 300 offices across the US
+- Responsible for large complex hybrid-cloud spanning multiple data centers and Azure serving more than 300 offices across the US
 - Insource patching of Linux and Windows servers, reducing cumulative monthly vulnerabilities 30% and cost by $400,000 a year
 - Automate repeated tasks such as software deployment and system reporting allowing teams to scale with organization growth
-- Design and maintain software defined datacenters running bare metal hypervisors on enterprise hardware
+- Design and maintain software defined data centers running bare metal hypervisors on enterprise hardware
 - Mentor, train, and share knowledge with peers
 - Work under general direction of senior management
 
-### Network Analyst | Chester County Library System; Remote -- Feb 2019-Apr 2022
+### Network Analyst | Chester County Library System; Remote -- February 2019-April 2022
 
 - Administered complex IT environment spanning 18 libraries across southeastern Pennsylvania
 - Automated Windows configuration with PowerShell and Linux and macOS configurations with Ruby, eliminating production
@@ -30,7 +30,7 @@ internally and by partners at Dell before factory-built machines ship which save
 configuring hardware and software
 - Trained and provided ongoing mentorship for two new system administrators
 
-### Service Analyst | County of Chester; West Chester, PA -- Oct 2016-Feb 2019
+### Service Analyst | County of Chester; West Chester, PA -- October 2016-February 2019
 
 - Built tools for common administrative tasks such as log parsing, reporting, and resource utilization with Ruby and PowerShell identifying issues 70% faster, solving 20% more tickets than peers, while maintaining highest customer satisfaction ratings
 - Supported and troubleshot day to day software and application systems for 2500 users (VMware Horizon Client, Windows, and Linux)
@@ -43,7 +43,7 @@ configuring hardware and software
 - Migrated from on-premises Active Directory and Exchange to Azure AD and Microsoft 365
 - Worked with vendor partners on cable runs and equipment installations
 
-### Technician | County of Chester; West Chester, PA -- Apr 2015-Apr 2016
+### Technician | County of Chester; West Chester, PA -- April 2015-April 2016
 
 - Provided desktop support for 900+ users across dozens of departments
 
