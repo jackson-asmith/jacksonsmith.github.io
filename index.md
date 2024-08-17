@@ -6,14 +6,14 @@
 
 [Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
-Skilled infrastructure engineer with experience in networking, systems administration, and programming. I automate the boring stuff--_like builds, configurations, and maintenance_--for teams so people can focus on things that matter. I work on large-scale infrastructure projects with development, operations, security, and management teams designing and building resilient systems.
+I’m a passionate infrastructure engineer with deep expertise in Bash, PowerShell, Ruby, AWS, Azure, and software defined datacenters. I thrive on solving complex challenges and delivering results that drive efficiency and innovation. My approach blends technical expertise with a collaborative mindset, ensuring that solutions are not only effective but also sustainable. Outside of work, I enjoy skiing and cooking, which fuel my creativity and problem-solving skills.
 
 ### Operations Engineer | Lincoln Investment; Remote -- April 2022-Present
 
 - Responsible for large complex hybrid-cloud spanning multiple data centers and Azure serving more than 300 offices across the US
-- Insource patching of Linux and Windows servers, reducing cumulative monthly vulnerabilities 30% and cost by $400,000 a year
-- Automate repeated tasks such as software deployment and system reporting allowing teams to scale with organization growth
-- Design and maintain software defined data centers running bare metal hypervisors on enterprise hardware
+- Insource patching of Linux and Windows servers via SCCM and Satellite, reducing cumulative monthly vulnerabilities 30% and cost by $400,000 a year
+- Automate repeated tasks such as software deployment and system reporting via Bash, Ruby, and PowerShell allowing teams to scale with organization growth
+- Design and maintain software defined data centers running bare metal hypervisors on enterprise hardware via tools like HCL, PowerCLI, etc.
 - Mentor, train, and share knowledge with peers
 - Work under general direction of senior management
 
@@ -24,10 +24,9 @@ Skilled infrastructure engineer with experience in networking, systems administr
 misconfigurations
 - Taught reference librarians basic HTML and CSS empowering them to own content updates, reducing site update request
 time from 3-5 days to same day turn around
-- Performed network assessment resulting in replacement of end of life Cisco WLC with Cisco Meraki which eliminated complexity and annual reduced licensing costs
-- Refactored hardware provisioning with driverless images built in VMware vSphere with PowerShell and PowerCLI, tested
-internally and by partners at Dell before factory-built machines ship which saved 12 person months a year spent manually
-configuring hardware and software
+- Performed network assessment resulting in replacement of end of life Cisco wireless controller with Cisco Meraki which eliminated complexity and annual reduced licensing costs
+- Led refactor of hardware provisioning process with driverless images built in VMware vSphere with PowerShell and PowerCLI, tested
+internally and by partners at Dell before factory-built machines ship which saved 12 person months a year spent manually configuring hardware and software
 - Trained and provided ongoing mentorship for two new system administrators
 
 ### Service Analyst | County of Chester; West Chester, PA -- October 2016-February 2019
@@ -113,7 +112,7 @@ configuring hardware and software
     SQL
     MongoDB
 
-### Webservers
+### Web Servers
 
     Apache httpd
     IIS
