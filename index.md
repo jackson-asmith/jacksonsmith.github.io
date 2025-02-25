@@ -1,3 +1,13 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2GCC14GK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5J2GCC14GK');
+</script>
+
 <meta name="description" content="The personal website of Jackson Smith, an engineer who builds strong systems helping others do their best work.">
 
 ![Oh look, it's Jackson](https://avatars.githubusercontent.com/u/42005615?v=4)
