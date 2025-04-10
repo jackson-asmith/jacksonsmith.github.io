@@ -16,45 +16,39 @@
 
 [Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
-I’m a passionate infrastructure engineer with deep expertise in Bash, PowerShell, Ruby, AWS, Azure, and software defined datacenters. I thrive on solving complex challenges and delivering results that drive efficiency and innovation. My approach blends technical expertise with a collaborative mindset, ensuring that solutions are not only effective but also sustainable. Outside of work, I enjoy skiing and cooking, which fuel my creativity and problem-solving skills.
+Hi, I'm Jackson! I'm a passionate and well-rounded infrastructure engineer with 10+ years of experience building durable, cross-platform systems across Linux, Windows, and hybrid-cloud environments (AWS & Azure). Known for taking ownership of foundational, business-critical projects others avoid, typically migrations, such as replacing backup systems to leading pre-EOL adoption of modern operating systems. Outside of work, I enjoy skiing and cooking, which fuel my creativity and problem-solving skills.
 
 ### Operations Engineer | Lincoln Investment; Remote -- April 2022-Present
 
-- Responsible for large complex hybrid-cloud spanning multiple data centers and Azure serving more than 300 offices across the US
-- Insource patching of Linux and Windows servers via SCCM and Satellite, reducing cumulative monthly vulnerabilities 30% and cost by $400,000 a year
+- Deliver clean handoffs for complex, neglected systems like backup infrastructure replacement, certificate management/ rotation, and internal DNS refactoring — boosting security, compliance, and team confidence
+- Led data driven patch automation insourcing project using SCCM and Satellite, reducing open vulnerabilities by 30% and eliminating $400,000 in annual operating expenses
 - Automate repeated tasks such as software deployment and system reporting via Bash, Ruby, and PowerShell allowing teams to scale with organization growth
+- Championed and implemented adoption of Windows Server 2022 and RHEL, well ahead of Windows Server 2012 R2, 2016, and CentOS end of life, increased Domain Functional Level from 2008 to Windows Server 2016
 - Design and maintain software defined data centers running bare metal hypervisors on enterprise hardware via tools like HCL, PowerCLI, etc.
-- Mentor, train, and share knowledge with peers
-- Work under general direction of senior management
+-Trusted to mentor peers, communicate clearly across teams, document legacy systems, and take on critical but unglamorous projects others avoided, ensuring long-term operational stability
 
 ### Network Analyst | Chester County Library System; Remote -- February 2019-April 2022
 
-- Administered complex IT environment spanning 18 libraries across southeastern Pennsylvania
-- Automated Windows configuration with PowerShell and Linux and macOS configurations with Ruby, eliminating production
-misconfigurations
-- Taught reference librarians basic HTML and CSS empowering them to own content updates, reducing site update request
+- Modernized a network spanning 18 public libraries by replacing legacy Cisco gear with Meraki, reducing support overhead and licensing costs
+- Taught reference librarians basic HTML and CSS empowering them to own content updates, reducing website update request
 time from 3-5 days to same day turn around
-- Performed network assessment resulting in replacement of end of life Cisco wireless controller with Cisco Meraki which eliminated complexity and annual reduced licensing costs
-- Led refactor of hardware provisioning process with driverless images built in VMware vSphere with PowerShell and PowerCLI, tested
-internally and by partners at Dell before factory-built machines ship which saved 12 person months a year spent manually configuring hardware and software
-- Trained and provided ongoing mentorship for two new system administrators
+- Championed and implemented early migration of Windows 11 and Server 2019, well ahead of 2012 R2 and Windows 10 EOL, building deployment and validation tooling using PowerShell and MDT
+- Rebuilt hardware imaging pipeline in VMware using PowerShell and PowerCLI, saving 12 person-months annually through innovative process redesign
+- Mentored two junior system administrators
 
 ### Service Analyst | County of Chester; West Chester, PA -- October 2016-February 2019
 
-- Built tools for common administrative tasks such as log parsing, reporting, and resource utilization with Ruby and PowerShell identifying issues 70% faster, solving 20% more tickets than peers, while maintaining highest customer satisfaction ratings
-- Supported and troubleshot day to day software and application systems for 2500 users (VMware Horizon Client, Windows, and Linux)
-- Tested software updates in VMware vSphere and worked with application owners reducing release times 75%
+- Provided support for 2,500+ users in a mixed VMware/Windows/Linux environment while maintaining top CSAT scores across the team reflecting a consistent and communicative approach
 
 ### IT Consultant | Robert Half Technology; Philadelphia, PA -- Feb 2016-Oct 2016
 
-- Administered complex site spanning several offices in Philadelphia
-- Managed Windows and Linux servers with 99.9% uptime
-- Migrated from on-premises Active Directory and Exchange to Azure AD and Microsoft 365
-- Worked with vendor partners on cable runs and equipment installations
+- Supported clients with diverse, multi-site infrastructure; successfully migrated from on-prem AD/Exchange to Azure AD + Microsoft 365
+- Delivered 99.9% uptime across Windows and Linux servers, implementing config management and better patch workflows
+- Coordinated clearly with vendor partners on deployments and structured cabling, ensuring consistency and alignment
 
 ### Technician | County of Chester; West Chester, PA -- April 2015-April 2016
 
-- Provided desktop support for 900+ users across dozens of departments
+- Provided L2 support to 900+ users across county agencies; scripted and documented quick fixes to reduce handoffs and promote consistency across teams
 
 ## Certificates
 
@@ -62,15 +56,22 @@ internally and by partners at Dell before factory-built machines ship which save
 
 ## Projects
 
-- Present annual security course
-- Designed and deployed a Rocket.Chat instance hosted on public cloud running on a Debian cluster using a Node.js and nginx frontend and MongoDB backend provisioned with Ruby and shell (formerly Chef) monitored via Prometheus and Grafana
+### Work Projects
+
+- Legacy Refactoring Initiatives: Owned low-visibility but high-risk legacy cleanup (internal DNS, certificate lifecycle, syslog normalization), reducing internal escalations by 50% over 12 months through consistent and strategic improvement
+- Security Awareness Training: Designed and led annual in-house training programs that significantly improved phishing simulation metrics and staff vigilance
+
+### Home Projects
+
+- Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX). Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana
+- Home Network Refresh: Replaced ancient AirPort Extreme Time Capsule with modern Ubiquiti Dream Router 7 with modern network segmentation, that devolved into a Raspberry Pi based K3s cluster running containerized Active Directory, Active Directory Certificate Services, and NPS because Free IPA and all the YAML in the world could not deliver manageable 802.1x to keep my IoT devices off Shodan
 
 ## Technical Skills
 
 ### Operating Systems
 
     Linux: Debian, CentOS, RHEL 
-    Unix: macOS versions 10-13, openBSD, FreeBSD
+    Unix: macOS versions 10-15, openBSD, FreeBSD
     Windows: more than 400 years experience! NT 3.1-11 Server 2003-2022
 
 ### Boot managers
@@ -102,6 +103,10 @@ internally and by partners at Dell before factory-built machines ship which save
     Active Directory
     389 Directory Service
     Samba
+
+### Containers
+
+    Docker
 
 ### Hypervisors
 
@@ -168,7 +173,7 @@ internally and by partners at Dell before factory-built machines ship which save
 
 ## Soft Skills
 
-Public speaking, active listening, critical thinking, reading, flexibility, running, sound effects
+Communication, collaboration, consistency, commitment, courtesy, integrity, perseverance, self-control, indomitable spirit
 
 ## Education
 
