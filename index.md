@@ -25,7 +25,7 @@ Hi, I'm Jackson! I'm a passionate and well-rounded infrastructure engineer with 
 - Automate repeated tasks such as software deployment and system reporting via Bash, Ruby, and PowerShell allowing teams to scale with organization growth
 - Championed and implemented adoption of Windows Server 2022 and RHEL, well ahead of Windows Server 2012 R2, 2016, and CentOS end of life, increased Domain Functional Level from 2008 to Windows Server 2016
 - Design and maintain software defined data centers running bare metal hypervisors on enterprise hardware via tools like HCL, PowerCLI, etc.
--Trusted to mentor peers, communicate clearly across teams, document legacy systems, and take on critical but unglamorous projects others avoided, ensuring long-term operational stability
+- Trusted to mentor peers, communicate clearly across teams, document legacy systems, and take on critical but unglamorous projects others avoided, ensuring long-term operational stability
 
 ### Network Analyst | Chester County Library System; Remote -- February 2019-April 2022
 
