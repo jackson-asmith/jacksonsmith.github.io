@@ -64,7 +64,6 @@ time from 3-5 days to same day turn around
 ### Home Projects
 
 - Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX). Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana
-- Home Network Refresh: Replaced ancient AirPort Extreme Time Capsule with modern Ubiquiti Dream Router 7 with modern network segmentation, that devolved into a Raspberry Pi based K3s cluster running containerized Active Directory, Active Directory Certificate Services, and NPS because Free IPA and all the YAML in the world could not deliver manageable 802.1x to keep my IoT devices off Shodan
 
 ## Technical Skills
 
