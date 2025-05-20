@@ -16,7 +16,7 @@
 
 [Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
-Hi, I'm Jackson! I'm a passionate and well-rounded infrastructure engineer with 10+ years of experience building durable, cross-platform systems across Linux, Windows, and hybrid-cloud environments (AWS & Azure). Known for taking ownership of foundational, business-critical projects others avoid, typically migrations, such as replacing backup systems to leading pre-EOL adoption of modern operating systems. Outside of work, I enjoy skiing and cooking, which fuel my creativity and problem-solving skills.
+Hi, I'm Jackson! I'm a passionate and well-rounded infrastructure engineer with 10+ years of experience building durable, cross-platform systems across Linux, Windows, and hybrid-cloud environments (AWS & Azure). Known for taking ownership of foundational, business-critical projects others avoid, typically migrations, such as replacing backup systems or leading pre-EOL adoption of modern operating systems. Outside of work, I enjoy skiing and cooking, which fuel my creativity and problem-solving skills.
 
 ### Operations Engineer | Lincoln Investment; Remote -- April 2022-Present
 
