@@ -26,7 +26,7 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
 
 - Production engineering for 300+ offices nationwide across a hybrid-cloud environment in Azure and multiple data centers
 - Managed data driven patch automation insourcing project using SCCM and Satellite, reducing open vulnerabilities by 48% and cutting costs by $400,000 annually
-- Lead the replacement of aging and outgrown backup infrastructure (Avamar running on Data Domains) with a modern hybrid cloud (NetBackup running on Flex Appliance with Azure hosted archive), improving disaster recovery posture and operational transparency with zero downtime
+- Lead the replacement of aging and outgrown backup infrastructure with a modern hybrid cloud solution, improving disaster recovery posture and operational transparency with zero downtime
 - Automate repeated tasks such as software deployment and system reporting via Bash, Ruby, and PowerShell allowing teams to scale with organization growth
 - Delivered clean handoffs for certificate authority switch from Entrust to DigiCert including integration with Azure KeyVault for seamless management of certificates by the Infrastructure Operations team
 - Championed and implemented adoption of Windows Server 2022 and RHEL, well ahead of Windows Server 2012 R2, 2016, and CentOS end of life, increased Domain Functional Level from 2008 to Windows Server 2016
