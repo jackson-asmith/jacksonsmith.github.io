@@ -16,24 +16,29 @@
 
 [Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
-Hi, I'm Jackson! I'm a passionate and well-rounded infrastructure engineer with 10+ years of experience building durable, cross-platform systems across Linux, Windows, and hybrid-cloud environments (AWS & Azure). Known for taking ownership of foundational, business-critical projects others avoid, typically migrations, such as replacing backup systems or leading pre-EOL adoption of modern operating systems. Outside of work, I enjoy skiing and cooking, which fuel my creativity and problem-solving skills.
+Hi, I'm Jackson! I'm a well-rounded infrastructure engineer with over 10 years of experience designing, building, and maintaining cross-platform systems. Proven expertise in Linux and Windows environments, including cloud platforms like AWS and Azure.
+
+Known for taking ownership of business-critical projects and leading high-impact initiatives, such as backup system replacement and managing pre-EOL adoption of modern operating systems. Proficient in technical problem-solving and committed to delivering durable, foundational infrastructure solutions.
+
+Outside of work, I enjoy skiing and cooking, which fuel my creativity and problem-solving skills.
 
 ### Operations Engineer | Lincoln Investment; Remote -- April 2022-Present
 
-- Deliver clean handoffs for complex, neglected systems like backup infrastructure replacement, certificate management/ rotation, and internal DNS refactoring — boosting security, compliance, and team confidence
-- Led data driven patch automation insourcing project using SCCM and Satellite, reducing open vulnerabilities by 30% and eliminating $400,000 in annual operating expenses
+- Production engineering for 300+ offices nationwide across a hybrid-cloud environment in Azure and multiple data centers
+- Managed data driven patch automation insourcing project using SCCM and Satellite, reducing open vulnerabilities by 48% and cutting costs by $400,000 annually
+- Lead the replacement of aging and outgrown backup infrastructure (Avamar running on Data Domains) with a modern hybrid cloud (NetBackup running on Flex Appliance with Azure hosted archive), improving disaster recovery posture and operational transparency with zero downtime
 - Automate repeated tasks such as software deployment and system reporting via Bash, Ruby, and PowerShell allowing teams to scale with organization growth
+- Delivered clean handoffs for certificate authority switch from Entrust to DigiCert including integration with Azure KeyVault for seamless management of certificates by the Infrastructure Operations team
 - Championed and implemented adoption of Windows Server 2022 and RHEL, well ahead of Windows Server 2012 R2, 2016, and CentOS end of life, increased Domain Functional Level from 2008 to Windows Server 2016
 - Design and maintain software defined data centers running bare metal hypervisors on enterprise hardware via tools like HCL, PowerCLI, etc.
 - Trusted to mentor peers, communicate clearly across teams, document legacy systems, and take on critical but unglamorous projects others avoided, ensuring long-term operational stability
 
 ### Network Analyst | Chester County Library System; Remote -- February 2019-April 2022
 
+- Rebuilt hardware provisioning pipeline in VMware using PowerShell and PowerCLI, saving 12 person-months annually through innovative process redesign
 - Modernized a network spanning 18 public libraries by replacing legacy Cisco gear with Meraki, reducing support overhead and licensing costs
-- Taught reference librarians basic HTML and CSS empowering them to own content updates, reducing website update request
-time from 3-5 days to same day turn around
+- Empowered librarians to own content updates via basic HTML and CSS training, reducing website update request time from 3-5 days to same day delivery
 - Championed and implemented early migration of Windows 11 and Server 2019, well ahead of 2012 R2 and Windows 10 EOL, building deployment and validation tooling using PowerShell and MDT
-- Rebuilt hardware imaging pipeline in VMware using PowerShell and PowerCLI, saving 12 person-months annually through innovative process redesign
 - Mentored two junior system administrators
 
 ### Service Analyst | County of Chester; West Chester, PA -- October 2016-February 2019
@@ -43,7 +48,7 @@ time from 3-5 days to same day turn around
 ### IT Consultant | Robert Half Technology; Philadelphia, PA -- Feb 2016-Oct 2016
 
 - Supported clients with diverse, multi-site infrastructure; successfully migrated from on-prem AD/Exchange to Azure AD + Microsoft 365
-- Delivered 99.9% uptime across Windows and Linux servers, implementing config management and better patch workflows
+- Delivered 99.9% uptime across Windows and Linux servers, implementing configuration management and better patch workflows
 - Coordinated clearly with vendor partners on deployments and structured cabling, ensuring consistency and alignment
 
 ### Technician | County of Chester; West Chester, PA -- April 2015-April 2016
@@ -58,8 +63,9 @@ time from 3-5 days to same day turn around
 
 ### Work Projects
 
-- Legacy Refactoring Initiatives: Owned low-visibility but high-risk legacy cleanup (internal DNS, certificate lifecycle, syslog normalization), reducing internal escalations by 50% over 12 months through consistent and strategic improvement
-- Security Awareness Training: Designed and led annual in-house training programs that significantly improved phishing simulation metrics and staff vigilance
+- Migrated core SQL server from single to three node availability aware cluster for high availability and redundancy; eliminating key operational risks while also improving security posture
+- Legacy refactoring initiatives: owned high-risk legacy cleanup (internal DNS, cert lifecycle, syslog normalization), reducing internal escalations by 50% over 12 months through consistent and strategic improvement
+- Security awareness training: designed and led annual in-house training programs that significantly improved phishing simulation metrics and staff vigilance
 
 ### Home Projects
 
