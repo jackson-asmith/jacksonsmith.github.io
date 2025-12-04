@@ -18,7 +18,7 @@
 
 Hi, I'm Jackson! I'm a well-rounded infrastructure engineer with over 10 years of experience designing, building, and maintaining cross-platform systems. Proven expertise in Linux and Windows environments, including cloud platforms like AWS and Azure.
 
-Known for taking ownership of business-critical projects and leading high-impact initiatives, such as backup system replacement and managing pre-EOL adoption of modern operating systems. Proficient in technical problem-solving and committed to delivering durable, foundational infrastructure solutions.
+I'm known for taking ownership of business-critical projects and leading high-impact initiatives, such as backup system replacement and managing pre-EOL adoption of modern operating systems. I am proficient in technical problem-solving and committed to delivering durable, foundational infrastructure solutions.
 
 Outside of work, I enjoy skiing and cooking, which fuel my creativity and problem-solving skills.
 
@@ -122,15 +122,18 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
 ### Monitoring
 
     Grafana
-    Logstash
+    Logstash (ELK Stack)
     New Relic
     Prometheus (used in conjunction with Grafana)
     syslog (rsyslog)
+    Zabbix
 
 ### Databases
 
     SQL
+    Microsoft SQL Server
     MongoDB
+    MySQL
 
 ### Web Servers
 
@@ -145,6 +148,7 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
     AnyConnect
     GlobalProtect
     OpenVPN
+    Zscaler
 
 ### Public Cloud Infrastructure
 
@@ -174,11 +178,12 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
     Jira
     BitBucket
     GitHub
+    GitLab
     Slack/Rocket.Chat/Teams
 
 ## Soft Skills
 
-Communication, collaboration, consistency, commitment, courtesy, integrity, perseverance, self-control, indomitable spirit
+Communication, collaboration, consistency, commitment
 
 ## Education
 
