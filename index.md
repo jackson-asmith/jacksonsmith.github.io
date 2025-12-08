@@ -25,13 +25,14 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
 ### Operations Engineer | Lincoln Investment; Remote -- April 2022-Present
 
 - Production engineering for 300+ offices nationwide across a hybrid-cloud environment in Azure and multiple data centers
-- Managed data driven patch automation insourcing project using SCCM and Satellite, reducing open vulnerabilities by 48% and cutting costs by $400,000 annually
-- Lead the replacement of aging and outgrown backup infrastructure with a modern hybrid cloud solution, improving disaster recovery posture and operational transparency with zero downtime
 - Automate repeated tasks such as software deployment and system reporting via Bash, Ruby, and PowerShell allowing teams to scale with organization growth
-- Delivered clean handoffs for certificate authority switch from Entrust to DigiCert including integration with Azure KeyVault for seamless management of certificates by the Infrastructure Operations team
-- Championed and implemented adoption of Windows Server 2022 and RHEL, well ahead of Windows Server 2012 R2, 2016, and CentOS end of life, increased Domain Functional Level from 2008 to Windows Server 2016
 - Design and maintain software defined data centers running bare metal hypervisors on enterprise hardware via tools like HCL, PowerCLI, etc.
 - Trusted to mentor peers, communicate clearly across teams, document legacy systems, and take on critical but unglamorous projects others avoided, ensuring long-term operational stability
+- Led data driven patch automation insourcing project using Satellite and SCCM, reducing open vulnerabilities by 70% and cutting costs by $400,000 annually
+- Led the replacement of aging and outgrown backup infrastructure with a modern hybrid cloud solution, improving disaster recovery posture and operational transparency with zero downtime
+- Led certificate authority migration from Entrust to DigiCert in less than 6 months, including integration with Azure KeyVault for seamless management of certificates, and delivered clean handoff of operations to the Infrastructure Operations team
+- Delivered clean handoff of user account automation via One Login and ADP then Okta and DayForce as well as SAML integration for application access for seamless employee lifecycle management by Digital Workspace team
+- Championed and implemented adoption of Windows Server 2022 and RHEL, well ahead of Windows Server 2012 R2, 2016, and CentOS end of life, increased Domain Functional Level from 2008 to Windows Server 2016
 
 ### Network Analyst | Chester County Library System; Remote -- February 2019-April 2022
 
@@ -39,11 +40,13 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
 - Modernized a network spanning 18 public libraries by replacing legacy Cisco gear with Meraki, reducing support overhead and licensing costs
 - Empowered librarians to own content updates via basic HTML and CSS training, reducing website update request time from 3-5 days to same day delivery
 - Championed and implemented early migration of Windows 11 and Server 2019, well ahead of 2012 R2 and Windows 10 EOL, building deployment and validation tooling using PowerShell and MDT
+- Leveraged prior experience as a key technical resource for the County’s Disaster Recovery and Business Continuity committees to enhance system reliability and connectivity, led initiatives on high availability, redundancy, VPN, and ISP failover strategies, and ensured seamless operations during the pandemic by migrating employees from desktop to laptop workstations over 2019
 - Mentored two junior system administrators
 
 ### Service Analyst | County of Chester; West Chester, PA -- October 2016-February 2019
 
 - Provided support for 2,500+ users in a mixed VMware/Windows/Linux environment while maintaining top CSAT scores across the team reflecting a consistent and communicative approach
+- Served as a key technical resource for the County’s Disaster Recovery and Business Continuity committees, driving the development and implementation of plans focused on system reliability and connectivity, provided expertise on high availability, redundancy, VPN configurations, and ISP failover strategies to ensure uninterrupted operations during disaster scenarios
 
 ### IT Consultant | Robert Half Technology; Philadelphia, PA -- Feb 2016-Oct 2016
 
