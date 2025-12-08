@@ -80,7 +80,7 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
 
     Linux: Debian, CentOS, RHEL 
     Unix: macOS versions 10-15, openBSD, FreeBSD
-    Windows: more than 400 years experience! NT 3.1-11 Server 2003-2022
+    Windows: more than 400 years experience! NT 3.1-11 Server 2003-2025
 
 ### Boot managers
 
@@ -157,6 +157,14 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
     GlobalProtect
     OpenVPN
     Zscaler
+
+### Backup Solutions
+
+    Dell Avamar
+    Veritas HubStor (NetBackup SaaS Protection)
+    Veritas NetBackup
+    Dell NetWorker
+    Veeam
 
 ### Public Cloud Infrastructure
 
