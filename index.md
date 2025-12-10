@@ -27,7 +27,7 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
 - Production engineering for 300+ offices nationwide across a hybrid-cloud environment in Azure and multiple data centers
 - Automate repeated tasks such as software deployment and system reporting via Bash, Ruby, and PowerShell allowing teams to scale with organization growth
 - Design and maintain software defined data centers running bare metal hypervisors on enterprise hardware via tools like HCL, PowerCLI, etc.
-- Trusted to mentor peers, communicate clearly across teams, document legacy systems, and take on critical but unglamorous projects others avoided, ensuring long-term operational stability
+- Trusted to mentor peers, communicate clearly across teams, document legacy systems, and take on critical but unglamorous projects ensuring long-term operational stability
 - Led data driven patch automation insourcing project using Satellite and SCCM, reducing open vulnerabilities by 70% and cutting costs by $400,000 annually
 - Led the replacement of aging and outgrown backup infrastructure with a modern hybrid cloud solution, improving disaster recovery posture and operational transparency with zero downtime
 - Led certificate authority migration from Entrust to DigiCert in less than 6 months, including integration with Azure KeyVault for seamless management of certificates, and delivered clean handoff of operations to the Infrastructure Operations team
@@ -39,7 +39,7 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
 - Rebuilt hardware provisioning pipeline in VMware using PowerShell and PowerCLI, saving 12 person-months annually through innovative process redesign
 - Modernized a network spanning 18 public libraries by replacing legacy Cisco gear with Meraki, reducing support overhead and licensing costs
 - Empowered librarians to own content updates via basic HTML and CSS training, reducing website update request time from 3-5 days to same day delivery
-- Championed and implemented early migration of Windows 11 and Server 2019, well ahead of 2012 R2 and Windows 10 EOL, building deployment and validation tooling using PowerShell and MDT
+- Led early OS migration initiatives, securing senior stakeholder approval to adopt Windows 11 and Server 2019 ahead of Windows 10 and Server 2012/R2 end-of-life and built automated PowerShell and MDT workflows that validated the new platforms and ensured reliable deployment
 - Leveraged prior experience as a key technical resource for the County’s Disaster Recovery and Business Continuity committees to enhance system reliability and connectivity, led initiatives on high availability, redundancy, VPN, and ISP failover strategies, and ensured seamless operations during the pandemic by migrating employees from desktop to laptop workstations over 2019
 - Mentored two junior system administrators
 
