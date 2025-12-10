@@ -34,7 +34,9 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
 - Designed and maintained enterprise monitoring with New Relic and Zabbix, tracking system utilization, latency, and network performance to ensure platform reliability and partnered with developers to extend observability into high-value applications, implemented early SLI/SLO-based alerting, and reduced downtime by 35% across critical services
 - Led certificate authority migration from Entrust to DigiCert in less than 6 months, including integration with Azure KeyVault for seamless management of certificates, and delivered clean handoff of operations to the Infrastructure Operations team
 - Collaborated with senior developers on pruning hundreds of terabytes of legacy data, proposing and implementing a parallelized PowerShell solution using `ForEach-Object -Parallel` that reduced deletion time from days to hours, significantly improving operational efficiency and resource utilization
+- Led the operations team’s biannual audit tasks for core line-of-business applications, validating backups and disaster recovery readiness
 - Delivered clean handoff of user account automation via One Login and ADP then Okta and DayForce as well as SAML integration for application access for seamless employee lifecycle management by Digital Workspace team
+- Partnered with InfoSec and development teams on all major security incidents, contributing operational expertise and ensuring rapid containment, mitigation, and post-incident analysis across critical services
 - Championed and implemented adoption of Windows Server 2022 and RHEL, well ahead of Windows Server 2012 R2, 2016, and CentOS end of life, increased Domain Functional Level from 2008 to Windows Server 2016
 
 ### Network Analyst | Chester County Library System; Remote -- February 2019-April 2022
