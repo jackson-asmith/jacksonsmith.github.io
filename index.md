@@ -28,6 +28,7 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
 - Automate repeated tasks such as software deployment and system reporting via Bash, Ruby, and PowerShell allowing teams to scale with organization growth
 - Design and maintain software defined data centers running bare metal hypervisors on enterprise hardware via tools like HCL, PowerCLI, etc.
 - Trusted to mentor peers, communicate clearly across teams, document legacy systems, and take on critical but unglamorous projects ensuring long-term operational stability
+- Lead operations engineer from my team on a cross-functional storage modernization project, replacing legacy Dell PowerMax SANs with Nimble or Pure solutions to enhance capacity, reliability, and support long-term Azure migration plans
 - Led data driven patch automation insourcing project using Satellite and SCCM, reducing open vulnerabilities by 70% and cutting costs by $400,000 annually
 - Led the replacement of aging and outgrown backup infrastructure with a modern hybrid cloud solution, improving disaster recovery posture and operational transparency with zero downtime
 - Designed and maintained infrastructure monitoring with New Relic and Zabbix, tracking system utilization, latency, and network performance to ensure platform reliability, while collaborating with developers to extend observability into applications and support early SLI/SLO-based alerting
