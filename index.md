@@ -37,6 +37,7 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
 - Led the operations team’s biannual audit tasks for core line-of-business applications, validating backups and disaster recovery readiness
 - Delivered clean handoff of user account automation via One Login and ADP then Okta and DayForce as well as SAML integration for application access for seamless employee lifecycle management by Digital Workspace team
 - Partnered with InfoSec and development teams on all major security incidents, contributing operational expertise and ensuring rapid containment, mitigation, and post-incident analysis across critical services
+- Lead organization-wide documentation standardization initiative, developed documentation standard, handover process, and update process centralizing all operational documentation in a single operations Confluence space
 - Championed and implemented adoption of Windows Server 2022 and RHEL, well ahead of Windows Server 2012 R2, 2016, and CentOS end of life, increased Domain Functional Level from 2008 to Windows Server 2016
 
 ### Network Analyst | Chester County Library System; Remote -- February 2019-April 2022
