@@ -191,6 +191,7 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
 
     Bash: config and utility scripts < 100 lines
     PowerShell: utility scripts, tools < 500 lines, advanced functions, modules
+    Python: utility scripts, probes/parsers, extending bash functionality
     Ruby: utility scripts, probes/parsers, extending bash functionality
     Query Languages: enough to query CIM, WMI, etc. which use derivatives of ANSI SQL
 
