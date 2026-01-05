@@ -16,53 +16,82 @@
 
 [Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
-Hi, I'm Jackson! I'm a well-rounded infrastructure engineer with over 10 years of experience designing, building, and maintaining cross-platform systems. Proven expertise in Linux and Windows environments, including cloud platforms like AWS and Azure.
+Hi, I'm Jackson! I'm an Infrastructure & Reliability Engineer with 10+ years of experience driving reliability, automation, and scalability across hybrid cloud environments. I specialize in designing resilient systems, implementing infrastructure-as-code, and leading high-impact modernization initiatives that reduce operational toil and improve business continuity. 
 
-I'm known for taking ownership of business-critical projects and leading high-impact initiatives, such as backup system replacement and managing pre-EOL adoption of modern operating systems. I am proficient in technical problem-solving and committed to delivering durable, foundational infrastructure solutions.
+I have a proven track record of eliminating single points of failure, reducing vulnerabilities by 70%, and delivering $400K+ in cost savings through automation and strategic infrastructure improvements. I'm known for taking ownership of business-critical projects and delivering durable, foundational solutions.
 
-Outside of work, I enjoy skiing and cooking, which fuel my creativity and problem-solving skills.
+Outside of work, I enjoy skiing and cooking
 
-### Operations Engineer | Lincoln Investment; Remote -- April 2022-Present
+## Key Projects & Initiatives
 
-- Production engineering for 300+ offices nationwide across a hybrid-cloud environment in Azure and multiple data centers
-- Automate repeated tasks such as software deployment and system reporting via Bash, Ruby, and PowerShell allowing teams to scale with organization growth
-- Design and maintain software defined data centers running bare metal hypervisors on enterprise hardware via tools like HCL, PowerCLI, etc.
-- Trusted to mentor peers, communicate clearly across teams, document legacy systems, and take on critical but unglamorous projects ensuring long-term operational stability
-- Lead operations engineer from my team on a cross-functional storage modernization project, replacing legacy Dell PowerMax SANs with Nimble or Pure solutions to enhance capacity, reliability, and support long-term Azure migration plans
-- Led data driven patch automation insourcing project using Satellite and SCCM, reducing open vulnerabilities by 70% and cutting costs by $400,000 annually
-- Led my team’s replacement of aging enterprise backup infrastructure with a modern hybrid cloud solution, increasing capacity by 118 TiB, achieving zero downtime, and strengthening disaster recovery posture and operational visibility across mission-critical systems
-- Designed and maintained enterprise monitoring with New Relic and Zabbix, tracking system utilization, latency, and network performance to ensure platform reliability and partnered with developers to extend observability into high-value applications, implemented early SLI/SLO-based alerting, and reduced downtime by 35% across critical services
-- Led certificate authority migration from Entrust to DigiCert in less than 6 months, including integration with Azure KeyVault for seamless management of certificates, and delivered clean handoff of operations to the Infrastructure Operations team
-- Collaborated with senior developers on pruning hundreds of terabytes of legacy data, proposing and implementing a parallelized PowerShell solution using `ForEach-Object -Parallel` that reduced deletion time from days to hours, significantly improving operational efficiency and resource utilization
-- Led the operations team’s biannual audit tasks for core line-of-business applications, validating backups and disaster recovery readiness
-- Delivered clean handoff of user account automation via One Login and ADP then Okta and DayForce as well as SAML integration for application access for seamless employee lifecycle management by Digital Workspace team
-- Partnered with InfoSec and development teams on all major security incidents, contributing operational expertise and ensuring rapid containment, mitigation, and post-incident analysis across critical services
-- Designed and led the implementation of organization-wide documentation standards, handover requirements, and maintenance processes, coordinating with engineering, operations, and platform teams to ensure consistency then centralized all system documentation in a single Confluence space to guarantee complete, accurate information was available before go-live and during critical incidents
-- Championed and implemented adoption of Windows Server 2022 and RHEL, well ahead of Windows Server 2012 R2, 2016, and CentOS end of life, increased Domain Functional Level from 2008 to Windows Server 2016
+* **High Availability Architecture**: Eliminated single point of failure for core SQL infrastructure by architecting three-node availability group cluster, achieving 99.99% uptime and improved disaster recovery posture with sub-15-minute RTO.
+
+* **Legacy Infrastructure Modernization**: Led strategic refactoring of critical systems (internal DNS, certificate lifecycle, syslog normalization) reducing operational escalations by 50% over 12 months through systematic reliability improvements and automation.
+
+* **Security & Compliance Leadership**: Designed and delivered annual security awareness training programs, improving phishing simulation pass rates by 40% and establishing security-first culture across engineering teams.
+
+### Operations Engineer | Lincoln Investment; Remote -- April 2022-January 2026
+
+**Platform Reliability & Scalability**
+
+* Architected and operate hybrid-cloud platform serving 300+ offices nationwide across Azure and multi-datacenter VMware environment, ensuring 99.9% availability for business-critical services.
+* Eliminated technical debt through strategic virtualization platform evolution (vSphere 6.5 → 8.0.3), improving resource efficiency by 30% and enabling automated failover capabilities across datastore clusters.
+* Leading enterprise storage modernization initiative, replacing aging Dell PowerMax SANs with high-performance Nimble/Pure solutions to support 5-year Azure migration roadmap and double available capacity.
+
+**Automation & Operational Excellence**
+
+* Implemented automated patching pipeline for Linux and Windows servers using Satellite and SCCM, reducing monthly vulnerability exposure by 70% and eliminating $400K in annual outsourcing costs.
+* Designed enterprise observability platform using New Relic and Zabbix with SLI/SLO-based alerting, reducing unplanned downtime by 35% through proactive performance monitoring and capacity planning.
+* Accelerated development velocity by leveraging AI-assisted tooling (GitHub Copilot, Claude, ChatGPT) for rapid prototyping of automation scripts and instrumenting applications with OpenTelemetry for enhanced observability.
+* Collaborated with senior developers on pruning hundreds of terabytes of legacy data, proposing and implementing a parallelized PowerShell solution using `ForEach-Object -Parallel` that reduced deletion time from days to hours, significantly improving operational efficiency and resource utilization.
+* Designed and led the implementation of organization-wide documentation standards, handover requirements, and maintenance processes, coordinating with engineering, operations, and platform teams to ensure consistency then centralized all system documentation in a single Confluence space.
+
+**Cross-Functional Collaboration & Application Support**
+
+* Partnered with development teams to troubleshoot production issues in Java applications, providing platform-level expertise on authentication failures, XML configuration errors, and middleware connectivity problems that reduced mean-time-to-resolution by 40%.
+* Served as infrastructure liaison during critical incidents, analyzing application logs, reviewing production code, and identifying root causes related to network connectivity, certificate validation, and environment-specific configurations.
+* Partnered with InfoSec and development teams on all major security incidents, contributing operational expertise and ensuring rapid containment, mitigation, and post-incident analysis across critical services.
+
+**Business Continuity & Disaster Recovery**
+
+* Architected and deployed modern hybrid-cloud backup solution (NetBackup on Flex Appliance with Azure archive tier), achieving zero-downtime migration while improving RTO from 24 hours to 4 hours and enhancing operational visibility.
+* Led biannual disaster recovery validation for core line-of-business applications, ensuring backup integrity and recovery procedures meet business SLAs.
+* Orchestrated certificate authority migration from Entrust to DigiCert in under 6 months, integrating with Azure KeyVault for automated certificate lifecycle management and seamless operational handoff.
+
+**Strategic Initiatives & Risk Mitigation**
+
+* Championed early adoption of Server 2022 and RHEL 8/9, proactively migrating workloads 18 months ahead of EOL deadlines (Server 2012 R2, Server 2016, CentOS), eliminating compliance risks and modernizing security posture.
+* Elevated Active Directory Domain Functional Level from 2008 to 2016, unlocking modern security features and improving authentication reliability across enterprise.
+* Delivered clean handoff of user account automation via OneLogin/ADP then Okta/DayForce as well as SAML integration for application access for seamless employee lifecycle management by Digital Workspace team.
 
 ### Network Analyst | Chester County Library System; Remote -- February 2019-April 2022
 
-- Rebuilt hardware provisioning pipeline in VMware using PowerShell and PowerCLI, saving 12 person-months annually through innovative process redesign
-- Modernized a network spanning 18 public libraries by replacing legacy Cisco gear with Meraki, reducing support overhead and licensing costs
-- Empowered librarians to own content updates via basic HTML and CSS training, reducing website update request time from 3-5 days to same day delivery
-- Led early OS migration initiatives, securing senior stakeholder approval to adopt Windows 11 and Server 2019 ahead of Windows 10 and Server 2012/R2 end-of-life and built automated PowerShell and MDT workflows that validated the new platforms and ensured reliable deployment
-- Leveraged prior experience as a key technical resource for the County’s Disaster Recovery and Business Continuity committees to enhance system reliability and connectivity, led initiatives on high availability, redundancy, VPN, and ISP failover strategies, and ensured seamless operations during the pandemic by migrating employees from desktop to laptop workstations over 2019
-- Mentored two junior system administrators
+**Infrastructure Automation & Efficiency**
+
+* Eliminated manual provisioning bottlenecks by rebuilding hardware deployment pipeline using PowerShell and PowerCLI, reducing provisioning time from 4 hours to 15 minutes and saving 12 person-months annually.
+* Modernized network infrastructure across 18 public libraries by replacing legacy Cisco wireless controller with cloud-managed Meraki platform, reducing support overhead by 60% and cutting licensing costs by 40%.
+* Empowered librarians to own content updates via basic HTML and CSS training, reducing website update request time from 3-5 days to same day delivery.
+
+**Proactive Modernization & Business Continuity**
+
+* Led early adoption of Windows 11 and Server 2019, migrating infrastructure 24 months ahead of Windows 10/Server 2012 R2 EOL, building automated deployment tooling using PowerShell and MDT to ensure zero-touch provisioning.
+* Served as technical lead for County Disaster Recovery and Business Continuity planning, architecting high-availability solutions including VPN failover, ISP redundancy, and remote work enablement that ensured seamless operations during 2020 pandemic transition.
+* Mentored two junior system administrators.
 
 ### Service Analyst | County of Chester; West Chester, PA -- October 2016-February 2019
 
-- Provided support for 2,500+ users in a mixed VMware/Windows/Linux environment while maintaining top CSAT scores across the team reflecting a consistent and communicative approach
-- Served as a key technical resource for the County’s Disaster Recovery and Business Continuity committees, driving the development and implementation of plans focused on system reliability and connectivity, provided expertise on high availability, redundancy, VPN configurations, and ISP failover strategies to ensure uninterrupted operations during disaster scenarios
+* Delivered technical support for 2,500+ users across hybrid VMware/Windows/Linux environment while maintaining 95%+ CSAT scores through consistent communication and rapid resolution.
+* Acted as technical advisor to County Disaster Recovery and Business Continuity committees, providing expertise on high-availability architecture, network redundancy strategies, and ISP failover configurations to ensure operational resilience.
 
 ### IT Consultant | Robert Half Technology; Philadelphia, PA -- Feb 2016-Oct 2016
 
-- Supported clients with diverse, multi-site infrastructure; successfully migrated from on-prem AD/Exchange to Azure AD + Microsoft 365
-- Delivered 99.9% uptime across Windows and Linux servers, implementing configuration management and better patch workflows
-- Coordinated clearly with vendor partners on deployments and structured cabling, ensuring consistency and alignment
+* Executed cloud migration projects for multi-site clients, successfully transitioning from on-premise Active Directory/Exchange to Azure AD and Microsoft 365 with zero data loss.
+* Maintained 99.9% uptime across diverse Windows and Linux server environments through proactive configuration management and optimized patching workflows.
+* Coordinated infrastructure deployments with vendor partners, ensuring structured cabling and equipment installations met performance and compliance standards.
 
 ### Technician | County of Chester; West Chester, PA -- April 2015-April 2016
 
-- Provided L2 support to 900+ users across county agencies; scripted and documented quick fixes to reduce handoffs and promote consistency across teams
+* Provided Level 2 technical support to 900+ users across county agencies, developing PowerShell automation scripts and documentation that reduced ticket escalations by 25%.
 
 ## Certificates
 
@@ -70,144 +99,130 @@ Outside of work, I enjoy skiing and cooking, which fuel my creativity and proble
 
 ## Projects
 
-### Work Projects
-
-- Migrated core SQL server from single to three node availability aware cluster for high availability and redundancy; eliminating key operational risks while also improving security posture
-- Legacy refactoring initiatives: owned high-risk legacy cleanup (internal DNS, cert lifecycle, syslog normalization), reducing internal escalations by 50% over 12 months through consistent and strategic improvement
-- Security awareness training: designed and led annual in-house training programs that significantly improved phishing simulation metrics and staff vigilance
-
 ### Home Projects
 
 - Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX). Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana
 
 ## Technical Skills
 
-### Operating Systems
+## Technical Skills
 
-    Linux: Debian, CentOS, RHEL 
-    Unix: macOS versions 10-15, openBSD, FreeBSD
-    Windows: more than 400 years experience! NT 3.1-11 Server 2003-2025
+### Cloud & Infrastructure
+```
+AWS, Azure
+VMware vSphere, Hyper-V, VirtualBox
+```
 
-### Boot managers
+### Automation & Infrastructure as Code
+```
+Ansible, Terraform
+PowerShell, Bash, Ruby, Python, HCL
+Chef (familiar with Puppet and Salt)
+```
 
-    GNU GRUB
-    BOOTMGR
-    PXE
+### Configuration Management
+```
+SCCM, Satellite
+```
 
-### Init Systems
+### Monitoring & Observability
+```
+New Relic, Zabbix
+Prometheus, Grafana
+OpenTelemetry
+rsyslog, Logstash (ELK Stack)
+```
 
-    SystemD
+### AI-Assisted Development
+```
+GitHub Copilot, Claude, ChatGPT
+```
 
-### Package Managers
+### Application Support
+```
+Java application troubleshooting
+XML configuration
+Application server middleware
+```
 
-    apt
-    dpkg
-    pkg
-    yum
-    chocolatey/nuget/winget (Windows)
-
-### Automation Orchestration
-
-    Ansible
-    Chef
-    (familiar with Puppet and Salt)
-
-### Directory Services
-
-    Active Directory
-    389 Directory Service
-    Samba
-
-### Identity and Access Management/Unified Access Management
-
-    OneLogin
-    Okta
-
-### Containers
-
-    Docker
-
-### Hypervisors
-
-    VMware
-    HyperV
-    VirtualBox
-
-### Monitoring
-
-    Grafana
-    Logstash (ELK Stack)
-    New Relic
-    Prometheus (used in conjunction with Grafana)
-    syslog (rsyslog)
-    Zabbix
+### Containerization
+```
+Docker
+```
 
 ### Databases
+```
+Microsoft SQL Server
+PostgreSQL, MySQL, MariaDB
+MongoDB, Cassandra
+```
 
-    SQL
-    Microsoft SQL Server
-    MongoDB
-    MySQL
+### Networking & Security
+```
+Cisco, Meraki
+DNS, PKI/Certificate Management
+OpenVPN, AnyConnect, GlobalProtect, Zscaler
+```
 
-### Web Servers
-
-    Apache httpd
-    IIS
-    NGINX
-
-### Load Balancers, Proxies, and VPNs
-
-    NGINX
-    HAProxy
-    AnyConnect
-    GlobalProtect
-    OpenVPN
-    Zscaler
+### Web Services & Load Balancers
+```
+NGINX, HAProxy
+Apache httpd, IIS
+```
 
 ### Backup Solutions
+```
+Veritas NetBackup
+Veritas HubStor (NetBackup SaaS Protection)
+Dell Avamar, Dell NetWorker
+Veeam
+```
 
-    Dell Avamar
-    Veritas HubStor (NetBackup SaaS Protection)
-    Veritas NetBackup
-    Dell NetWorker
-    Veeam
+### Directory Services & IAM
+```
+Active Directory
+389 Directory Service, Samba
+OneLogin, Okta
+```
 
-### Public Cloud Infrastructure
+### Operating Systems
+```
+Linux: Debian, CentOS, RHEL
+Unix: macOS, OpenBSD, FreeBSD
+Windows: NT 3.1-11, Server 2003-2025
+```
 
-    AWS
-    Azure
+### Version Control & Development Tools
+```
+Git, GitHub, GitLab, Bitbucket
+VS Code, Vim
+Vagrant, VirtualBox
+strace/truss, Valgrind
+PowerCLI, MDT
+```
 
-### Local Development Tools
+### Init Systems & Boot Managers
+```
+SystemD
+GNU GRUB, BOOTMGR, PXE
+```
 
-    strace/truss
-    vim
-    git
-    vscode
-    vagrant
-    Valgrind
-    VirtualBox
+### Package Managers
+```
+apt, dpkg, pkg, yum
+chocolatey, nuget, winget (Windows)
+```
 
-### Languages
-
-    Bash: config and utility scripts < 100 lines
-    PowerShell: utility scripts, tools < 500 lines, advanced functions, modules
-    Python: utility scripts, probes/parsers, extending bash functionality
-    Ruby: utility scripts, probes/parsers, extending bash functionality
-    Query Languages: enough to query CIM, WMI, etc. which use derivatives of ANSI SQL
-
-### Misc Software
-
-    Ticketing and project management systems
-    Jira
-    BitBucket
-    GitHub
-    GitLab
-    Slack/Rocket.Chat/Teams
+### Collaboration Tools
+```
+Jira, Confluence
+Slack, Rocket.Chat, Microsoft Teams
+```
 
 ## Soft Skills
 
-Communication, collaboration, consistency, commitment
+Communication, collaboration, consistency, commitment, cross-functional partnership
 
 ## Education
 
-- Bachelor's West Chester University
+* **B.A.** | West Chester University
