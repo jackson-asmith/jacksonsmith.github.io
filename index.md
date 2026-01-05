@@ -101,6 +101,7 @@ Outside of work, I enjoy skiing and cooking
 
 ### Home Projects
 
+- Local LLM Infrastructure & Fine-Tuning: Built local AI experimentation environment running Mistral 8x7b and 8x22b models via Ollama. Fine-tuned custom Mixtral 8x7b model using official training guides, gaining hands-on experience with model architecture, quantization, and GPU resource optimization.
 - Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX). Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana
 
 ## Technical Skills
@@ -133,7 +134,9 @@ rsyslog, Logstash (ELK Stack)
 
 ### AI-Assisted Development
 ```
-GitHub Copilot, Claude, ChatGPT
+GitHub Copilot, Claude, ChatGPT (Production)
+Ollama (local LLM deployment)
+Mixtral/Mistral (model fine-tuning and experimentation)
 ```
 
 ### Application Support
