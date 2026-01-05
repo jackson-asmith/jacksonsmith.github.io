@@ -105,8 +105,6 @@ Outside of work, I enjoy skiing and cooking
 
 ## Technical Skills
 
-## Technical Skills
-
 ### Cloud & Infrastructure
 ```
 AWS, Azure
