@@ -50,7 +50,7 @@ Outside of work, I enjoy skiing and cooking
 
 * Partnered with development teams to troubleshoot production issues in Java applications, providing platform-level expertise on authentication failures, XML configuration errors, and middleware connectivity problems that reduced mean-time-to-resolution by 40%.
 * Served as infrastructure liaison during critical incidents, analyzing application logs, reviewing production code, and identifying root causes related to network connectivity, certificate validation, and environment-specific configurations.
-* Partnered with InfoSec and development teams on all major security incidents, contributing operational expertise and ensuring rapid containment, mitigation, and post-incident analysis across critical services.
+* Partnered with InfoSec team on security initiatives including Zscaler Zero Trust deployment (network integration, certificate configuration, application testing) and all major security incidents, contributing operational expertise and ensuring rapid containment, mitigation, and post-incident analysis across critical services.
 
 **Business Continuity & Disaster Recovery**
 
@@ -108,7 +108,7 @@ identity management.
 ### Home Projects
 
 - Local LLM Infrastructure & Fine-Tuning: Built local AI experimentation environment running Mistral 8x7b and 8x22b models via Ollama. Fine-tuned custom Mixtral 8x7b model using official training guides, gaining hands-on experience with model architecture, quantization, and GPU resource optimization.
-- Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX). Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana
+- * Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX) with automated SSL/TLS certificate lifecycle via Certbot/Let's Encrypt. Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana.
 
 ## Technical Skills
 
@@ -166,8 +166,10 @@ MongoDB, Cassandra
 
 ### Networking & Security
 ```
+Networking & Security
 Cisco, Meraki
 DNS, PKI/Certificate Management
+SSL/TLS Automation (Certbot, Let's Encrypt, ACME Protocol)
 OpenVPN, AnyConnect, GlobalProtect, Zscaler
 ```
 
@@ -194,13 +196,13 @@ OneLogin, Okta
 ### Email & Messaging Platforms
 ```
 Microsoft Exchange (On-Premises & Online)
-Microsoft 365 Administration
+Microsoft 365 & Teams Administration
 Google Workspace Administration  
 Slack Administration (SAML/SSO Integration)
 Cisco Unified Communications
-DMARC, SPF, DKIM, SMTP Authentication
-SendGrid, Mailgun, SMTP Relay Configuration
-Purview, Smarsh
+Email Authentication (DMARC, SPF, DKIM)
+SMTP Protocol & Relay Configuration (SendGrid, Mailgun, IIS)
+Compliance & eDiscovery (Purview, Smarsh)
 ```
 
 ### Operating Systems
