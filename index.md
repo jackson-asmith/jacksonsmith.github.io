@@ -245,4 +245,4 @@ Communication, collaboration, consistency, commitment, cross-functional partners
 
 ## Education
 
-* **B.A.** | West Chester University
+**B.A.** | West Chester University
