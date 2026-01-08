@@ -62,6 +62,12 @@ Outside of work, I enjoy skiing and cooking
 
 * Championed early adoption of Server 2022 and RHEL 8/9, proactively migrating workloads 18 months ahead of EOL deadlines (Server 2012 R2, Server 2016, CentOS), eliminating compliance risks and modernizing security posture.
 * Elevated Active Directory Domain Functional Level from 2008 to 2016, unlocking modern security features and improving authentication reliability across enterprise.
+* Architected and managed federated identity infrastructure connecting Lincoln's 
+Active Directory with 20+ external Microsoft 365/Entra ID tenants for financial 
+advisor offices nationwide. Designed automated provisioning workflow creating 
+mail-enabled users in federated tenants with license assignment via OneLogin, 
+enabling secure cross-organization collaboration while maintaining centralized 
+identity management.
 * Delivered clean handoff of user account automation via OneLogin/ADP then Okta/DayForce as well as SAML integration for application access for seamless employee lifecycle management by Digital Workspace team.
 
 ### Network Analyst | Chester County Library System; Remote -- February 2019-April 2022
@@ -184,6 +190,17 @@ Veeam
 Active Directory
 389 Directory Service, Samba
 OneLogin, Okta
+```
+### Email & Messaging Platforms
+```
+Microsoft Exchange (On-Premises & Online)
+Microsoft 365 Administration
+Google Workspace Administration  
+Slack Administration (SAML/SSO Integration)
+Cisco Unified Communications
+DMARC, SPF, DKIM, SMTP Authentication
+SendGrid, Mailgun, SMTP Relay Configuration
+Purview, Smarsh
 ```
 
 ### Operating Systems
