@@ -10,6 +10,26 @@
 
 <meta name="description" content="The personal website of Jackson Smith, an engineer who builds strong systems helping others do their best work.">
 
+<style>
+  nav {
+    position: sticky;
+    top: 0;
+    background: Canvas;
+    z-index: 10;
+  }
+</style>
+
+<nav>
+  <ul>
+    <li><a href="#key-projects--initiatives">Key Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#technical-skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+  </ul>
+</nav>
+
 ![Oh look, it's Jackson](https://avatars.githubusercontent.com/u/42005615?v=4)
 
 ## About me
@@ -22,6 +42,7 @@ I have a proven track record of eliminating single points of failure, reducing v
 
 Outside of work, I enjoy skiing and cooking
 
+<div id="Key Projects & Initiatives">
 ## Key Projects & Initiatives
 
 * **High Availability Architecture**: Eliminated single point of failure for core SQL infrastructure by architecting three-node availability group cluster, achieving 99.99% uptime and improved disaster recovery posture with sub-15-minute RTO.
@@ -29,6 +50,9 @@ Outside of work, I enjoy skiing and cooking
 * **Legacy Infrastructure Modernization**: Led strategic refactoring of critical systems (internal DNS, certificate lifecycle, syslog normalization) reducing operational escalations by 50% over 12 months through systematic reliability improvements and automation.
 
 * **Security & Compliance Leadership**: Designed and delivered annual security awareness training programs, improving phishing simulation pass rates by 40% and establishing security-first culture across engineering teams.
+
+<div id="Experience">
+## Experience
 
 ### Operations Engineer | Lincoln Investment; Remote -- April 2022-January 2026
 
@@ -99,17 +123,18 @@ identity management.
 
 * Provided Level 2 technical support to 900+ users across county agencies, developing PowerShell automation scripts and documentation that reduced ticket escalations by 25%.
 
+<div id="Certificates">
 ## Certificates
 
 - Google IT Support Professional Certificate
 
-## Projects
-
-### Home Projects
+<div id="Home Projects">
+## Home Projects
 
 - Local LLM Infrastructure & Fine-Tuning: Built local AI experimentation environment running Mistral 8x7b and 8x22b models via Ollama. Fine-tuned custom Mixtral 8x7b model using official training guides, gaining hands-on experience with model architecture, quantization, and GPU resource optimization.
 - * Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX) with automated SSL/TLS certificate lifecycle via Certbot/Let's Encrypt. Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana.
 
+<div id="Technical Skills">
 ## Technical Skills
 
 ### Cloud & Infrastructure
@@ -238,11 +263,7 @@ chocolatey, nuget, winget (Windows)
 Jira, Confluence
 Slack, Rocket.Chat, Microsoft Teams
 ```
-
-## Soft Skills
-
-Communication, collaboration, consistency, commitment, cross-functional partnership
-
+<div id="Education">
 ## Education
 
 **B.A.** | West Chester University
