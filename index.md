@@ -129,6 +129,15 @@ Outside of work, I enjoy skiing, cooking, yoga, and Pilates.
 
 ## Technical Skills
 
+### Languages
+```
+PowerShell (primary; including .NET interop)
+Ruby
+Python
+Bash
+SQL (ANSI and derivatives: T-SQL, PL/pgSQL)
+```
+
 ### Cloud & Infrastructure
 ```
 AWS, Azure
@@ -138,7 +147,7 @@ VMware vSphere, Hyper-V, VirtualBox
 ### Automation & Infrastructure as Code
 ```
 Ansible, Terraform
-PowerShell, Bash, Ruby, Python, HCL
+HCL
 Chef (familiar with Puppet and Salt)
 ```
 
