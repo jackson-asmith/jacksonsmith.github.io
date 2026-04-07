@@ -16,11 +16,11 @@
 
 [Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
-Hi, I'm Jackson! I'm an Infrastructure & Reliability Engineer with 10+ years of experience driving reliability, automation, and scalability across hybrid cloud environments. I specialize in designing resilient systems, implementing infrastructure-as-code, and leading high-impact modernization initiatives that reduce operational toil and improve business continuity. 
+Hi, I'm Jackson! I'm a Software Engineer with 10+ years of experience building and operating systems that reduce toil and keep things running. My background is in infrastructure and reliability engineering — hybrid cloud, IaC, automation, and high-availability architecture — and I've worked within Agile delivery teams and participated in SAFe program increments throughout my career. I recently moved up the stack into software development, building automated workflows and productivity tooling.
 
-I have a proven track record of eliminating single points of failure, reducing vulnerabilities by 70%, and delivering $400K+ in cost savings through automation and strategic infrastructure improvements. I'm known for taking ownership of business-critical projects and delivering durable, foundational solutions.
+I have a proven track record of eliminating single points of failure, reducing vulnerabilities by 70%, and delivering $400K+ in cost savings through automation. I bring an operator's instinct to software development: I care about correctness, testability, and systems that don't page someone at 3am.
 
-Outside of work, I enjoy skiing and cooking
+Outside of work, I enjoy skiing, cooking, yoga, and Pilates.
 
 ## Key Projects & Initiatives
 
@@ -28,7 +28,29 @@ Outside of work, I enjoy skiing and cooking
 
 * **Legacy Infrastructure Modernization**: Led strategic refactoring of critical systems (internal DNS, certificate lifecycle, syslog normalization) reducing operational escalations by 50% over 12 months through systematic reliability improvements and automation.
 
-* **Security & Compliance Leadership**: Designed and delivered annual security awareness training programs, improving phishing simulation pass rates by 40% and establishing security-first culture across engineering teams.
+* **Security Engineering**: Partnered with InfoSec as a trusted technical contributor across Zero Trust network deployment (Zscaler), certificate authority migration (Entrust → DigiCert with Azure KeyVault automation), PKI lifecycle management, and major security incident response — bringing infrastructure depth to security initiatives where most engineers contribute only peripherally.
+
+### Software Engineer 4 | Public Consulting Group; Remote -- March 2026-Present
+
+**Testing & Code Quality**
+
+* Established foundational Pester unit test suite and reusable shared test infrastructure for an existing codebase, creating automated quality gates where none previously existed.
+* Configured CI pipeline executing Pester tests on push and pull request events, enforcing code quality standards across the development workflow from day one.
+
+**Platform Reliability & Modernization**
+
+* Centralized shared mail delivery using Microsoft Graph API with Graph-first routing behavior, modernizing email delivery away from legacy protocol dependencies.
+* Implemented targeted input validation and hardening on critical workflows, reducing attack surface and improving operational resilience of production systems.
+
+**Architecture & Modernization Strategy**
+
+* Conducted architectural assessment of existing codebase, identifying strengths, gaps, and a prioritized improvement roadmap — balancing modernization velocity against production risk.
+* Executing phased modularization strategy: extracting notification and directory lookup logic from monolithic orchestration scripts before touching destructive workflows, ensuring each extraction is independently unit-testable and carries no production side effects.
+* Identified and fixed latent production bug (single-quote filter defect in directory service lookup) discovered during refactoring.
+
+**Documentation**
+
+* Authored focused documentation for shared function helpers and the test system, improving developer onboarding and long-term maintainability.
 
 ### Operations Engineer | Lincoln Investment; Remote -- April 2022-January 2026
 
@@ -62,12 +84,7 @@ Outside of work, I enjoy skiing and cooking
 
 * Championed early adoption of Server 2022 and RHEL 8/9, proactively migrating workloads 18 months ahead of EOL deadlines (Server 2012 R2, Server 2016, CentOS), eliminating compliance risks and modernizing security posture.
 * Elevated Active Directory Domain Functional Level from 2008 to 2016, unlocking modern security features and improving authentication reliability across enterprise.
-* Architected and managed federated identity infrastructure connecting Lincoln's 
-Active Directory with 20+ external Microsoft 365/Entra ID tenants for financial 
-advisor offices nationwide. Designed automated provisioning workflow creating 
-mail-enabled users in federated tenants with license assignment via OneLogin, 
-enabling secure cross-organization collaboration while maintaining centralized 
-identity management.
+* Architected and managed federated identity infrastructure connecting Lincoln's Active Directory with 20+ external Microsoft 365/Entra ID tenants for financial advisor offices nationwide. Designed automated provisioning workflow creating mail-enabled users in federated tenants with license assignment via OneLogin, enabling secure cross-organization collaboration while maintaining centralized identity management.
 * Delivered clean handoff of user account automation via OneLogin/ADP then Okta/DayForce as well as SAML integration for application access for seamless employee lifecycle management by Digital Workspace team.
 
 ### Network Analyst | Chester County Library System; Remote -- February 2019-April 2022
@@ -108,7 +125,7 @@ identity management.
 ### Home Projects
 
 - Local LLM Infrastructure & Fine-Tuning: Built local AI experimentation environment running Mistral 8x7b and 8x22b models via Ollama. Fine-tuned custom Mixtral 8x7b model using official training guides, gaining hands-on experience with model architecture, quantization, and GPU resource optimization.
-- * Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX) with automated SSL/TLS certificate lifecycle via Certbot/Let's Encrypt. Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana.
+- Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX) with automated SSL/TLS certificate lifecycle via Certbot/Let's Encrypt. Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana.
 
 ## Technical Skills
 
@@ -166,7 +183,6 @@ MongoDB, Cassandra
 
 ### Networking & Security
 ```
-Networking & Security
 Cisco, Meraki
 DNS, PKI/Certificate Management
 SSL/TLS Automation (Certbot, Let's Encrypt, ACME Protocol)
@@ -193,6 +209,7 @@ Active Directory
 389 Directory Service, Samba
 OneLogin, Okta
 ```
+
 ### Email & Messaging Platforms
 ```
 Microsoft Exchange (On-Premises & Online)
@@ -221,12 +238,6 @@ strace/truss, Valgrind
 PowerCLI, MDT
 ```
 
-### Init Systems & Boot Managers
-```
-SystemD
-GNU GRUB, BOOTMGR, PXE
-```
-
 ### Package Managers
 ```
 apt, dpkg, pkg, yum
@@ -239,10 +250,6 @@ Jira, Confluence
 Slack, Rocket.Chat, Microsoft Teams
 ```
 
-## Soft Skills
-
-Communication, collaboration, consistency, commitment, cross-functional partnership
-
 ## Education
 
-**B.A.** | West Chester University
+**B.A., Political Science** | West Chester University, 2013
