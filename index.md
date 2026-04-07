@@ -30,7 +30,7 @@ Outside of work, I enjoy skiing, cooking, yoga, and Pilates.
 
 * **Security Engineering**: Partnered with InfoSec as a trusted technical contributor across Zero Trust network deployment (Zscaler), certificate authority migration (Entrust → DigiCert with Azure KeyVault automation), PKI lifecycle management, and major security incident response — bringing infrastructure depth to security initiatives where most engineers contribute only peripherally.
 
-### Software Engineer 4 | Public Consulting Group; Remote -- March 2026-Present
+### IT Software Engineer | Public Consulting Group; Remote -- March 2026-Present
 
 **Testing & Code Quality**
 
