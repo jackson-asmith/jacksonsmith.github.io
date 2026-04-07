@@ -16,7 +16,7 @@
 
 [Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
-Hi, I'm Jackson! I'm a Software Engineer with 10+ years of experience building and operating systems that reduce toil and keep things running. My background is in infrastructure and reliability engineering — hybrid cloud, IaC, automation, and high-availability architecture — and I've worked within Agile delivery teams and participated in SAFe program increments throughout my career. I recently moved up the stack into software development, building automated workflows and productivity tooling.
+Hi, I’m Jackson! I’m a Software Engineer with over a decade of experience in building and operating systems that streamline processes and ensure smooth operations. My expertise lies in infrastructure and reliability engineering, encompassing hybrid cloud, Infrastructure as Code (IaC), automation, and high-availability architecture. Throughout my career, I’ve collaborated with Agile delivery teams and actively participated in SAFe program increments. Recently, I transitioned into software development, where I’ve been responsible for building automated workflows and productivity tools.
 
 I have a proven track record of eliminating single points of failure, reducing vulnerabilities by 70%, and delivering $400K+ in cost savings through automation. I bring an operator's instinct to software development: I care about correctness, testability, and systems that don't page someone at 3am.
 
