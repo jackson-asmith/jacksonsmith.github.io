@@ -16,7 +16,7 @@
 
 [Email](mailto:jackson@jacksonasmith.com) | [GitHub](https://github.com/jackson-asmith) | [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/)
 
-Hi, I’m Jackson! I’m a Software Engineer with over a decade of experience in building and operating systems that streamline processes and ensure smooth operations. My expertise lies in infrastructure and reliability engineering, encompassing hybrid cloud, Infrastructure as Code (IaC), automation, and high-availability architecture. Throughout my career, I’ve collaborated with Agile delivery teams and actively participated in SAFe program increments. Recently, I transitioned into software development, where I’ve been responsible for building automated workflows and productivity tools.
+Hi, I’m Jackson! I’m a Software Engineer with over a decade of experience in building and operating systems that streamline processes and ensure smooth operations. My expertise lies in infrastructure and reliability engineering, encompassing hybrid cloud, Infrastructure as Code (IaC), automation, and high-availability architecture. Throughout my career, I’ve collaborated with Agile delivery teams and actively participated in SAFe program increments. Recently, I transitioned into software development, where I’ve been responsible for building automated workflows and productivity tools, including REST API integrations and BI solutions on Power BI.
 
 I have a proven track record of eliminating single points of failure, reducing vulnerabilities by 70%, and delivering $400K+ in cost savings through automation. I bring an operator's instinct to software development: I care about correctness, testability, and systems that don't page someone at 3am.
 
@@ -24,22 +24,32 @@ Outside of work, I enjoy skiing, cooking, yoga, and Pilates.
 
 ## Key Projects & Initiatives
 
+* **FinOps & BI Engineering**: Designed end-to-end BI solution for GitHub Enterprise billing — PowerShell-based ETL pipeline consuming the GitHub REST API, star schema semantic model, and DAX measures powering Power BI dashboards for cost visibility. Paired with automated GitHub Copilot budget governance (per-user overrides, cost center management) via the billing API.
+
 * **High Availability Architecture**: Eliminated single point of failure for core SQL infrastructure by architecting three-node availability group cluster, achieving 99.99% uptime and improved disaster recovery posture with sub-15-minute RTO.
 
 * **Legacy Infrastructure Modernization**: Led strategic refactoring of critical systems (internal DNS, certificate lifecycle, syslog normalization) reducing operational escalations by 50% over 12 months through systematic reliability improvements and automation.
 
 * **Security Engineering**: Partnered with InfoSec as a trusted technical contributor across Zero Trust network deployment (Zscaler), certificate authority migration (Entrust → DigiCert with Azure KeyVault automation), PKI lifecycle management, and major security incident response — bringing infrastructure depth to security initiatives where most engineers contribute only peripherally.
 
-### IT Software Engineer | Public Consulting Group; Remote -- March 2026-Present
+### Software Engineer | Public Consulting Group; Remote -- March 2026-Present
+
+**Systems Integration & Analytics**
+
+* Designed end-to-end BI solution for GitHub Enterprise billing: PowerShell-based ETL pipeline consuming the GitHub REST API, star schema semantic model, and DAX measures powering curated Power BI dashboards for cost visibility and budget governance.
+* Built orchestration workflows connecting GitHub Enterprise and Entra ID REST APIs, implementing rate-limit handling, exponential backoff retry logic, and structured event logging for reliable unattended execution.
+* Automated GitHub Copilot cost governance via the GitHub billing API, including per-user budget overrides and cost center management.
 
 **Testing & Code Quality**
 
 * Established foundational Pester unit test suite and reusable shared test infrastructure for an existing codebase, creating automated quality gates where none previously existed.
 * Configured CI pipeline executing Pester tests on push and pull request events, enforcing code quality standards across the development workflow from day one.
+* Authored a GitHub Copilot custom-instructions file codifying a team PowerShell style guide and Microsoft's recommended development practices, substantially reducing recurring AI-generated anti-patterns (e.g., non-idiomatic `return $var` usage) across the team's codebase before code reaches review.
+* Practice a structured AI-assisted development workflow — documenting research findings and implementation plans before generating code, with explicit review checkpoints to correct assumptions and scope — keeping architectural control over AI-authored changes rather than accepting output wholesale.
 
 **Platform Reliability & Modernization**
 
-* Centralized shared mail delivery using Microsoft Graph API with Graph-first routing behavior, modernizing email delivery away from legacy protocol dependencies.
+* Centralized shared mail delivery on the Microsoft Graph API, migrating email delivery away from legacy SMTP dependencies.
 * Implemented targeted input validation and hardening on critical workflows, reducing attack surface and improving operational resilience of production systems.
 
 **Architecture & Modernization Strategy**
@@ -56,13 +66,14 @@ Outside of work, I enjoy skiing, cooking, yoga, and Pilates.
 
 **Platform Reliability & Scalability**
 
-* Architected and operate hybrid-cloud platform serving 300+ offices nationwide across Azure and multi-datacenter VMware environment, ensuring 99.9% availability for business-critical services.
+* Architected and operated hybrid-cloud platform serving 300+ offices nationwide across Azure and multi-datacenter VMware environment, ensuring 99.99% availability for business-critical services.
 * Eliminated technical debt through strategic virtualization platform evolution (vSphere 6.5 → 8.0.3), improving resource efficiency by 30% and enabling automated failover capabilities across datastore clusters.
-* Leading enterprise storage modernization initiative, replacing aging Dell PowerMax SANs with high-performance Nimble/Pure solutions to support 5-year Azure migration roadmap and double available capacity.
+* Led enterprise storage modernization initiative, replacing aging Dell PowerMax SANs with high-performance Nimble/Pure solutions to support 5-year Azure migration roadmap and double available capacity.
 
 **Automation & Operational Excellence**
 
 * Implemented automated patching pipeline for Linux and Windows servers using Satellite and SCCM, reducing monthly vulnerability exposure by 70% and eliminating $400K in annual outsourcing costs.
+* Built orchestration workflows integrating CrowdStrike, Microsoft Graph, and Atlassian REST APIs to automate security and identity operations, with retry logic and structured logging for unattended reliability.
 * Designed enterprise observability platform using New Relic and Zabbix with SLI/SLO-based alerting, reducing unplanned downtime by 35% through proactive performance monitoring and capacity planning.
 * Accelerated development velocity by leveraging AI-assisted tooling (GitHub Copilot, Claude, ChatGPT) for rapid prototyping of automation scripts and instrumenting applications with OpenTelemetry for enhanced observability.
 * Collaborated with senior developers on pruning hundreds of terabytes of legacy data, proposing and implementing a parallelized PowerShell solution using `ForEach-Object -Parallel` that reduced deletion time from days to hours, significantly improving operational efficiency and resource utilization.
@@ -142,6 +153,11 @@ PowerShell, Bash, Ruby, Python, HCL
 Chef (familiar with Puppet and Salt)
 ```
 
+### API Integration
+```
+REST APIs: Microsoft Graph, GitHub, Atlassian, CrowdStrike, Power BI
+```
+
 ### Configuration Management
 ```
 SCCM, Satellite
@@ -179,6 +195,13 @@ Docker
 Microsoft SQL Server
 PostgreSQL, MySQL, MariaDB
 MongoDB, Cassandra
+```
+
+### Data & Analytics
+```
+Power BI, DAX
+Semantic modeling (star schema)
+ETL pipeline design
 ```
 
 ### Networking & Security
@@ -236,6 +259,7 @@ VS Code, Vim
 Vagrant, VirtualBox
 strace/truss, Valgrind
 PowerCLI, MDT
+Pester
 ```
 
 ### Package Managers
