@@ -34,43 +34,43 @@ Outside of work, I enjoy skiing, cooking, yoga, and Pilates.
 
 ### Software Engineer | Public Consulting Group; Remote -- March 2026-Present
 
-**Systems Integration & Analytics**
+#### Systems Integration & Analytics
 
 * Designed end-to-end BI solution for GitHub Enterprise billing: PowerShell-based ETL pipeline consuming the GitHub REST API, star schema semantic model, and DAX measures powering curated Power BI dashboards for cost visibility and budget governance.
 * Built orchestration workflows connecting GitHub Enterprise and Entra ID REST APIs, implementing rate-limit handling, exponential backoff retry logic, and structured event logging for reliable unattended execution.
 * Automated GitHub Copilot cost governance via the GitHub billing API, including per-user budget overrides and cost center management.
 
-**Testing & Code Quality**
+#### Testing & Code Quality
 
 * Established foundational Pester unit test suite and reusable shared test infrastructure for an existing codebase, creating automated quality gates where none previously existed.
 * Configured CI pipeline executing Pester tests on push and pull request events, enforcing code quality standards across the development workflow from day one.
 * Authored a GitHub Copilot custom-instructions file codifying a team PowerShell style guide and Microsoft's recommended development practices, substantially reducing recurring AI-generated anti-patterns (e.g., non-idiomatic `return $var` usage) across the team's codebase before code reaches review.
 * Practice a structured AI-assisted development workflow — documenting research findings and implementation plans before generating code, with explicit review checkpoints to correct assumptions and scope — keeping architectural control over AI-authored changes rather than accepting output wholesale.
 
-**Platform Reliability & Modernization**
+#### Platform Reliability & Modernization
 
 * Centralized shared mail delivery on the Microsoft Graph API, migrating email delivery away from legacy SMTP dependencies.
 * Implemented targeted input validation and hardening on critical workflows, reducing attack surface and improving operational resilience of production systems.
 
-**Architecture & Modernization Strategy**
+#### Architecture & Modernization Strategy
 
 * Conducted architectural assessment of existing codebase, identifying strengths, gaps, and a prioritized improvement roadmap — balancing modernization velocity against production risk.
 * Executing phased modularization strategy: extracting notification and directory lookup logic from monolithic orchestration scripts before touching destructive workflows, ensuring each extraction is independently unit-testable and carries no production side effects.
 * Identified and fixed latent production bug (single-quote filter defect in directory service lookup) discovered during refactoring.
 
-**Documentation**
+#### Documentation
 
 * Authored focused documentation for shared function helpers and the test system, improving developer onboarding and long-term maintainability.
 
 ### Operations Engineer | Lincoln Investment; Remote -- April 2022-January 2026
 
-**Platform Reliability & Scalability**
+#### Platform Reliability & Scalability
 
 * Architected and operated hybrid-cloud platform serving 300+ offices nationwide across Azure and multi-datacenter VMware environment, ensuring 99.99% availability for business-critical services.
 * Eliminated technical debt through strategic virtualization platform evolution (vSphere 6.5 → 8.0.3), improving resource efficiency by 30% and enabling automated failover capabilities across datastore clusters.
 * Led enterprise storage modernization initiative, replacing aging Dell PowerMax SANs with high-performance Nimble/Pure solutions to support 5-year Azure migration roadmap and double available capacity.
 
-**Automation & Operational Excellence**
+#### Automation & Operational Excellence
 
 * Implemented automated patching pipeline for Linux and Windows servers using Satellite and SCCM, reducing monthly vulnerability exposure by 70% and eliminating $400K in annual outsourcing costs.
 * Built orchestration workflows integrating CrowdStrike, Microsoft Graph, and Atlassian REST APIs to automate security and identity operations, with retry logic and structured logging for unattended reliability.
@@ -79,19 +79,19 @@ Outside of work, I enjoy skiing, cooking, yoga, and Pilates.
 * Collaborated with senior developers on pruning hundreds of terabytes of legacy data, proposing and implementing a parallelized PowerShell solution using `ForEach-Object -Parallel` that reduced deletion time from days to hours, significantly improving operational efficiency and resource utilization.
 * Designed and led the implementation of organization-wide documentation standards, handover requirements, and maintenance processes, coordinating with engineering, operations, and platform teams to ensure consistency then centralized all system documentation in a single Confluence space.
 
-**Cross-Functional Collaboration & Application Support**
+#### Cross-Functional Collaboration & Application Support
 
 * Partnered with development teams to troubleshoot production issues in Java applications, providing platform-level expertise on authentication failures, XML configuration errors, and middleware connectivity problems that reduced mean-time-to-resolution by 40%.
 * Served as infrastructure liaison during critical incidents, analyzing application logs, reviewing production code, and identifying root causes related to network connectivity, certificate validation, and environment-specific configurations.
 * Partnered with InfoSec team on security initiatives including Zscaler Zero Trust deployment (network integration, certificate configuration, application testing) and all major security incidents, contributing operational expertise and ensuring rapid containment, mitigation, and post-incident analysis across critical services.
 
-**Business Continuity & Disaster Recovery**
+#### Business Continuity & Disaster Recovery
 
 * Architected and deployed modern hybrid-cloud backup solution (NetBackup on Flex Appliance with Azure archive tier), achieving zero-downtime migration while improving RTO from 24 hours to 4 hours and enhancing operational visibility.
 * Led biannual disaster recovery validation for core line-of-business applications, ensuring backup integrity and recovery procedures meet business SLAs.
 * Orchestrated certificate authority migration from Entrust to DigiCert in under 6 months, integrating with Azure KeyVault for automated certificate lifecycle management and seamless operational handoff.
 
-**Strategic Initiatives & Risk Mitigation**
+#### Strategic Initiatives & Risk Mitigation
 
 * Championed early adoption of Server 2022 and RHEL 8/9, proactively migrating workloads 18 months ahead of EOL deadlines (Server 2012 R2, Server 2016, CentOS), eliminating compliance risks and modernizing security posture.
 * Elevated Active Directory Domain Functional Level from 2008 to 2016, unlocking modern security features and improving authentication reliability across enterprise.
@@ -100,13 +100,13 @@ Outside of work, I enjoy skiing, cooking, yoga, and Pilates.
 
 ### Network Analyst | Chester County Library System; Remote -- February 2019-April 2022
 
-**Infrastructure Automation & Efficiency**
+#### Infrastructure Automation & Efficiency
 
 * Eliminated manual provisioning bottlenecks by rebuilding hardware deployment pipeline using PowerShell and PowerCLI, reducing provisioning time from 4 hours to 15 minutes and saving 12 person-months annually.
 * Modernized network infrastructure across 18 public libraries by replacing legacy Cisco wireless controller with cloud-managed Meraki platform, reducing support overhead by 60% and cutting licensing costs by 40%.
 * Empowered librarians to own content updates via basic HTML and CSS training, reducing website update request time from 3-5 days to same day delivery.
 
-**Proactive Modernization & Business Continuity**
+#### Proactive Modernization & Business Continuity
 
 * Led early adoption of Windows 11 and Server 2019, migrating infrastructure 24 months ahead of Windows 10/Server 2012 R2 EOL, building automated deployment tooling using PowerShell and MDT to ensure zero-touch provisioning.
 * Served as technical lead for County Disaster Recovery and Business Continuity planning, architecting high-availability solutions including VPN failover, ISP redundancy, and remote work enablement that ensured seamless operations during 2020 pandemic transition.
@@ -129,24 +129,26 @@ Outside of work, I enjoy skiing, cooking, yoga, and Pilates.
 
 ## Certificates
 
-- Google IT Support Professional Certificate
+* Google IT Support Professional Certificate
 
 ## Projects
 
 ### Home Projects
 
-- Local LLM Infrastructure & Fine-Tuning: Built local AI experimentation environment running Mistral 8x7b and 8x22b models via Ollama. Fine-tuned custom Mixtral 8x7b model using official training guides, gaining hands-on experience with model architecture, quantization, and GPU resource optimization.
-- Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX) with automated SSL/TLS certificate lifecycle via Certbot/Let's Encrypt. Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana.
+* Local LLM Infrastructure & Fine-Tuning: Built local AI experimentation environment running Mistral 8x7b and 8x22b models via Ollama. Fine-tuned custom Mixtral 8x7b model using official training guides, gaining hands-on experience with model architecture, quantization, and GPU resource optimization.
+* Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX) with automated SSL/TLS certificate lifecycle via Certbot/Let's Encrypt. Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana.
 
 ## Technical Skills
 
 ### Cloud & Infrastructure
+
 ```
 AWS, Azure
 VMware vSphere, Hyper-V, VirtualBox
 ```
 
 ### Automation & Infrastructure as Code
+
 ```
 Ansible, Terraform
 PowerShell, Bash, Ruby, Python, HCL
@@ -154,16 +156,19 @@ Chef (familiar with Puppet and Salt)
 ```
 
 ### API Integration
+
 ```
 REST APIs: Microsoft Graph, GitHub, Atlassian, CrowdStrike, Power BI
 ```
 
 ### Configuration Management
+
 ```
 SCCM, Satellite
 ```
 
 ### Monitoring & Observability
+
 ```
 New Relic, Zabbix
 Prometheus, Grafana
@@ -172,6 +177,7 @@ rsyslog, Logstash (ELK Stack)
 ```
 
 ### AI-Assisted Development
+
 ```
 GitHub Copilot, Claude, ChatGPT (Production)
 Ollama (local LLM deployment)
@@ -179,6 +185,7 @@ Mixtral/Mistral (model fine-tuning and experimentation)
 ```
 
 ### Application Support
+
 ```
 Java application troubleshooting
 XML configuration
@@ -186,11 +193,13 @@ Application server middleware
 ```
 
 ### Containerization
+
 ```
 Docker
 ```
 
 ### Databases
+
 ```
 Microsoft SQL Server
 PostgreSQL, MySQL, MariaDB
@@ -198,6 +207,7 @@ MongoDB, Cassandra
 ```
 
 ### Data & Analytics
+
 ```
 Power BI, DAX
 Semantic modeling (star schema)
@@ -205,6 +215,7 @@ ETL pipeline design
 ```
 
 ### Networking & Security
+
 ```
 Cisco, Meraki
 DNS, PKI/Certificate Management
@@ -213,12 +224,14 @@ OpenVPN, AnyConnect, GlobalProtect, Zscaler
 ```
 
 ### Web Services & Load Balancers
+
 ```
 NGINX, HAProxy
 Apache httpd, IIS
 ```
 
 ### Backup Solutions
+
 ```
 Veritas NetBackup
 Veritas HubStor (NetBackup SaaS Protection)
@@ -227,6 +240,7 @@ Veeam
 ```
 
 ### Directory Services & IAM
+
 ```
 Active Directory
 389 Directory Service, Samba
@@ -234,10 +248,11 @@ OneLogin, Okta
 ```
 
 ### Email & Messaging Platforms
+
 ```
 Microsoft Exchange (On-Premises & Online)
 Microsoft 365 & Teams Administration
-Google Workspace Administration  
+Google Workspace Administration
 Slack Administration (SAML/SSO Integration)
 Cisco Unified Communications
 Email Authentication (DMARC, SPF, DKIM)
@@ -246,6 +261,7 @@ Compliance & eDiscovery (Purview, Smarsh)
 ```
 
 ### Operating Systems
+
 ```
 Linux: Debian, CentOS, RHEL
 Unix: macOS, OpenBSD, FreeBSD
@@ -253,6 +269,7 @@ Windows: NT 3.1-11, Server 2003-2025
 ```
 
 ### Version Control & Development Tools
+
 ```
 Git, GitHub, GitLab, Bitbucket
 VS Code, Vim
@@ -263,12 +280,14 @@ Pester
 ```
 
 ### Package Managers
+
 ```
 apt, dpkg, pkg, yum
 chocolatey, nuget, winget (Windows)
 ```
 
 ### Collaboration Tools
+
 ```
 Jira, Confluence
 Slack, Rocket.Chat, Microsoft Teams
