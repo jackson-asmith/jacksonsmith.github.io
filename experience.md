@@ -83,7 +83,7 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 
 * Championed early adoption of Server 2022 and RHEL 8/9, proactively migrating workloads 18 months ahead of EOL deadlines (Server 2012 R2, Server 2016, CentOS), eliminating compliance risks and modernizing security posture.
 * Elevated Active Directory Domain Functional Level from 2008 to 2016, unlocking modern security features and improving authentication reliability across enterprise.
-* Architected and managed federated identity infrastructure connecting Lincoln's Active Directory with 20+ external Microsoft 365/Entra ID tenants for financial advisor offices nationwide. Designed automated provisioning workflow creating mail-enabled users in federated tenants with license assignment via OneLogin, enabling secure cross-organization collaboration while maintaining centralized identity management.
+* Built and ran identity federation spanning dozens of partner Microsoft 365 tenants, automating account provisioning and licensing so a single identity source governed access across organizations nationwide.
 * Delivered clean handoff of user account automation via OneLogin/ADP then Okta/DayForce as well as SAML integration for application access for seamless employee lifecycle management by Digital Workspace team.
 
 ### Network Analyst | Chester County Library System; Remote -- February 2019-April 2022
