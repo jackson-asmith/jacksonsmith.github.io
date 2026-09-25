@@ -1,2 +1,45 @@
-#theme: jekyll-theme-minimal
+# GitHub Pages already falls back to Primer when no theme is set; naming it
+# explicitly keeps local previews identical to the live site.
+theme: jekyll-theme-primer
 title: Jackson Smith
+tagline: Software Engineer
+description: Software engineer with an operator's instinct — building reliable automation, testable code, and systems that don't page someone at 3am.
+url: https://jacksonasmith.com
+lang: en-US
+author:
+  name: Jackson Smith
+  email: jackson@jacksonasmith.com
+social:
+  name: Jackson Smith
+  links:
+    - https://github.com/jackson-asmith
+    - https://www.linkedin.com/in/jackson-a-smith/
+google_analytics_id: G-5J2GCC14GK
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: default }
+  - scope: { path: "", type: projects }
+    values: { layout: case-study }
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+
+permalink: /writing/:year/:title/
+
+exclude:
+  - README.md
+  - draft.md
+  - _templates
+  - Gemfile
+  - Gemfile.lock
+  - vendor

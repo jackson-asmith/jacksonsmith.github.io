@@ -1,0 +1,19 @@
+{% assign nav = "Home:/|Principles:/principles/|Projects:/projects/|Writing:/writing/|Experience:/experience/" | split: "|" %}
+<header class="site-header">
+  <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+  <nav aria-label="Main">
+    <ul class="site-nav">
+      {% for item in nav %}
+        {% assign parts = item | split: ":" %}
+        {% assign label = parts[0] %}
+        {% assign href = parts[1] %}
+        {% if href == "/" %}
+          {% if page.url == "/" %}{% assign current = true %}{% else %}{% assign current = false %}{% endif %}
+        {% else %}
+          {% if page.url contains href %}{% assign current = true %}{% else %}{% assign current = false %}{% endif %}
+        {% endif %}
+        <li><a href="{{ href | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ label }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
