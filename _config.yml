@@ -28,7 +28,9 @@ collections:
 
 defaults:
   - scope: { path: "" }
-    values: { layout: default }
+    values:
+      layout: default
+      image: https://avatars.githubusercontent.com/u/42005615?v=4
   - scope: { path: "", type: projects }
     values: { layout: case-study }
   - scope: { path: "", type: posts }
