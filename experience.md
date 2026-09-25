@@ -44,7 +44,7 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 
 * Conducted architectural assessment of existing codebase, identifying strengths, gaps, and a prioritized improvement roadmap — balancing modernization velocity against production risk.
 * Executing phased modularization strategy: extracting notification and directory lookup logic from monolithic orchestration scripts before touching destructive workflows, ensuring each extraction is independently unit-testable and carries no production side effects.
-* Identified and fixed latent production bug (single-quote filter defect in directory service lookup) discovered during refactoring.
+* Identified and fixed a latent production bug in a directory lookup, surfaced by the new test suite during refactoring.
 
 #### Documentation
 
