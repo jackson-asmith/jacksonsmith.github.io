@@ -27,6 +27,16 @@
 {% if page.mermaid %}
 <script type="module">
   import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-  mermaid.initialize({ startOnLoad: true });
+  // kramdown renders ```mermaid fences as highlighted code; swap them for
+  // the <pre class="mermaid"> elements Mermaid looks for.
+  document.querySelectorAll("div.language-mermaid, pre > code.language-mermaid").forEach((el) => {
+    const block = el.matches("code") ? el.parentElement : el;
+    const pre = document.createElement("pre");
+    pre.className = "mermaid";
+    pre.textContent = el.textContent;
+    block.replaceWith(pre);
+  });
+  mermaid.initialize({ startOnLoad: false });
+  await mermaid.run();
 </script>
 {% endif %}
