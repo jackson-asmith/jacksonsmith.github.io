@@ -1,8 +1,9 @@
 ---
 title: Email alignment checker
+description: How a scheduled GitHub Actions workflow that monitors SPF, DKIM, and DMARC went from 350 noisy commits to quiet, fail-safe, and self-sustaining.
 summary: A scheduled GitHub Actions workflow that monitors this domain's mail authentication records — and the three iterations it took to make it quiet, honest, and self-sustaining.
 date: 2026-06-12
-principles: [Safe automation, Reliability, Testability]
+principles: [Automation must reduce risk, Reliability is a feature, Testing comes before trust]
 repo: https://github.com/jackson-asmith/jackson-asmith/blob/main/.github/workflows/update-mail-alignment.yml
 mermaid: true
 ---
@@ -84,4 +85,3 @@ flowchart TD
 * **Fixing one problem can create another.** Making the workflow quiet is what exposed the inactivity shutdown. It's worth asking what else depended on the old behavior.
 * **What I'd do next:**
   * Move the parsing logic out of inline YAML into a script with unit tests covering SPF, DMARC, and resolver-failure cases.
-  * Rename "Last updated" to "Last changed". The README timestamp now marks the last *change*, not the last *check*. The check itself is visible in each run's summary.

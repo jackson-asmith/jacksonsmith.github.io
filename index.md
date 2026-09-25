@@ -52,6 +52,6 @@ Context for each number is on the [experience](/experience/) page.
 
 * [**Projects & case studies**](/projects/) — the problem, the constraints, the decision, and what I learned.
 * [**PublicPowerShell**](https://github.com/jackson-asmith/PublicPowerShell) — PowerShell tooling for day-to-day system administration.
-* [**Email alignment checker**](https://github.com/jackson-asmith/jackson-asmith/tree/main/.github/workflows) — a scheduled GitHub Actions workflow that monitors this domain's SPF, DKIM, and DMARC records.
+* [**Email alignment checker**](/projects/email-alignment-checker/) — a scheduled GitHub Actions workflow that monitors this domain's SPF, DKIM, and DMARC records.
 
 Outside of work you'll find me skiing, cooking, on a yoga mat, or suffering through another Ferrari strategy call.

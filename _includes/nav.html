@@ -1,4 +1,5 @@
-{% assign nav = "Home:/|Principles:/principles/|Projects:/projects/|Writing:/writing/|Experience:/experience/" | split: "|" %}
+{% if site.posts.size > 0 %}{% assign nav = "Home:/|Principles:/principles/|Projects:/projects/|Writing:/writing/|Experience:/experience/" %}{% else %}{% assign nav = "Home:/|Principles:/principles/|Projects:/projects/|Experience:/experience/" %}{% endif %}
+{% assign nav = nav | split: "|" %}
 <header class="site-header">
   <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title }}</a>
   <nav aria-label="Main">
