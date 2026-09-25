@@ -1,0 +1,7 @@
+{
+  "default": true,
+  "MD013": false,
+  "MD040": false,
+  "MD025": { "front_matter_title": "" },
+  "MD033": { "allowed_elements": ["img", "ul", "li", "strong", "span", "br"] }
+}

@@ -13,7 +13,9 @@ Each case study follows the same structure: the problem, the existing state, the
 {% assign studies = site.projects | sort: "date" | reverse %}
 {% if studies.size > 0 %}
 {% for study in studies %}
+
 * [**{{ study.title }}**]({{ study.url | relative_url }}) — {{ study.summary }}{% if study.principles %} <span class="tags">({{ study.principles | join: ", " }})</span>{% endif %}
+
 {% endfor %}
 {% else %}
 The first case studies are being written. In the meantime, the [experience](/experience/) page has summaries of the major projects.
