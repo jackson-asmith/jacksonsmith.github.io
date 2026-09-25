@@ -90,7 +90,7 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 
 #### Infrastructure Automation & Efficiency
 
-* Eliminated manual provisioning bottlenecks by rebuilding hardware deployment pipeline using PowerShell and PowerCLI, reducing provisioning time from 4 hours to 15 minutes and saving 12 person-months annually.
+* Replaced in-house Ghost imaging (several hours per machine, four at a time) with Dell factory provisioning via Image Assist and an automated PowerShell image-build pipeline, so devices were dropshipped plug-and-play to 18 branches. Lease refreshes across a 1,000-device fleet went from one library per day to several, freeing two of three technicians from several weeks of rollout work each cycle.
 * Modernized network infrastructure across 18 public libraries by replacing legacy Cisco wireless controller with cloud-managed Meraki platform, reducing support overhead by 60% and cutting licensing costs by 40%.
 * Empowered librarians to own content updates via basic HTML and CSS training, reducing website update request time from 3-5 days to same day delivery.
 
@@ -114,10 +114,6 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 ### Technician | County of Chester; West Chester, PA -- April 2015-April 2016
 
 * Provided Level 2 technical support to 900+ users across county agencies, developing PowerShell automation scripts and documentation that reduced ticket escalations by 25%.
-
-## Certificates
-
-* Google IT Support Professional Certificate
 
 ## Projects
 
