@@ -23,7 +23,7 @@ This site is less a résumé than a record of how I think about engineering — 
   <li><strong>−70%</strong><span>monthly vulnerability exposure from the same pipeline</span></li>
   <li><strong>99.99%</strong><span>uptime after removing a SQL single point of failure</span></li>
   <li><strong>24h → 4h</strong><span>recovery time objective on a hybrid-cloud backup rebuild</span></li>
-  <li><strong>4h → 15m</strong><span>server provisioning via PowerShell and PowerCLI</span></li>
+  <li><strong>1 → several</strong><span>libraries per day during lease refreshes, via factory provisioning and dropship</span></li>
   <li><strong>−50%</strong><span>operational escalations over 12 months of legacy refactoring</span></li>
 </ul>
 
