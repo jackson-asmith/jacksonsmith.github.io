@@ -19,12 +19,11 @@ This site is less a résumé than a record of how I think about engineering — 
 ## Impact
 
 <ul class="impact">
+  <li><strong>24 scripts</strong><span>(47 call sites) now running on the internal standard library I built for my team</span></li>
   <li><strong>$400K+</strong><span>annual outsourcing cost eliminated through automated patching</span></li>
   <li><strong>−70%</strong><span>monthly vulnerability exposure from the same pipeline</span></li>
-  <li><strong>99.99%</strong><span>uptime after removing a SQL single point of failure</span></li>
+  <li><strong>40–60% → 99.99%</strong><span>availability on a 1,200-server platform our ops team stabilized</span></li>
   <li><strong>24h → 4h</strong><span>recovery time objective on a hybrid-cloud backup rebuild</span></li>
-  <li><strong>1 → several</strong><span>libraries per day during lease refreshes, via factory provisioning and dropship</span></li>
-  <li><strong>−50%</strong><span>operational escalations over 12 months of legacy refactoring</span></li>
 </ul>
 
 Context for each number is on the [experience](/experience/) page.

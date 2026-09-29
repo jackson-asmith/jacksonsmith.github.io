@@ -12,7 +12,7 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 
 * **FinOps & BI Engineering**: Designed end-to-end BI solution for GitHub Enterprise billing — PowerShell-based ETL pipeline consuming the GitHub REST API, star schema semantic model, and DAX measures powering Power BI dashboards for cost visibility. Paired with automated GitHub Copilot budget governance (per-user overrides, cost center management) via the billing API.
 
-* **High Availability Architecture**: Eliminated single point of failure for core SQL infrastructure by architecting three-node availability group cluster, achieving 99.99% uptime and improved disaster recovery posture with sub-15-minute RTO.
+* **High Availability Architecture**: Part of the operations team that removed the single point of failure in core SQL infrastructure with a three-node availability group (sub-15-minute RTO), one piece of taking the platform from 40–60% to 99.99% availability.
 
 * **Legacy Infrastructure Modernization**: Led strategic refactoring of critical systems (internal DNS, certificate lifecycle, syslog normalization) reducing operational escalations by 50% over 12 months through systematic reliability improvements and automation.
 
@@ -59,6 +59,7 @@ Core member of the operations team that took a 1,200-server hybrid Azure/VMware 
 * **Monitoring:** designed and ran the observability platform (New Relic, Zabbix) with SLI/SLO-based alerting, cutting unplanned downtime 35% and catching failures before users did.
 * **Automation:** owned OS and infrastructure deployment automation and the team's GitHub repository. Built the Satellite/SCCM patching pipeline that reduced monthly vulnerability exposure 70% and eliminated $400K/yr in outsourced patching.
 * **Three virtualized datacenters:** ran day-to-day operations and led the vSphere 6.5 → 8.0.3 upgrade, improving resource efficiency 30%.
+* **Legacy systems:** refactored internal DNS, certificate lifecycle, and syslog normalization, cutting operational escalations 50% over 12 months.
 * **Integrations:** built unattended workflows across CrowdStrike, Microsoft Graph, and Atlassian REST APIs with retry logic and structured logging.
 
 #### How we got there (team efforts where I was a core contributor)
