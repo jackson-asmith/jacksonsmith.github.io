@@ -16,11 +16,11 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 
 * **Legacy Infrastructure Modernization**: Led strategic refactoring of critical systems (internal DNS, certificate lifecycle, syslog normalization) reducing operational escalations by 50% over 12 months through systematic reliability improvements and automation.
 
-* **Security Engineering**: Partnered with InfoSec as a trusted technical contributor across Zero Trust network deployment (Zscaler), certificate authority migration (Entrust → DigiCert with Azure KeyVault automation), PKI lifecycle management, and major security incident response — bringing infrastructure depth to security initiatives where most engineers contribute only peripherally.
+* **Security Engineering**: Partnered with InfoSec as a trusted technical contributor across Zero Trust network deployment (Zscaler), certificate authority migration (Entrust → DigiCert with Azure KeyVault automation), PKI lifecycle management, and major security incident response.
 
 ## Roles
 
-### Software Engineer | Public Consulting Group; Remote -- March 2026-Present
+### Software Engineer | Public Consulting Group; Remote -- March 2026–Present
 
 #### Systems Integration & Analytics
 
@@ -33,7 +33,7 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 * Established foundational Pester unit test suite and reusable shared test infrastructure for an existing codebase, creating automated quality gates where none previously existed.
 * Configured CI pipeline executing Pester tests on push and pull request events, enforcing code quality standards across the development workflow from day one.
 * Authored a GitHub Copilot custom-instructions file codifying a team PowerShell style guide and Microsoft's recommended development practices, substantially reducing recurring AI-generated anti-patterns (e.g., non-idiomatic `return $var` usage) across the team's codebase before code reaches review.
-* Practice a structured AI-assisted development workflow — documenting research findings and implementation plans before generating code, with explicit review checkpoints to correct assumptions and scope — keeping architectural control over AI-authored changes rather than accepting output wholesale.
+* Adopted a structured AI-assisted development workflow — documenting research findings and implementation plans before generating code, with explicit review checkpoints to correct assumptions and scope — keeping architectural control over AI-authored changes rather than accepting output wholesale.
 
 #### Platform Reliability & Modernization
 
@@ -43,14 +43,14 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 #### Architecture & Modernization Strategy
 
 * Conducted architectural assessment of existing codebase, identifying strengths, gaps, and a prioritized improvement roadmap — balancing modernization velocity against production risk.
-* Executing phased modularization strategy: extracting notification and directory lookup logic from monolithic orchestration scripts before touching destructive workflows, ensuring each extraction is independently unit-testable and carries no production side effects.
+* Planned and began a phased modularization strategy: extracting notification and directory lookup logic from monolithic orchestration scripts before touching destructive workflows, ensuring each extraction is independently unit-testable and carries no production side effects.
 * Identified and fixed a latent production bug in a directory lookup, surfaced by the new test suite during refactoring.
 
 #### Documentation
 
 * Authored focused documentation for shared function helpers and the test system, improving developer onboarding and long-term maintainability.
 
-### Operations Engineer | Lincoln Investment; Remote -- April 2022-January 2026
+### Operations Engineer | Lincoln Investment; Remote -- April 2022–January 2026
 
 #### Platform Reliability & Scalability
 
@@ -63,9 +63,9 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 * Implemented automated patching pipeline for Linux and Windows servers using Satellite and SCCM, reducing monthly vulnerability exposure by 70% and eliminating $400K in annual outsourcing costs.
 * Built orchestration workflows integrating CrowdStrike, Microsoft Graph, and Atlassian REST APIs to automate security and identity operations, with retry logic and structured logging for unattended reliability.
 * Designed enterprise observability platform using New Relic and Zabbix with SLI/SLO-based alerting, reducing unplanned downtime by 35% through proactive performance monitoring and capacity planning.
-* Accelerated development velocity by leveraging AI-assisted tooling (GitHub Copilot, Claude, ChatGPT) for rapid prototyping of automation scripts and instrumenting applications with OpenTelemetry for enhanced observability.
+* Instrumented applications with OpenTelemetry, extending observability from infrastructure into application code.
 * Collaborated with senior developers on pruning hundreds of terabytes of legacy data, proposing and implementing a parallelized PowerShell solution using `ForEach-Object -Parallel` that reduced deletion time from days to hours, significantly improving operational efficiency and resource utilization.
-* Designed and led the implementation of organization-wide documentation standards, handover requirements, and maintenance processes, coordinating with engineering, operations, and platform teams to ensure consistency then centralized all system documentation in a single Confluence space.
+* Designed and led the implementation of organization-wide documentation standards, handover requirements, and maintenance processes, coordinating with engineering, operations, and platform teams to ensure consistency, then centralized all system documentation in a single Confluence space.
 
 #### Cross-Functional Collaboration & Application Support
 
@@ -84,9 +84,9 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 * Championed early adoption of Server 2022 and RHEL 8/9, proactively migrating workloads 18 months ahead of EOL deadlines (Server 2012 R2, Server 2016, CentOS), eliminating compliance risks and modernizing security posture.
 * Elevated Active Directory Domain Functional Level from 2008 to 2016, unlocking modern security features and improving authentication reliability across enterprise.
 * Built and ran identity federation spanning dozens of partner Microsoft 365 tenants, automating account provisioning and licensing so a single identity source governed access across organizations nationwide.
-* Delivered clean handoff of user account automation via OneLogin/ADP then Okta/DayForce as well as SAML integration for application access for seamless employee lifecycle management by Digital Workspace team.
+* Automated the employee account lifecycle (OneLogin/ADP, later Okta/Dayforce) with SAML-based application access, then handed it off cleanly to the Digital Workspace team.
 
-### Network Analyst | Chester County Library System; Remote -- February 2019-April 2022
+### Network Analyst | Chester County Library System; Remote -- February 2019–April 2022
 
 #### Infrastructure Automation & Efficiency
 
@@ -100,18 +100,18 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 * Served as technical lead for County Disaster Recovery and Business Continuity planning, architecting high-availability solutions including VPN failover, ISP redundancy, and remote work enablement that ensured seamless operations during 2020 pandemic transition.
 * Mentored two junior system administrators.
 
-### Service Analyst | County of Chester; West Chester, PA -- October 2016-February 2019
+### Service Analyst | County of Chester; West Chester, PA -- October 2016–February 2019
 
 * Delivered technical support for 2,500+ users across hybrid VMware/Windows/Linux environment while maintaining 95%+ CSAT scores through consistent communication and rapid resolution.
 * Acted as technical advisor to County Disaster Recovery and Business Continuity committees, providing expertise on high-availability architecture, network redundancy strategies, and ISP failover configurations to ensure operational resilience.
 
-### IT Consultant | Robert Half Technology; Philadelphia, PA -- Feb 2016-Oct 2016
+### IT Consultant | Robert Half Technology; Philadelphia, PA -- February 2016–October 2016
 
 * Executed cloud migration projects for multi-site clients, successfully transitioning from on-premise Active Directory/Exchange to Azure AD and Microsoft 365 with zero data loss.
 * Maintained 99.9% uptime across diverse Windows and Linux server environments through proactive configuration management and optimized patching workflows.
 * Coordinated infrastructure deployments with vendor partners, ensuring structured cabling and equipment installations met performance and compliance standards.
 
-### Technician | County of Chester; West Chester, PA -- April 2015-April 2016
+### Technician | County of Chester; West Chester, PA -- April 2015–April 2016
 
 * Provided Level 2 technical support to 900+ users across county agencies, developing PowerShell automation scripts and documentation that reduced ticket escalations by 25%.
 
@@ -119,163 +119,30 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 
 ### Home Projects
 
-* Local LLM Infrastructure & Fine-Tuning: Built local AI experimentation environment running Mistral 8x7b and 8x22b models via Ollama. Fine-tuned custom Mixtral 8x7b model using official training guides, gaining hands-on experience with model architecture, quantization, and GPU resource optimization.
+* Local LLM Infrastructure & Fine-Tuning: Built local AI experimentation environment running Mixtral 8x7B and 8x22B models via Ollama. Fine-tuned a custom Mixtral 8x7B model, gaining hands-on experience with model architecture, quantization, and GPU resource optimization.
 * Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX) with automated SSL/TLS certificate lifecycle via Certbot/Let's Encrypt. Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana.
 
 ## Technical Skills
 
-### Cloud & Infrastructure
-
-```
-AWS, Azure
-VMware vSphere, Hyper-V, VirtualBox
-```
-
-### Automation & Infrastructure as Code
-
-```
-Ansible, Terraform
-PowerShell, Bash, Ruby, Python, HCL
-Chef (familiar with Puppet and Salt)
-```
-
-### API Integration
-
-```
-REST APIs: Microsoft Graph, GitHub, Atlassian, CrowdStrike, Power BI
-```
-
-### Configuration Management
-
-```
-SCCM, Satellite
-```
-
-### Monitoring & Observability
-
-```
-New Relic, Zabbix
-Prometheus, Grafana
-OpenTelemetry
-rsyslog, Logstash (ELK Stack)
-```
-
-### AI-Assisted Development
-
-```
-GitHub Copilot, Claude, ChatGPT (Production)
-Ollama (local LLM deployment)
-Mixtral/Mistral (model fine-tuning and experimentation)
-```
-
-### Application Support
-
-```
-Java application troubleshooting
-XML configuration
-Application server middleware
-```
-
-### Containerization
-
-```
-Docker
-```
-
-### Databases
-
-```
-Microsoft SQL Server
-PostgreSQL, MySQL, MariaDB
-MongoDB, Cassandra
-```
-
-### Data & Analytics
-
-```
-Power BI, DAX
-Semantic modeling (star schema)
-ETL pipeline design
-```
-
-### Networking & Security
-
-```
-Cisco, Meraki
-DNS, PKI/Certificate Management
-SSL/TLS Automation (Certbot, Let's Encrypt, ACME Protocol)
-OpenVPN, AnyConnect, GlobalProtect, Zscaler
-```
-
-### Web Services & Load Balancers
-
-```
-NGINX, HAProxy
-Apache httpd, IIS
-```
-
-### Backup Solutions
-
-```
-Veritas NetBackup
-Veritas HubStor (NetBackup SaaS Protection)
-Dell Avamar, Dell NetWorker
-Veeam
-```
-
-### Directory Services & IAM
-
-```
-Active Directory
-389 Directory Service, Samba
-OneLogin, Okta
-```
-
-### Email & Messaging Platforms
-
-```
-Microsoft Exchange (On-Premises & Online)
-Microsoft 365 & Teams Administration
-Google Workspace Administration
-Slack Administration (SAML/SSO Integration)
-Cisco Unified Communications
-Email Authentication (DMARC, SPF, DKIM)
-SMTP Protocol & Relay Configuration (SendGrid, Mailgun, IIS)
-Compliance & eDiscovery (Purview, Smarsh)
-```
-
-### Operating Systems
-
-```
-Linux: Debian, CentOS, RHEL
-Unix: macOS, OpenBSD, FreeBSD
-Windows: NT 3.1-11, Server 2003-2025
-```
-
-### Version Control & Development Tools
-
-```
-Git, GitHub, GitLab, Bitbucket
-VS Code, Vim
-Vagrant, VirtualBox
-strace/truss, Valgrind
-PowerCLI, MDT
-Pester
-```
-
-### Package Managers
-
-```
-apt, dpkg, pkg, yum
-chocolatey, nuget, winget (Windows)
-```
-
-### Collaboration Tools
-
-```
-Jira, Confluence
-Slack, Rocket.Chat, Microsoft Teams
-```
+* **Cloud & Infrastructure:** AWS, Azure; VMware vSphere, Hyper-V, VirtualBox
+* **Automation & Infrastructure as Code:** Ansible, Terraform; PowerShell, Bash, Ruby, Python, HCL; Chef (familiar with Puppet and Salt)
+* **API Integration:** REST APIs: Microsoft Graph, GitHub, Atlassian, CrowdStrike, Power BI
+* **Configuration Management:** SCCM, Satellite
+* **Monitoring & Observability:** New Relic, Zabbix; Prometheus, Grafana; OpenTelemetry; rsyslog, Logstash (ELK Stack)
+* **AI-Assisted Development:** GitHub Copilot, Claude, ChatGPT (daily development); Ollama (local LLM deployment); Mixtral (model fine-tuning and experimentation)
+* **Application Support:** Java application troubleshooting; XML configuration; Application server middleware
+* **Containerization:** Docker
+* **Databases:** Microsoft SQL Server; PostgreSQL, MySQL, MariaDB; MongoDB, Cassandra
+* **Data & Analytics:** Power BI, DAX; Semantic modeling (star schema); ETL pipeline design
+* **Networking & Security:** Cisco, Meraki; DNS, PKI/Certificate Management; SSL/TLS Automation (Certbot, Let's Encrypt, ACME Protocol); OpenVPN, AnyConnect, GlobalProtect, Zscaler
+* **Web Services & Load Balancers:** NGINX, HAProxy; Apache httpd, IIS
+* **Backup Solutions:** Veritas NetBackup; Veritas HubStor (NetBackup SaaS Protection); Dell Avamar, Dell NetWorker; Veeam
+* **Directory Services & IAM:** Active Directory; 389 Directory Service, Samba; OneLogin, Okta
+* **Email & Messaging Platforms:** Microsoft Exchange (On-Premises & Online); Microsoft 365 & Teams Administration; Google Workspace Administration; Slack Administration (SAML/SSO Integration); Cisco Unified Communications; Email Authentication (DMARC, SPF, DKIM); SMTP Protocol & Relay Configuration (SendGrid, Mailgun, IIS); Compliance & eDiscovery (Purview, Smarsh)
+* **Operating Systems:** Linux: Debian, CentOS, RHEL; Unix: macOS, OpenBSD, FreeBSD; Windows: NT 3.1-11, Server 2003-2025
+* **Version Control & Development Tools:** Git, GitHub, GitLab, Bitbucket; VS Code, Vim; Vagrant, VirtualBox; strace/truss, Valgrind; PowerCLI, MDT; Pester
+* **Package Managers:** apt, dpkg, pkg, yum; chocolatey, nuget, winget (Windows)
+* **Collaboration Tools:** Jira, Confluence; Slack, Rocket.Chat, Microsoft Teams
 
 ## Education
 

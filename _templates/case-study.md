@@ -1,9 +1,10 @@
 ---
 # Copy to _projects/<slug>.md. Files in _templates/ are never published.
 title: 
+description: One sentence for search results and link previews.
 summary: One sentence — what changed and why it mattered.
 date: 2026-01-01
-principles: [Reliability, Safe automation, Incremental modernization, Enabling governance, Testability, Documentation]
+principles: [Reliability is a feature, Automation must reduce risk, Modernize incrementally, Governance should enable engineers, Testing comes before trust, Documentation is engineering work]
 repo:            # optional public repo URL
 mermaid: false   # set true to render ```mermaid diagrams
 ---
