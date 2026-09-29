@@ -18,7 +18,7 @@ If a system only stays up because one engineer knows its quirks, it isn't reliab
 
 **In practice:** eliminating single points of failure, graceful failure and recovery, alerting tied to meaningful service levels, and validating disaster recovery instead of assuming it works.
 
-**Where it shows up:** a three-node SQL availability group that removed a single point of failure (99.99% uptime, sub-15-minute RTO); disaster-recovery validation twice a year for core line-of-business applications; SLI/SLO-based alerting that cut unplanned downtime by 35%. ([Experience](/experience/))
+**Where it shows up:** a three-node SQL availability group our team built to remove a single point of failure (sub-15-minute RTO), part of taking the platform from 40–60% to 99.99% availability; disaster-recovery validation twice a year for core line-of-business applications; SLI/SLO-based alerting that cut unplanned downtime by 35%. ([Experience](/experience/))
 
 ## 2. Automation must reduce risk, not create it
 
