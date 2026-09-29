@@ -52,39 +52,28 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 
 ### Operations Engineer | Lincoln Investment; Remote -- April 2022–January 2026
 
-#### Platform Reliability & Scalability
+Core member of the operations team that took a 1,200-server hybrid Azure/VMware platform (900 Linux, 300 Windows) from frequent outages (40–60% availability) to 99.99%, serving 3,500 users across 300+ offices.
 
-* Architected and operated hybrid-cloud platform serving 300+ offices nationwide across Azure and multi-datacenter VMware environment, ensuring 99.99% availability for business-critical services.
-* Eliminated technical debt through strategic virtualization platform evolution (vSphere 6.5 → 8.0.3), improving resource efficiency by 30% and enabling automated failover capabilities across datastore clusters.
-* Led enterprise storage modernization initiative, replacing aging Dell PowerMax SANs with high-performance Nimble/Pure solutions to support 5-year Azure migration roadmap and double available capacity.
+#### What I owned
 
-#### Automation & Operational Excellence
+* **Monitoring:** designed and ran the observability platform (New Relic, Zabbix) with SLI/SLO-based alerting, cutting unplanned downtime 35% and catching failures before users did.
+* **Automation:** owned OS and infrastructure deployment automation and the team's GitHub repository. Built the Satellite/SCCM patching pipeline that reduced monthly vulnerability exposure 70% and eliminated $400K/yr in outsourced patching.
+* **Three virtualized datacenters:** ran day-to-day operations and led the vSphere 6.5 → 8.0.3 upgrade, improving resource efficiency 30%.
+* **Integrations:** built unattended workflows across CrowdStrike, Microsoft Graph, and Atlassian REST APIs with retry logic and structured logging.
 
-* Implemented automated patching pipeline for Linux and Windows servers using Satellite and SCCM, reducing monthly vulnerability exposure by 70% and eliminating $400K in annual outsourcing costs.
-* Built orchestration workflows integrating CrowdStrike, Microsoft Graph, and Atlassian REST APIs to automate security and identity operations, with retry logic and structured logging for unattended reliability.
-* Designed enterprise observability platform using New Relic and Zabbix with SLI/SLO-based alerting, reducing unplanned downtime by 35% through proactive performance monitoring and capacity planning.
-* Instrumented applications with OpenTelemetry, extending observability from infrastructure into application code.
-* Collaborated with senior developers on pruning hundreds of terabytes of legacy data, proposing and implementing a parallelized PowerShell solution using `ForEach-Object -Parallel` that reduced deletion time from days to hours, significantly improving operational efficiency and resource utilization.
-* Designed and led the implementation of organization-wide documentation standards, handover requirements, and maintenance processes, coordinating with engineering, operations, and platform teams to ensure consistency, then centralized all system documentation in a single Confluence space.
+#### How we got there (team efforts where I was a core contributor)
 
-#### Cross-Functional Collaboration & Application Support
+* Removed the SQL single point of failure with a three-node availability group (sub-15-minute RTO).
+* Rebuilt backup on NetBackup with Azure archive tier, improving RTO from 24 hours to 4; ran biannual DR validation for line-of-business apps.
+* Migrated workloads to Server 2022 and RHEL 8/9 18 months ahead of end of life.
+* Federated identity across 20+ M365/Entra ID tenants from a single on-prem AD source.
+* Moved the certificate authority from Entrust to DigiCert in six months, with Azure Key Vault automating renewals.
 
-* Partnered with development teams to troubleshoot production issues in Java applications, providing platform-level expertise on authentication failures, XML configuration errors, and middleware connectivity problems that reduced mean-time-to-resolution by 40%.
-* Served as infrastructure liaison during critical incidents, analyzing application logs, reviewing production code, and identifying root causes related to network connectivity, certificate validation, and environment-specific configurations.
-* Partnered with InfoSec team on security initiatives including Zscaler Zero Trust deployment (network integration, certificate configuration, application testing) and all major security incidents, contributing operational expertise and ensuring rapid containment, mitigation, and post-incident analysis across critical services.
+#### Also
 
-#### Business Continuity & Disaster Recovery
-
-* Architected and deployed modern hybrid-cloud backup solution (NetBackup on Flex Appliance with Azure archive tier), achieving zero-downtime migration while improving RTO from 24 hours to 4 hours and enhancing operational visibility.
-* Led biannual disaster recovery validation for core line-of-business applications, ensuring backup integrity and recovery procedures meet business SLAs.
-* Orchestrated certificate authority migration from Entrust to DigiCert in under 6 months, integrating with Azure KeyVault for automated certificate lifecycle management and seamless operational handoff.
-
-#### Strategic Initiatives & Risk Mitigation
-
-* Championed early adoption of Server 2022 and RHEL 8/9, proactively migrating workloads 18 months ahead of EOL deadlines (Server 2012 R2, Server 2016, CentOS), eliminating compliance risks and modernizing security posture.
-* Elevated Active Directory Domain Functional Level from 2008 to 2016, unlocking modern security features and improving authentication reliability across enterprise.
-* Built and ran identity federation spanning dozens of partner Microsoft 365 tenants, automating account provisioning and licensing so a single identity source governed access across organizations nationwide.
-* Automated the employee account lifecycle (OneLogin/ADP, later Okta/Dayforce) with SAML-based application access, then handed it off cleanly to the Digital Workspace team.
+* Helped manage our Azure environment.
+* Partnered with InfoSec on the Zscaler Zero Trust rollout and incident response.
+* Worked with developers on Java production issues, cutting MTTR 40%.
 
 ### Network Analyst | Chester County Library System; Remote -- February 2019–April 2022
 
