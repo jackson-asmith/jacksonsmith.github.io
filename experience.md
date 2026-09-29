@@ -59,6 +59,7 @@ Core member of the operations team that took a 1,200-server hybrid Azure/VMware 
 * **Monitoring:** designed and ran the observability platform (New Relic, Zabbix) with SLI/SLO-based alerting, cutting unplanned downtime 35% and catching failures before users did.
 * **Automation:** owned OS and infrastructure deployment automation and the team's GitHub repository. Built the Satellite/SCCM patching pipeline that reduced monthly vulnerability exposure 70% and eliminated $400K/yr in outsourced patching.
 * **Three virtualized datacenters:** ran day-to-day operations and led the vSphere 6.5 → 8.0.3 upgrade, improving resource efficiency 30%.
+* **Legacy systems:** refactored internal DNS, certificate lifecycle, and syslog normalization, cutting operational escalations 50% over 12 months.
 * **Integrations:** built unattended workflows across CrowdStrike, Microsoft Graph, and Atlassian REST APIs with retry logic and structured logging.
 
 #### How we got there (team efforts where I was a core contributor)
