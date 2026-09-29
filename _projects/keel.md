@@ -84,6 +84,7 @@ The full reasoning, including a dated amendment for the SDK path, is in [ADR 000
 * **The tests caught a bug in the fix, too.** My first version treated a failure to change the SDK's settings as "possibly delivered," which blocked fallback even though nothing had been sent. Those failures are now marked as not sent.
 * The suite grew from 198 to 261 passing test cases, 7 of them against the real SDK. Every commit passes on its own, except the one that adds the SDK test ahead of its fix, which fails on purpose.
 * Two ADRs record the decisions a reader would otherwise have to reverse-engineer: why configuration comes from `KEEL_` environment variables, and why the library never resends after an ambiguous failure, with an amendment for the SDK path.
+* **Update, September 29: CI checked the other runtime, and it found a bug.** GitHub Actions now runs PSScriptAnalyzer and the Pester suite on PowerShell 7 across Linux, macOS, and Windows, plus Windows PowerShell 5.1. The first 5.1 run failed five tests. Most came from test assumptions that only held on PowerShell 7, but one exposed a real bug: 5.1's `Send-MailMessage` has no `-ReplyTo`, so SMTP delivery threw whenever a Reply-To was set. Keel now leaves Reply-To out on 5.1 and writes a warning naming the dropped addresses, so the message still goes out. The failure classification passed on a real 5.1 host unchanged. A weekly job also runs the SDK integration tests against the latest Microsoft.Graph.Authentication, so a change in the SDK's retry behavior shows up before an upgrade.
 
 ## Principles demonstrated
 
@@ -100,6 +101,5 @@ The full reasoning, including a dated amendment for the SDK path, is in [ADR 000
 * **"Unknown" keeps coming back.** In the [email alignment checker](/projects/email-alignment-checker/), the lesson was that an empty DNS answer isn't a missing record. Here it's that a timeout isn't a failure. Both times, the fix was to give "I couldn't tell" its own outcome and let it block the risky action.
 * **What I'd do next:**
   * Confirm the 408 and 503 classifications against observed Graph behavior. Both currently rest on what the HTTP specification says those statuses mean.
-  * Run the Pester suite in GitHub Actions on both Windows PowerShell 5.1 and PowerShell 7, so the 5.1 classification is verified on a real 5.1 host.
   * Settle command naming (`Send-Email` versus a prefixed `Send-KeelMail`) in an ADR before a 1.0 release.
   * Support Graph upload sessions for attachments over 3 MB, instead of relying on SMTP for large files.
