@@ -25,4 +25,4 @@ The first case studies are being written. In the meantime, the [experience](/exp
 
 * [**Keel**](https://github.com/jackson-asmith/keel) — PowerShell modules for unattended automation, CI-tested on Windows PowerShell 5.1 and PowerShell 7: bounded HTTP retries and Graph-first mail that won't resend after an ambiguous failure.
 * [**Email alignment checker**](https://github.com/jackson-asmith/email-alignment-checker) — scheduled GitHub Actions workflow that monitors SPF, DKIM, and DMARC for this domain and commits only when something actually changes.
-* [**LinuxConfig**](https://github.com/jackson-asmith/LinuxConfig) — scripted, repeatable Linux server configuration.
+* [**LinuxConfig**](https://github.com/jackson-asmith/LinuxConfig) — modular Bash pipeline that bootstraps RHEL hosts into Active Directory and Red Hat Satellite, with dry-run mode on every stage and bats + ShellCheck in CI.
