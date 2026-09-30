@@ -4,7 +4,7 @@ description: How a scheduled GitHub Actions workflow that monitors SPF, DKIM, an
 summary: A scheduled GitHub Actions workflow that monitors this domain's mail authentication records — and the three iterations it took to make it quiet, honest, and self-sustaining.
 date: 2026-06-12
 principles: [Automation must reduce risk, Reliability is a feature, Testing comes before trust]
-repo: https://github.com/jackson-asmith/jackson-asmith/blob/main/.github/workflows/update-mail-alignment.yml
+repo: https://github.com/jackson-asmith/email-alignment-checker
 mermaid: true
 ---
 
@@ -63,7 +63,7 @@ flowchart TD
 * MX results sorted by priority so the reported primary is stable between runs
 * The workflow fails loudly if the README's start/end markers are missing, instead of silently mangling the file
 * A concurrency group plus rebase-before-push, so overlapping runs can't race each other
-* Least-privilege permissions: `contents: write` for the README and `actions: write` for the keepalive, nothing else
+* Least-privilege permissions: `contents: write` for its own README and status file, and `actions: write` for the keepalive, nothing else
 * A run summary written on every execution, even on failure
 
 ## Outcome
@@ -71,6 +71,7 @@ flowchart TD
 * Commit noise went from **about 350 commits in three months to one** in the months since the fix: the single commit came when the table format itself changed.
 * The public status can no longer be wrong because of a flaky resolver.
 * The workflow keeps its own schedule alive without any manual intervention.
+* **Update, September 29: it moved to [its own repository](https://github.com/jackson-asmith/email-alignment-checker), with its commit history.** The profile README can't keep showing a table this workflow writes unless the workflow gets a credential that can write to another repository. A long-lived token with write access, used by a job that runs unattended four times a day, is more risk than a status table is worth. So the workflow now also publishes a small `status.json`, and the profile shows it as a badge that reads that file. It follows the same rules as the table: it changes only when the records do, and a run with any resolver error publishes nothing. The trade-offs are recorded in [ADR 0001](https://github.com/jackson-asmith/email-alignment-checker/blob/main/docs/adr/0001-publish-status-as-a-badge.md).
 
 ## Principles demonstrated
 
