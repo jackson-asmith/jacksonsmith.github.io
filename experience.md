@@ -10,7 +10,7 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 
 ## Key Projects & Initiatives
 
-* **FinOps & BI Engineering**: Designed end-to-end BI solution for GitHub Enterprise billing — PowerShell-based ETL pipeline consuming the GitHub REST API, star schema semantic model, and DAX measures powering Power BI dashboards for cost visibility. Paired with automated GitHub Copilot budget governance (per-user overrides, cost center management) via the billing API.
+* **FinOps & BI Engineering**: Designed end-to-end BI solution for GitHub Enterprise billing — ETL pipeline consuming the GitHub REST API (built in PowerShell, then re-platformed to Python for the data team), star schema semantic model, and DAX measures powering Power BI dashboards for cost visibility. Paired with automated GitHub Copilot budget governance (per-user overrides, cost center management) via the billing API.
 
 * **High Availability Architecture**: Part of the operations team that removed the single point of failure in core SQL infrastructure with a three-node availability group (sub-15-minute RTO), one piece of taking the platform from 40–60% to 99.99% availability.
 
@@ -24,7 +24,8 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 
 #### Systems Integration & Analytics
 
-* Designed end-to-end BI solution for GitHub Enterprise billing: PowerShell-based ETL pipeline consuming the GitHub REST API, star schema semantic model, and DAX measures powering curated Power BI dashboards for cost visibility and budget governance.
+* Designed end-to-end BI solution for GitHub Enterprise billing: GitHub REST API ingestion, star schema semantic model, and DAX measures powering curated Power BI dashboards for cost visibility and budget governance.
+* Re-platformed the ETL pipeline from PowerShell to Python so the data team could read, maintain, and extend it in their own stack.
 * Built orchestration workflows connecting GitHub Enterprise and Entra ID REST APIs, implementing rate-limit handling, exponential backoff retry logic, and structured event logging for reliable unattended execution.
 * Automated GitHub Copilot cost governance via the GitHub billing API, including per-user budget overrides and cost center management.
 
@@ -124,7 +125,7 @@ Core member of the operations team that took a 1,200-server hybrid Azure/VMware 
 * **Application Support:** Java application troubleshooting; XML configuration; Application server middleware
 * **Containerization:** Docker
 * **Databases:** Microsoft SQL Server; PostgreSQL, MySQL, MariaDB; MongoDB, Cassandra
-* **Data & Analytics:** Power BI, DAX; Semantic modeling (star schema); ETL pipeline design
+* **Data & Analytics:** Power BI, DAX; Semantic modeling (star schema); ETL pipeline design (Python, Jupyter, PowerShell)
 * **Networking & Security:** Cisco, Meraki; DNS, PKI/Certificate Management; SSL/TLS Automation (Certbot, Let's Encrypt, ACME Protocol); OpenVPN, AnyConnect, GlobalProtect, Zscaler
 * **Web Services & Load Balancers:** NGINX, HAProxy; Apache httpd, IIS
 * **Backup Solutions:** Veritas NetBackup; Veritas HubStor (NetBackup SaaS Protection); Dell Avamar, Dell NetWorker; Veeam
