@@ -38,6 +38,10 @@ defaults:
 
 permalink: /writing/:year/:title/
 
+# Jekyll skips dot-directories by default; publish RFC 9116 security.txt.
+include:
+  - .well-known
+
 exclude:
   - README.md
   - draft.md
