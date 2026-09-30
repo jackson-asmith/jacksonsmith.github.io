@@ -1,6 +1,6 @@
 # jacksonasmith.com
 
-My personal website and resume, hosted via GitHub Pages.
+My personal website: experience, case studies, and engineering principles, hosted on GitHub Pages.
 
 ## Live Site
 
@@ -8,13 +8,14 @@ My personal website and resume, hosted via GitHub Pages.
 
 ## About
 
-Infrastructure & Reliability Engineer with 10+ years of experience in hybrid cloud environments, automation, and high-availability architecture. This site serves as my professional resume and portfolio.
+I'm a software engineer who spent ten years running production infrastructure before moving into software. The site covers my [experience](https://jacksonasmith.com/experience/), [case studies](https://jacksonasmith.com/projects/) on the design decisions behind public projects like [Keel](https://github.com/jackson-asmith/keel), and the [engineering principles](https://jacksonasmith.com/principles/) I work by: reliability, testing, and automation that reduces risk instead of creating it.
 
 ## Tech Stack
 
-- GitHub Pages
-- Jekyll
-- Markdown
+- Jekyll on GitHub Pages, with the Primer theme
+- Markdown content, with a `projects` collection for case studies
+- Mermaid for diagrams
+- `jekyll-seo-tag`, `jekyll-sitemap`, and `jekyll-feed`
 
 ## License
 
