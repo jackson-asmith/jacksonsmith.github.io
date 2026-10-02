@@ -9,22 +9,53 @@
 {% endif %}
 {% feed_meta %}
 <style>
-  .site-header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1.5rem; border-bottom: 1px solid #eaecef; margin-bottom: 2rem; padding-bottom: .75rem; }
+  /* Colors: github-markdown-css (assets/css/github-markdown.css) defines light
+     and dark values for its --fgColor-* / --borderColor-* / --bgColor-*
+     variables on .markdown-body, switching on prefers-color-scheme. Everything
+     on the page sits inside .markdown-body, so custom styles use those
+     variables instead of hard-coded colors. Only <body> is outside it. */
+  :root { color-scheme: light dark; }
+  body { background-color: #ffffff; }
+  @media (prefers-color-scheme: dark) {
+    body { background-color: #0d1117; color: #f0f6fc; } /* = --bgColor-default / --fgColor-default */
+  }
+
+  .site-header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1.5rem; border-bottom: 1px solid var(--borderColor-muted); margin-bottom: 2rem; padding-bottom: .75rem; }
   .site-header .site-title { font-size: 1.25rem; font-weight: 600; color: inherit; }
   .markdown-body .site-nav { display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin: 0; padding: 0; list-style: none; }
   .markdown-body .site-nav li + li { margin-top: 0; }
   .site-nav a[aria-current="page"] { font-weight: 600; text-decoration: underline; }
   .markdown-body .impact { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1rem; margin: 0 0 1.5rem; padding: 0; list-style: none; }
   .markdown-body .impact li + li { margin-top: 0; }
-  .impact li { border: 1px solid #eaecef; border-radius: 6px; padding: .75rem 1rem; }
+  .impact li { border: 1px solid var(--borderColor-muted); border-radius: 6px; padding: .75rem 1rem; }
   .impact strong { display: block; font-size: 1.5rem; line-height: 1.2; }
-  .impact span { font-size: .875rem; color: #586069; }
+  .impact span { font-size: .875rem; color: var(--fgColor-muted); }
   .avatar-hero { float: right; width: 120px; margin: 0 0 1rem 1.5rem; border-radius: 50%; }
-  .tags { font-size: .875rem; color: #586069; }
-  .site-footer { border-top: 1px solid #eaecef; margin-top: 3rem; padding-top: 1rem; font-size: .875rem; color: #586069; }
+  .tags { font-size: .875rem; color: var(--fgColor-muted); }
+  .site-footer { border-top: 1px solid var(--borderColor-muted); margin-top: 3rem; padding-top: 1rem; font-size: .875rem; color: var(--fgColor-muted); }
   .markdown-body pre.mermaid { background: none; padding: 0; text-align: center; }
   .markdown-body pre.mermaid svg { max-width: 100%; max-height: 34rem; height: auto; }
   @media (max-width: 544px) { .avatar-hero { float: none; display: block; margin: 0 0 1rem; } }
+
+  /* Code highlighting: Rouge emits Pygments-style token classes, which the
+     Primer theme colors for a light background only. Reset its colors, then
+     map token groups to GitHub's syntax variables so code follows the scheme. */
+  .markdown-body .highlight { background-color: transparent; } /* theme paints #f8f8f8 behind the rounded <pre> */
+  .markdown-body .highlight span { color: inherit; background-color: transparent; font-weight: inherit; font-style: inherit; }
+  .markdown-body .highlight :is(.c, .ch, .cd, .cm, .cp, .cpf, .c1, .cs) { color: var(--color-prettylights-syntax-comment); }
+  .markdown-body .highlight :is(.k, .kd, .kn, .kp, .kr, .kt, .kv, .ow) { color: var(--color-prettylights-syntax-keyword); }
+  .markdown-body .highlight :is(.s, .sa, .sb, .sc, .dl, .sd, .s2, .se, .sh, .si, .sx, .s1, .ss) { color: var(--color-prettylights-syntax-string); }
+  .markdown-body .highlight .sr { color: var(--color-prettylights-syntax-string-regexp); }
+  .markdown-body .highlight :is(.m, .mb, .mf, .mh, .mi, .il, .mo, .mx, .kc, .no, .nb, .bp, .na) { color: var(--color-prettylights-syntax-constant); }
+  .markdown-body .highlight :is(.nf, .fm, .nc, .ne, .nd, .nn) { color: var(--color-prettylights-syntax-entity); }
+  .markdown-body .highlight .nt { color: var(--color-prettylights-syntax-entity-tag); }
+  .markdown-body .highlight :is(.nv, .vc, .vg, .vi, .vm) { color: var(--color-prettylights-syntax-variable); }
+  .markdown-body .highlight :is(.gh, .gu) { color: var(--color-prettylights-syntax-markup-heading); font-weight: 600; }
+  .markdown-body .highlight .gi { color: var(--color-prettylights-syntax-markup-inserted-text); background-color: var(--color-prettylights-syntax-markup-inserted-bg); }
+  .markdown-body .highlight .gd { color: var(--color-prettylights-syntax-markup-deleted-text); background-color: var(--color-prettylights-syntax-markup-deleted-bg); }
+  .markdown-body .highlight .ge { font-style: italic; }
+  .markdown-body .highlight .gs { font-weight: 600; }
+  .markdown-body .highlight .err { color: var(--color-prettylights-syntax-invalid-illegal-text); background-color: var(--color-prettylights-syntax-invalid-illegal-bg); }
 </style>
 {% if page.mermaid %}
 <script type="module">
@@ -38,7 +69,9 @@
     pre.textContent = el.textContent;
     block.replaceWith(pre);
   });
-  mermaid.initialize({ startOnLoad: false });
+  // Match the diagram theme to the visitor's color scheme at load time.
+  const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  mermaid.initialize({ startOnLoad: false, theme: dark ? "dark" : "default" });
   await mermaid.run();
 </script>
 {% endif %}
