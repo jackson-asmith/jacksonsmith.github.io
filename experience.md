@@ -34,7 +34,7 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 * Established foundational Pester unit test suite and reusable shared test infrastructure for an existing codebase, creating automated quality gates where none previously existed.
 * Configured CI pipeline executing Pester tests on push and pull request events, enforcing code quality standards across the development workflow from day one.
 * Authored a GitHub Copilot custom-instructions file codifying a team PowerShell style guide and Microsoft's recommended development practices, substantially reducing recurring AI-generated anti-patterns (e.g., non-idiomatic `return $var` usage) across the team's codebase before code reaches review.
-* Adopted a structured AI-assisted development workflow — documenting research findings and implementation plans before generating code, with explicit review checkpoints to correct assumptions and scope — keeping architectural control over AI-authored changes rather than accepting output wholesale.
+* Adopted a structured AI-assisted development workflow — documenting research findings and implementation plans before generating code, with explicit review checkpoints to correct assumptions and scope, and the same Pester tests and CI gates as any other change — keeping architectural control over AI-authored changes rather than accepting output wholesale.
 
 #### Platform Reliability & Modernization
 
@@ -111,7 +111,7 @@ Core member of the operations team that took a 1,200-server hybrid Azure/VMware 
 
 ### Home Projects
 
-* Local LLM Infrastructure & Fine-Tuning: Built local AI experimentation environment running Mixtral 8x7B and 8x22B models via Ollama. Fine-tuned a custom Mixtral 8x7B model, gaining hands-on experience with model architecture, quantization, and GPU resource optimization.
+* Local LLM Infrastructure & Fine-Tuning: Run local models through Ollama (currently Qwen and DeepSeek) for private experimentation. Previously ran Mixtral 8x7B and 8x22B and fine-tuned a custom Mixtral 8x7B model, gaining hands-on experience with model architecture, quantization, and GPU resource optimization.
 * Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX) with automated SSL/TLS certificate lifecycle via Certbot/Let's Encrypt. Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana.
 
 ## Community
@@ -132,7 +132,7 @@ Board member of a nonprofit professional association for systems administrators:
 * **API Integration:** REST APIs: Microsoft Graph, GitHub, Atlassian, CrowdStrike, Power BI
 * **Configuration Management:** SCCM, Satellite
 * **Monitoring & Observability:** New Relic, Zabbix; Prometheus, Grafana; OpenTelemetry; rsyslog, Logstash (ELK Stack)
-* **AI-Assisted Development:** GitHub Copilot, Claude, ChatGPT (daily development); Ollama (local LLM deployment); Mixtral (model fine-tuning and experimentation)
+* **AI-Assisted Development:** Claude Code, GitHub Copilot with custom instructions (daily development); Ollama with Qwen and DeepSeek (local models); Mixtral 8x7B (prior fine-tuning work)
 * **Application Support:** Java application troubleshooting; XML configuration; Application server middleware
 * **Containerization:** Docker
 * **Databases:** Microsoft SQL Server; PostgreSQL, MySQL, MariaDB; MongoDB, Cassandra
