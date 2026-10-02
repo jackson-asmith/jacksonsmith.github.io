@@ -14,7 +14,6 @@ social:
   links:
     - https://github.com/jackson-asmith
     - https://www.linkedin.com/in/jackson-a-smith/
-google_analytics_id: G-5J2GCC14GK
 
 plugins:
   - jekyll-seo-tag

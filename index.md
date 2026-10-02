@@ -2,7 +2,7 @@
 description: Jackson Smith is a software engineer who spent a decade operating production infrastructure — now building reliable automation, testable code, and systems that don't page someone at 3am.
 ---
 
-<img class="avatar-hero" src="https://avatars.githubusercontent.com/u/42005615?v=4" alt="Jackson Smith">
+<img class="avatar-hero" src="/assets/img/avatar-240.webp" width="120" height="120" fetchpriority="high" alt="Jackson Smith">
 
 # Hi, I'm Jackson
 
