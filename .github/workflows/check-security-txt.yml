@@ -1,0 +1,47 @@
+name: Check security.txt
+
+on:
+  schedule:
+    - cron: "17 13 * * 1" # Mondays, 13:17 UTC
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - ".well-known/security.txt"
+      - ".github/workflows/check-security-txt.yml"
+      - ".github/scripts/check-security-txt.sh"
+
+permissions:
+  contents: read
+  actions: write # Re-enable this workflow's schedule (inactivity keepalive)
+
+concurrency:
+  group: security-txt
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # On a pull request, check the proposed file before it ships.
+      - name: Check proposed security.txt
+        if: github.event_name == 'pull_request'
+        run: bash .github/scripts/check-security-txt.sh .well-known/security.txt 60
+
+      # Otherwise check what visitors and scanners actually receive.
+      - name: Check live security.txt
+        if: github.event_name != 'pull_request'
+        run: bash .github/scripts/check-security-txt.sh https://jacksonasmith.com/.well-known/security.txt 60
+
+      - name: Keep scheduled workflow enabled
+        if: always() && github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # GitHub disables cron schedules after 60 days without repository
+          # activity, and scheduled runs don't count as activity.
+          # Re-enabling on every run resets that timer.
+          gh api -X PUT "repos/${{ github.repository }}/actions/workflows/check-security-txt.yml/enable"
