@@ -3,6 +3,7 @@ title: Keel
 description: How a PowerShell mail library that retried and fell back on every failure could send one alert four times, and the redesign that makes it resend only when Graph provably refused the message.
 summary: A public PowerShell library for unattended automation — and the gateway timeout that could have sent the same alert four times.
 date: 2026-09-28
+order: 1
 principles: [Automation must reduce risk, Testing comes before trust, Documentation is engineering work]
 repo: https://github.com/jackson-asmith/keel
 mermaid: true
