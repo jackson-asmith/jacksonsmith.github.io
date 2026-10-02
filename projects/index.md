@@ -10,7 +10,7 @@ Each case study follows the same structure: the problem, the existing state, the
 
 ## Case studies
 
-{% assign studies = site.projects | sort: "date" | reverse %}
+{% assign studies = site.projects | sort: "order" %}
 {% if studies.size > 0 %}
 {% for study in studies %}
 
