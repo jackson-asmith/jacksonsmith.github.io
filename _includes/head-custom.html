@@ -15,6 +15,9 @@
      on the page sits inside .markdown-body, so custom styles use those
      variables instead of hard-coded colors. Only <body> is outside it. */
   :root { color-scheme: light dark; }
+  /* github-markdown-css sets margin: 0 on .markdown-body, which overrides the
+     theme's centering of .container-lg (they're the same element). */
+  .container-lg.markdown-body { margin-left: auto; margin-right: auto; }
   body { background-color: #ffffff; }
   @media (prefers-color-scheme: dark) {
     body { background-color: #0d1117; color: #f0f6fc; } /* = --bgColor-default / --fgColor-default */
