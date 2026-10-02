@@ -1,12 +1,3 @@
-{% if site.google_analytics_id and jekyll.environment == "production" %}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ site.google_analytics_id }}');
-</script>
-{% endif %}
 {% feed_meta %}
 <style>
   /* Colors: github-markdown-css (assets/css/github-markdown.css) defines light
@@ -15,9 +6,14 @@
      on the page sits inside .markdown-body, so custom styles use those
      variables instead of hard-coded colors. Only <body> is outside it. */
   :root { color-scheme: light dark; }
-  /* github-markdown-css sets margin: 0 on .markdown-body, which overrides the
-     theme's centering of .container-lg (they're the same element). */
-  .container-lg.markdown-body { margin-left: auto; margin-right: auto; }
+  /* Page layout. These replace the only parts of the Primer theme stylesheet the
+     site used (box-sizing, .container-lg, .px-3, .my-5), so the theme's ~77 KB
+     stylesheet no longer has to load before the page can render. Values match
+     the theme's. github-markdown-css sets margin: 0 on .markdown-body, so the
+     selector includes it to win. */
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; }
+  .container-lg.markdown-body { max-width: 1012px; margin: 32px auto; padding: 0 16px; }
   body { background-color: #ffffff; }
   @media (prefers-color-scheme: dark) {
     body { background-color: #0d1117; color: #f0f6fc; } /* = --bgColor-default / --fgColor-default */
@@ -40,11 +36,8 @@
   .markdown-body pre.mermaid svg { max-width: 100%; max-height: 34rem; height: auto; }
   @media (max-width: 544px) { .avatar-hero { float: none; display: block; margin: 0 0 1rem; } }
 
-  /* Code highlighting: Rouge emits Pygments-style token classes, which the
-     Primer theme colors for a light background only. Reset its colors, then
-     map token groups to GitHub's syntax variables so code follows the scheme. */
-  .markdown-body .highlight { background-color: transparent; } /* theme paints #f8f8f8 behind the rounded <pre> */
-  .markdown-body .highlight span { color: inherit; background-color: transparent; font-weight: inherit; font-style: inherit; }
+  /* Code highlighting: Rouge emits Pygments-style token classes. Map token
+     groups to GitHub's syntax variables so code follows the color scheme. */
   .markdown-body .highlight :is(.c, .ch, .cd, .cm, .cp, .cpf, .c1, .cs) { color: var(--color-prettylights-syntax-comment); }
   .markdown-body .highlight :is(.k, .kd, .kn, .kp, .kr, .kt, .kv, .ow) { color: var(--color-prettylights-syntax-keyword); }
   .markdown-body .highlight :is(.s, .sa, .sb, .sc, .dl, .sd, .s2, .se, .sh, .si, .sx, .s1, .ss) { color: var(--color-prettylights-syntax-string); }
