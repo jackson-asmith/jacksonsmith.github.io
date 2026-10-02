@@ -90,6 +90,7 @@ The day before, the dark-mode change had shipped a bug: content was pinned to th
 * **Mobile performance went from 86 to 99**, and desktop stayed at 100.
 * **No visual change**, by measurement rather than by inspection.
 * **The page carries less:** no third-party JavaScript, one stylesheet instead of two, and no requests to other servers on the home page.
+* **Search data without page JavaScript:** Google Search Console is set up, verified through the domain's DNS at Cloudflare, with the sitemap submitted. It covers the one traffic source that produced engaged visits, and reports which searches show the site and which lead to clicks.
 
 ## Principles demonstrated
 
@@ -103,6 +104,5 @@ The day before, the dark-mode change had shipped a bug: content was pinned to th
 * **A regression is a reason to change the test, not just the code.** The centering bug was fixed in three lines. The more durable fix was verifying the next change at several widths, by measurement.
 * **Know where to stop.** The remaining warnings are the one stylesheet the page genuinely needs, a short cache lifetime set by GitHub Pages, and a small script Cloudflare adds. Past 99, run-to-run variation is larger than anything left to gain.
 * **What I'd do next:**
-  * Set up Google Search Console, which covers the one traffic source that produced real readers.
   * Add a Cloudflare cache rule for `/assets/` so stylesheets and images are cached for longer than GitHub Pages' 10 minutes.
   * Run PageSpeed on the case study pages, which load Mermaid for diagrams and may behave differently from the home page.
