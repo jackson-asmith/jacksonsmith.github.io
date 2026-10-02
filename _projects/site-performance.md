@@ -87,9 +87,18 @@ The day before, the dark-mode change had shipped a bug: content was pinned to th
 
 ## Outcome
 
-* **Mobile performance went from 86 to 99**, and desktop stayed at 100.
+* **Mobile performance went from 86 to 99**, and desktop stayed at 100. Accessibility, Best Practices, and SEO all score 100 on mobile.
+
+  | Metric (mobile) | Before | After |
+  |---|---|---|
+  | First Contentful Paint | 2.6 s | 1.5 s |
+  | Largest Contentful Paint | 3.6 s | 1.5 s |
+  | Speed Index | 3.1 s | 2.4 s |
+  | Total Blocking Time | 20 ms | 0 ms |
+  | Cumulative Layout Shift | 0 | 0 |
+
 * **No visual change**, by measurement rather than by inspection.
-* **The page carries less:** no third-party JavaScript, one stylesheet instead of two, and no requests to other servers on the home page.
+* **The page carries less:** no analytics script, one stylesheet instead of two, and no requests to other servers on the home page. The only JavaScript left is the small email-obfuscation script Cloudflare injects, served from the site's own domain.
 * **Search data without page JavaScript:** Google Search Console is set up, verified through the domain's DNS at Cloudflare, with the sitemap submitted. It covers the one traffic source that produced engaged visits, and reports which searches show the site and which lead to clicks.
 * **Longer caching for static files:** GitHub Pages tells browsers to cache everything for 10 minutes, and that can't be changed from the repository. A Cloudflare cache rule now caches everything under `/assets/` for a month, at Cloudflare and in visitors' browsers. That's safe because the stylesheet URL changes with every deploy. HTML pages keep the short default, so edits still appear within minutes.
 
@@ -103,6 +112,6 @@ The day before, the dark-mode change had shipped a bug: content was pinned to th
 * **Measure what the user waits for, not what's easy to optimize.** Total Blocking Time and layout shift were already perfect. All the lost points were in the files the phone had to fetch before it could draw.
 * **Installed isn't the same as useful.** Analytics cost every visitor a script download, and 90 days of its own data showed it wasn't informing any decisions.
 * **A regression is a reason to change the test, not just the code.** The centering bug was fixed in three lines. The more durable fix was verifying the next change at several widths, by measurement.
-* **Know where to stop.** The remaining warnings are the one stylesheet the page genuinely needs and a small script Cloudflare adds. Past 99, run-to-run variation is larger than anything left to gain.
+* **Know where to stop.** The remaining warnings are the one stylesheet the page genuinely needs and Cloudflare's email-obfuscation script, which hides the `mailto:` address from scrapers in exchange for 11 KiB of JavaScript. Past 99, run-to-run variation is larger than anything left to gain.
 * **What I'd do next:**
   * Run PageSpeed on the case study pages, which load Mermaid for diagrams and may behave differently from the home page.
