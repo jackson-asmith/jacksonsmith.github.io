@@ -114,6 +114,17 @@ Core member of the operations team that took a 1,200-server hybrid Azure/VMware 
 * Local LLM Infrastructure & Fine-Tuning: Built local AI experimentation environment running Mixtral 8x7B and 8x22B models via Ollama. Fine-tuned a custom Mixtral 8x7B model, gaining hands-on experience with model architecture, quantization, and GPU resource optimization.
 * Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX) with automated SSL/TLS certificate lifecycle via Certbot/Let's Encrypt. Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana.
 
+## Community
+
+### Vice President (previously Secretary) | League of Professional Systems Administrators (LOPSA); Volunteer -- September 2021–2025
+
+Board member of a nonprofit professional association for systems administrators: appointed in 2021 and re-elected in 2022, 2023, and 2024.
+
+* Spent several years with the board trying to revitalize the organization. When its local chapters had all gone inactive, I proposed finding a larger organization to carry our members forward rather than letting LOPSA fade out.
+* Helped lead the search, evaluating several potential partners before choosing the Association for Computing Machinery (ACM), the largest of them and the one that offered members the most.
+* Dissolved LOPSA in 2025 and moved every current member to two years of ACM membership, with access to ACM's monthly publication, its Digital Library, and discounted O'Reilly Online Learning, after an open AMA with members.
+* Quoted as a LOPSA board member in [Dice](https://www.dice.com/career-advice/systems-administrator-degree-do-you-need-one-to-succeed) on sysadmin careers.
+
 ## Technical Skills
 
 * **Cloud & Infrastructure:** AWS, Azure; VMware vSphere, Hyper-V, VirtualBox
