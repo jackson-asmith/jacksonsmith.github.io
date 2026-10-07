@@ -11,7 +11,7 @@ mermaid: true
 
 ## Problem
 
-Email authentication (SPF, DKIM, and DMARC) is set up once and then forgotten, until a DNS change or provider migration quietly breaks it and mail starts landing in spam. I wanted continuous, visible evidence that `jacksonasmith.com` stays correctly configured, published where people would actually see it: the live status table on my [GitHub profile](https://github.com/jackson-asmith).
+Email authentication is three DNS records: SPF lists the servers allowed to send mail for a domain, DKIM publishes the key receivers use to check a message's signature, and DMARC tells receivers what to do with mail that fails those checks. It's set up once and then forgotten, until a DNS change or provider migration quietly breaks it and mail starts landing in spam. I wanted continuous, visible evidence that `jacksonasmith.com` stays correctly configured, published where people would actually see it: the live status table on my [GitHub profile](https://github.com/jackson-asmith).
 
 ## Existing state
 
@@ -72,7 +72,7 @@ flowchart TD
 * Commit noise went from **about 350 commits in three months to one** in the months since the fix: the single commit came when the table format itself changed.
 * The public status can no longer be wrong because of a flaky resolver.
 * The workflow keeps its own schedule alive without any manual intervention.
-* **Update, September 29: it moved to [its own repository](https://github.com/jackson-asmith/email-alignment-checker), with its commit history.** The profile README can't keep showing a table this workflow writes unless the workflow gets a credential that can write to another repository. A long-lived token with write access, used by a job that runs unattended four times a day, is more risk than a status table is worth. So the workflow now also publishes a small `status.json`, and the profile shows it as a badge that reads that file. It follows the same rules as the table: it changes only when the records do, and a run with any resolver error publishes nothing. The trade-offs are recorded in [ADR 0001](https://github.com/jackson-asmith/email-alignment-checker/blob/main/docs/adr/0001-publish-status-as-a-badge.md).
+* **Update, September 29: it moved to [its own repository](https://github.com/jackson-asmith/email-alignment-checker), with its commit history.** The profile README can't keep showing a table this workflow writes unless the workflow gets a credential that can write to another repository. A long-lived token with write access, used by a job that runs unattended four times a day, is more risk than a status table is worth. So the workflow now also publishes a small `status.json`, and the profile shows it as a badge that reads that file. It follows the same rules as the table: it changes only when the records do, and a run with any resolver error publishes nothing. The trade-offs are recorded in an architecture decision record, [ADR 0001](https://github.com/jackson-asmith/email-alignment-checker/blob/main/docs/adr/0001-publish-status-as-a-badge.md).
 
 ## Principles demonstrated
 
