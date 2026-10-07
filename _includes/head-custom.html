@@ -32,7 +32,7 @@
   .avatar-hero { float: right; width: 120px; margin: 0 0 1rem 1.5rem; border-radius: 50%; }
   .tags { font-size: .875rem; color: var(--fgColor-muted); }
   .site-footer { border-top: 1px solid var(--borderColor-muted); margin-top: 3rem; padding-top: 1rem; font-size: .875rem; color: var(--fgColor-muted); }
-  .markdown-body pre.mermaid { background: none; padding: 0; text-align: center; }
+  .markdown-body pre.mermaid { background: none; padding: 0; text-align: center; overflow-x: auto; }
   .markdown-body pre.mermaid svg { max-width: 100%; max-height: 34rem; height: auto; }
   @media (max-width: 544px) { .avatar-hero { float: none; display: block; margin: 0 0 1rem; } }
 
@@ -69,5 +69,32 @@
   const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   mermaid.initialize({ startOnLoad: false, theme: dark ? "dark" : "default" });
   await mermaid.run();
+  // Mermaid scales each diagram down to fit its column. On a phone that shrinks
+  // a wide flowchart's 16px labels to 5-8px. Never scale below 70% (11px text);
+  // past that, the diagram keeps its size and scrolls sideways in its own box,
+  // the way wide tables already do.
+  const MIN_SCALE = 0.7;
+  const fitDiagrams = () => {
+    document.querySelectorAll("pre.mermaid svg").forEach((svg) => {
+      // Mermaid sets its own inline max-width (the diagram's natural width);
+      // keep it so wide screens render exactly as before.
+      svg.dataset.mermaidMaxWidth ??= svg.style.maxWidth;
+      const minWidth = svg.viewBox.baseVal.width * MIN_SCALE;
+      const tooSmall = minWidth > svg.parentElement.clientWidth;
+      svg.style.width = tooSmall ? `${minWidth}px` : "";
+      svg.style.maxWidth = tooSmall ? "none" : svg.dataset.mermaidMaxWidth;
+      svg.style.maxHeight = tooSmall ? "none" : "";
+      if (!tooSmall) return;
+      // Start the scroll on the top-most node (where a top-down flowchart
+      // begins) so the reader doesn't land on an empty corner.
+      const nodes = [...svg.querySelectorAll("g.node")];
+      if (!nodes.length) return;
+      const start = nodes.reduce((a, n) => (n.getBoundingClientRect().top < a.getBoundingClientRect().top ? n : a));
+      const box = svg.parentElement, s = start.getBoundingClientRect(), b = box.getBoundingClientRect();
+      box.scrollLeft += s.left + s.width / 2 - (b.left + b.width / 2);
+    });
+  };
+  fitDiagrams();
+  window.addEventListener("resize", fitDiagrams);
 </script>
 {% endif %}

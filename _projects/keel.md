@@ -17,9 +17,9 @@ The goal is for Graph to accept each message exactly once. Missing an alert is b
 
 ## Existing state
 
-The first version followed the usual advice for resilient API calls. `Invoke-WithBoundedRetry` retried every transient status (408, 429, 500, 502, 503, 504) with exponential backoff and `Retry-After` support. On top of that, `Send-Email` fell back to SMTP whenever Graph failed. Its Pester suite ran 198 test cases, and all of them passed.
+The first version followed the usual advice for resilient API calls. `Invoke-WithBoundedRetry` retried every transient status (408, 429, 500, 502, 503, 504) with exponential backoff and `Retry-After` support. On top of that, `Send-Email` fell back to SMTP whenever Graph failed. Its test suite, written in Pester (PowerShell's standard testing framework), ran 198 test cases, and all of them passed.
 
-An AI-assisted code review flagged the problem. Graph's `sendMail` is a POST, and it isn't idempotent. A 504 from a gateway means the gateway stopped waiting, not that Graph did nothing.
+An AI-assisted code review flagged the problem. Graph's `sendMail` is a POST, and it isn't idempotent: sending the same request twice can deliver the same message twice. A 504 from a gateway means the gateway stopped waiting, not that Graph did nothing.
 
 I treat review findings as hypotheses until I can reproduce them, so the first step was a reproduction, not a fix. With Graph mocked to return 504, a single `Send-Email` call made **three Graph requests and then one SMTP send**. If Graph had accepted any of them, recipients could get the same message up to four times.
 
@@ -71,7 +71,7 @@ flowchart TD
 
 **Turn off the SDK's retries, not just Keel's.** The Graph PowerShell SDK retries 429, 503, and 504 on its own, so Keel sets the SDK's `MaxRetry` to 0 for each send and restores the caller's settings afterward. Those settings are process-wide: while a message is in flight, other Graph calls in the same PowerShell process also run without SDK retries. I accepted that for the length of one request rather than lose control of what gets resent.
 
-The full reasoning, including a dated amendment for the SDK path, is in [ADR 0002](https://github.com/jackson-asmith/keel/blob/main/docs/adr/0002-no-resend-after-ambiguous-graph-failure.md).
+The full reasoning, including a dated amendment for the SDK path, is in an architecture decision record (ADR), [ADR 0002](https://github.com/jackson-asmith/keel/blob/main/docs/adr/0002-no-resend-after-ambiguous-graph-failure.md).
 
 ## Safeguards
 

@@ -13,7 +13,7 @@ mermaid: true
 
 This site scored 100 on Google's PageSpeed Insights desktop test but **86 on mobile**. The mobile test simulates a mid-range phone on a slow 4G connection, where every file that has to arrive before the page can draw costs far more than it does on desktop.
 
-The JavaScript and layout metrics were already perfect: Total Blocking Time was 20 ms and Cumulative Layout Shift was 0. All of the lost points came from two paint metrics:
+The JavaScript and layout metrics were already perfect: Total Blocking Time was 20 ms and Cumulative Layout Shift was 0. All of the lost points came from the paint metrics, which measure how soon the phone shows something: when the first text or image appears (First Contentful Paint), when the largest one does (Largest Contentful Paint), and how quickly the visible page fills in (Speed Index).
 
 | Metric | Mobile result |
 |---|---|
