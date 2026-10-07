@@ -1,7 +1,8 @@
 ---
-title: Keel
+title: "Keel: the retry that could send one alert four times"
 description: How a PowerShell mail library that retried and fell back on every failure could send one alert four times, and the redesign that makes it resend only when Graph provably refused the message.
-summary: A public PowerShell library for unattended automation — and the gateway timeout that could have sent the same alert four times.
+summary: Why "retry on server errors" isn't safe for a request that can't be repeated, and the redesign that makes a PowerShell mail library resend only when Microsoft Graph provably refused the message.
+show_summary: false
 date: 2026-09-28
 order: 1
 principles: [Automation must reduce risk, Testing comes before trust, Documentation is engineering work]
@@ -9,9 +10,11 @@ repo: https://github.com/jackson-asmith/keel
 mermaid: true
 ---
 
+One gateway timeout could make [Keel](https://github.com/jackson-asmith/keel), my PowerShell library for unattended automation, send the same alert up to four times, and its 198 passing tests never noticed. The cause was standard advice: retry on server errors. If your code retries HTTP requests that aren't safe to repeat, it may have the same bug. Below is how I reproduced it, and the redesign that turned that timeout into exactly one request and an error telling the operator to check before resending.
+
 ## Problem
 
-Unattended scripts need to tell people things: a sync failed, an account is about to expire, a certificate is due. [Keel](https://github.com/jackson-asmith/keel) is a small public PowerShell library for that kind of automation. `keel.Http` wraps REST calls in bounded retries, and `keel.Mail` sends mail through Microsoft Graph, with SMTP as a fallback.
+Unattended scripts need to tell people things: a sync failed, an account is about to expire, a certificate is due. In Keel, `keel.Http` wraps REST calls in bounded retries, and `keel.Mail` sends mail through Microsoft Graph, with SMTP as a fallback.
 
 The goal is for Graph to accept each message exactly once. Missing an alert is bad, but so is getting it four times: repeated alerts teach people to ignore them, and a duplicated notice to an end user looks like a malfunction.
 
