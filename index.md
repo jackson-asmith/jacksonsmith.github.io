@@ -6,15 +6,15 @@ description: Jackson Smith is a software engineer who spent a decade operating p
 
 # Hi, I'm Jackson
 
-I'm a software engineer in Philadelphia who spent ten years keeping production infrastructure running before moving into software. I bring an operator's instinct to code: I care about correctness, testability, and systems that are invisible when they work and recoverable when they break.
+I'm a software engineer in Philadelphia. Before moving into software, I spent ten years running production infrastructure, and that experience shaped how I write code: I care about correctness, testability, and systems that are invisible when they work and recoverable when they break.
 
-This site is less a résumé than a record of how I think about engineering — the principles I work by, the decisions behind the projects, and what I'd do differently next time.
+This site is less a résumé than a look at how I approach engineering: the principles I work by, the thinking behind my projects, and what I'd do differently next time.
 
-## Find your way around
+## Where to start
 
-* **Engineers of any level** — start with [how I approach engineering](/principles/) and the [projects](/projects/) that put it into practice.
-* **Hiring managers** — the [experience](/experience/) page has the full career history and skills.
-* **Everyone** — I'm always happy to talk shop, trade notes, or help someone earlier in their career. [Email me](mailto:jackson@jacksonasmith.com) or find me on [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/).
+* **Engineers:** my [engineering principles](/principles/) and the [projects](/projects/) where I've applied them.
+* **Hiring managers:** the [experience](/experience/) page has my full career history and technical skills.
+* **Everyone else:** I'm always up for talking shop or helping out if you're earlier in your career. [Email me](mailto:jackson@jacksonasmith.com) or connect on [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/).
 
 ## Impact
 
