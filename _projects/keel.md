@@ -4,7 +4,7 @@ description: How a PowerShell mail library that retried and fell back on every f
 summary: Why "retry on server errors" isn't safe for a request that can't be repeated, and the redesign that makes a PowerShell mail library resend only when Microsoft Graph provably refused the message.
 show_summary: false
 date: 2026-09-28
-order: 1
+order: 2
 principles: [Automation must reduce risk, Testing comes before trust, Documentation is engineering work]
 repo: https://github.com/jackson-asmith/keel
 mermaid: true
