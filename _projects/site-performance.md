@@ -3,7 +3,7 @@ title: Making this site faster on mobile
 description: How jacksonasmith.com went from 86 to 99 on PageSpeed's mobile performance test by removing what the page didn't need, and how I proved the change didn't move a single pixel.
 summary: A PageSpeed mobile score of 86, three things the page was loading that it didn't need, and the measurements that showed removing them changed nothing visible.
 date: 2026-10-02
-order: 3
+order: 4
 principles: [Testing comes before trust, Modernize incrementally]
 repo: https://github.com/jackson-asmith/jacksonsmith.github.io
 mermaid: true

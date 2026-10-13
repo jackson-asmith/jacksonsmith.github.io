@@ -50,6 +50,7 @@ Context for each number is on the [experience](/experience/) page.
 ## Selected work
 
 * [**Projects & case studies**](/projects/) — the problem, the constraints, the decision, and what I learned.
+* [**gh-baseline**](/projects/gh-baseline/) — a read-only `gh` extension that audits GitHub repositories against a tiered security baseline, built in Go from a manual audit of my own repositories.
 * [**Keel**](/projects/keel/) — PowerShell modules for unattended automation, CI-tested on Windows PowerShell 5.1 and PowerShell 7: bounded HTTP retries and Graph-first mail that won't resend after an ambiguous failure.
 * [**Email alignment checker**](/projects/email-alignment-checker/) — a scheduled GitHub Actions workflow that monitors this domain's SPF, DKIM, and DMARC records.
 
