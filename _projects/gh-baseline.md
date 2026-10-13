@@ -1,7 +1,7 @@
 ---
 title: "gh-baseline: the required checks that accepted any source"
 description: How a one-day audit of my GitHub repositories turned up checks anyone could satisfy and forgotten workflows that referenced credentials, and the read-only Go tool I built so it can't happen quietly again.
-summary: A gh extension that reports where repositories drift from a declared security baseline, built in Go by a PowerShell engineer with an LLM writing most of the code, and where judgment mattered more than the language.
+summary: A gh extension that reports where repositories drift from a declared security baseline, built in Go by an engineer who works mostly in cross-platform PowerShell, .NET, and Python, with an LLM writing most of the code, and where judgment mattered more than the language.
 show_summary: false
 date: 2026-10-13
 order: 1
@@ -47,7 +47,7 @@ I fixed the 8 repositories I still care about the same afternoon, through settin
 * **The API doesn't show everything.** Some settings, such as Dependabot malware alerts and the default permissions of the workflow token, aren't readable through the REST API with this kind of token. Others depend on the plan: rulesets on private repositories need a paid plan.
 * **The same error means different things.** On a private repository, reading branch rules returns HTTP 403 both on a free plan, where nothing can be fixed, and when the token lacks access, where protection might be missing. Only the message tells them apart.
 * **Its own supply chain.** A tool that audits action pinning and Dependabot coverage shouldn't arrive with a dependency tree of its own.
-* **I don't know Go.** I write PowerShell for a living. I chose Go because it builds a single binary for `gh` to install and because it's a language I want to grow into, which meant relying on an LLM for the code and putting my effort into design, tests, and review.
+* **I don't know Go.** At work I mostly write cross-platform PowerShell, .NET, and Python against APIs. I chose Go because it builds a single binary for `gh` to install and because it's a language I want to grow into, which meant relying on an LLM for the code and putting my effort into design, tests, and review.
 
 ## Options considered
 
