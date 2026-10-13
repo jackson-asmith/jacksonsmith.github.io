@@ -1,6 +1,6 @@
 ---
 title: "gh-baseline: the required checks that accepted any source"
-description: How a one-day audit of my GitHub repositories turned up checks anyone could satisfy and credentials that outlived their projects, and the read-only Go tool I built so it can't happen quietly again.
+description: How a one-day audit of my GitHub repositories turned up checks anyone could satisfy and forgotten workflows that referenced credentials, and the read-only Go tool I built so it can't happen quietly again.
 summary: A gh extension that reports where repositories drift from a declared security baseline, built in Go by a PowerShell engineer with an LLM writing most of the code, and where judgment mattered more than the language.
 show_summary: false
 date: 2026-10-13
@@ -10,7 +10,7 @@ repo: https://github.com/jackson-asmith/gh-baseline
 mermaid: true
 ---
 
-One of my repositories required four status checks before anything could merge, and anything allowed to post a commit status could have satisfied them, whether or not the checks ever ran. Two others, untouched since 2020, still had workflows that referenced cloud and package-registry credentials. I found all of it in a one-day audit of my public GitHub repositories, then turned that audit into [gh-baseline](https://github.com/jackson-asmith/gh-baseline), a `gh` extension that reports where repositories drift from a baseline you declare once, in a file.
+One of my repositories required four status checks before anything could merge, and anything allowed to post a commit status could have satisfied them, whether or not the checks ever ran. Two others, untouched since 2020, still had deploy and publish workflows that referenced cloud and package-registry secrets. I found all of it in a one-day audit of my public GitHub repositories, then turned that audit into [gh-baseline](https://github.com/jackson-asmith/gh-baseline), a `gh` extension that reports where repositories drift from a baseline you declare once, in a file.
 
 I wrote it in Go, a language I don't know, with an LLM writing most of the code. Below is how the audit became a tool, the decisions behind it, and where my judgment mattered more than the language did.
 
@@ -33,9 +33,11 @@ I audited all 11 of my public repositories by hand: 9 of my own and 2 forks. For
 | Secret scanning and push protection off | 5 of 11 | A committed credential goes unnoticed |
 | Workflows with no `permissions:` block | 4 of 8 with workflows | The job token gets the repository default, which may be write |
 | Required checks that accept any source | 1 (4 checks) | Any app or token that can post a status can satisfy them |
-| Stale repos whose workflows reference secrets | 2 | Credentials outlive the project that used them |
+| Stale repos whose workflows reference secrets | 2 | If the secrets are set, credentials outlive the project that used them |
 
-The last two were the surprises. The required checks looked like strong protection in the settings page; the source field read "Any source" and nothing flagged it. The stale repos were from 2020: one ran `terraform apply` with an Azure service principal on every push to an unprotected branch, and the other published a Ruby gem from a workflow that also ran on pull requests.
+The last two were the surprises. The required checks looked like strong protection in the settings page; the source field read "Any source" and nothing flagged it. The stale repos were from 2020. One was a fork from a virtual conference, with a workflow written to run `terraform apply` with an Azure service principal on every push to an unprotected branch. The other was a Ruby log analyzer from the course where I learned git and Ruby, and it published a gem from a workflow that also ran on pull requests.
+
+The fork turned out to be less dangerous than it looked. I had never set its secrets, so the workflow had nothing to authenticate with. The audit couldn't tell that from the outside, and neither can the tool: both see that a workflow references a secret, not whether the secret exists.
 
 I fixed the 8 repositories I still care about the same afternoon, through settings and four pull requests that pinned actions, restricted workflow tokens, and added Dependabot. The fixes were quick. Finding the problems took the day, and nothing would stop them from coming back.
 
@@ -114,6 +116,7 @@ The 403 ambiguity is settled once, in the collector: a 403 on a private reposito
 * **The LLM's suggestion was wrong, and a test showed it.** Reviewing an early version, it suggested deciding whether a private repository was on a free plan from the status code alone. A test case already in the suite had a private repository returning 403 because the token lacked access. Treating that as "free plan" would have reported a possibly unprotected repository as nothing to fix. The message turned out to be the only signal, so the classification moved into the collector and got its own decision record.
 * **A cleanup broke installation, and every check stayed green.** One round of changes deleted the release workflow. Tests passed and CI passed, but with no release binaries, the install command in the README would have failed. Review caught it before the first release, and an ADR now says why the workflow exists.
 * **A constraint became a principle.** I started with no dependencies partly because the environment I built it in couldn't download Go modules. Once I thought it through, it was the right call anyway, and ADR 0001 records why, along with its cost: workflow files are read line by line instead of parsed as YAML.
+* **Update, October 13: the cleanup is done.** I deleted the fork, made the Ruby repository private, and confirmed my GitHub account has no live personal access tokens.
 
 ## Principles demonstrated
 
@@ -125,11 +128,12 @@ The 403 ambiguity is settled once, in the collector: a 403 on a private reposito
 ## Lessons learned
 
 * **A setting that looks right isn't the same as one that is.** The "any source" checks passed every glance at the settings page. Most of what mattered in the audit was in a field nobody reads twice.
-* **Your attack surface includes what you've forgotten.** The riskiest repositories weren't my active projects. They were two I hadn't thought about in years.
+* **Your attack surface includes what you've forgotten.** The findings that looked worst weren't in my active projects. They were in two repositories I hadn't thought about in years.
+* **A reference isn't a credential.** The finding that looked most dangerous, a fork wired to deploy to Azure, pointed at secrets that had never been set. Reading the workflow told me what it would do with a credential, not whether one existed. I only knew because I remembered never setting it up.
 * **An LLM makes the code cheap, not the judgment.** It wrote most of the Go. It didn't know that GitHub uses one status code for two different situations, and it didn't notice that a passing build couldn't be installed. Both were caught by tests and review, which is where my time went.
 * **"Unknown" keeps coming back.** In the [email alignment checker](/projects/email-alignment-checker/), an empty DNS answer wasn't a missing record. In [Keel](/projects/keel/), a timeout wasn't a failure. Here, a setting the API won't show isn't a pass. Each time, the fix was to give "I couldn't tell" its own outcome.
 * **What I'd do next:**
   * Write SARIF output mostly by hand, with the LLM reviewing instead of writing, so findings appear in GitHub's Security tab and I can say I wrote that part of the Go.
   * Run it on a schedule against my own account and open an issue when anything drifts.
   * Choose tiers by topic or by whether a repository has CI, instead of listing names in the baseline.
-  * Archive the two 2020 repositories and revoke the credentials behind them, which the tool flags until I do.
+  * Check whether referenced secrets exist. The API lists a repository's secret names without their values, so the stale-secrets check can separate a live credential from an empty reference.
