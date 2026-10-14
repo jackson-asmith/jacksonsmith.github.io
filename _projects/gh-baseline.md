@@ -8,6 +8,7 @@ order: 1
 principles: [Governance should enable engineers, Testing comes before trust, Automation must reduce risk, Documentation is engineering work]
 repo: https://github.com/jackson-asmith/gh-baseline
 mermaid: true
+image: /assets/img/social/gh-baseline.png
 ---
 
 One of my repositories required four status checks before anything could merge, and anything allowed to post a commit status could have satisfied them, whether or not the checks ever ran. Two others, untouched since 2020, still had deploy and publish workflows that referenced cloud and package-registry secrets. I found all of it in a one-day audit of my public GitHub repositories, then turned that audit into [gh-baseline](https://github.com/jackson-asmith/gh-baseline), a `gh` extension that reports where repositories drift from a baseline you declare once, in a file.

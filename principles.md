@@ -2,6 +2,7 @@
 title: Engineering Principles
 description: The six principles behind how Jackson Smith designs, automates, and modernizes systems — and where each one shows up in real work.
 permalink: /principles/
+image: /assets/img/social/principles.png
 ---
 
 # How I approach engineering
