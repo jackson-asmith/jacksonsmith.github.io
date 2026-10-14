@@ -1,7 +1,7 @@
 ---
 title: "gh-baseline: the required checks that accepted any source"
 description: How a one-day audit of my GitHub repositories turned up checks anyone could satisfy and forgotten workflows that referenced credentials, and the read-only Go tool I built so it can't happen quietly again.
-summary: A gh extension that reports where repositories drift from a declared security baseline, built in Go by an engineer who works mostly in cross-platform PowerShell, .NET, and Python, with an LLM writing most of the code, and where judgment mattered more than the language.
+summary: A gh extension that reports where repositories drift from a declared security baseline. I built it in Go, a language I don't work in day to day, with an LLM writing most of the code, and the judgment mattered more than the language.
 show_summary: false
 date: 2026-10-13
 order: 1
@@ -116,7 +116,7 @@ Plan limits are classified once, in the collector: a 403 on a private repository
 * **A test asserted something GitHub doesn't do.** Reviewing an early version, the LLM suggested deciding whether a private repository was on a free plan from the status code alone. A test already in the suite had a private repository returning 403 because the token lacked access, and I took that as proof the suggestion was wrong. It was an assumption, not proof. When I checked against the live API, the plan message matched exactly, but a token without access got 404, not 403. The design held up, since checking the message only ever errs toward `unknown`. The decision record now carries an amendment saying its original reasoning was wrong, and the tests say where each response came from.
 * **A cleanup broke installation, and every check stayed green.** One round of changes deleted the release workflow. Tests passed and CI passed, but with no release binaries, the install command in the README would have failed. Review caught it before the first release, and an ADR now says why the workflow exists.
 * **A constraint became a principle.** I started with no dependencies partly because the environment I built it in couldn't download Go modules. Once I thought it through, it was the right call anyway, and ADR 0001 records why, along with its cost: workflow files are read line by line instead of parsed as YAML.
-* **Update, October 13: the cleanup is done.** I deleted the fork, made the Ruby repository private, and confirmed my GitHub account has no live personal access tokens.
+* **The cleanup is done.** I deleted the fork, made the Ruby repository private, and confirmed my GitHub account has no live personal access tokens.
 
 ## Principles demonstrated
 
@@ -133,7 +133,7 @@ Plan limits are classified once, in the collector: a 403 on a private repository
 * **An LLM makes the code cheap, not the judgment.** It wrote most of the Go, and it wrote tests that encoded its own beliefs about GitHub's API, one of which was false. It also didn't notice that a passing build couldn't be installed. Tests written alongside the code share its assumptions, so the expected answer has to come from somewhere else: a manual audit, review, or the live API. That's where my time went.
 * **"Unknown" keeps coming back.** In the [email alignment checker](/projects/email-alignment-checker/), an empty DNS answer wasn't a missing record. In [Keel](/projects/keel/), a timeout wasn't a failure. Here, a setting the API won't show isn't a pass. Each time, the fix was to give "I couldn't tell" its own outcome.
 * **What I'd do next:**
-  * Write SARIF output mostly by hand, with the LLM reviewing instead of writing, so findings appear in GitHub's Security tab and I can say I wrote that part of the Go.
+  * Write SARIF output mostly by hand, with the LLM reviewing instead of writing, so findings appear in GitHub's Security tab and I write part of the Go myself.
   * Run it on a schedule against my own account and open an issue when anything drifts.
   * Choose tiers by topic or by whether a repository has CI, instead of listing names in the baseline.
   * Test against the real thing: a fixture snapshot whose expected findings come from the manual audit, fuzzing for the workflow parser, and a smoke test that runs the released binary.
