@@ -8,6 +8,7 @@ order: 2
 principles: [Automation must reduce risk, Testing comes before trust, Documentation is engineering work]
 repo: https://github.com/jackson-asmith/keel
 mermaid: true
+image: /assets/img/social/keel.png
 ---
 
 One gateway timeout could make [Keel](https://github.com/jackson-asmith/keel), my PowerShell library for unattended automation, send the same alert up to four times, and its 198 passing tests never noticed. The cause was standard advice: retry on server errors. If your code retries HTTP requests that aren't safe to repeat, it may have the same bug. Below is how I reproduced it, and the redesign that turned that timeout into exactly one request and an error telling the operator to check before resending.

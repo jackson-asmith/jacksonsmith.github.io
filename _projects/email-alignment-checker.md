@@ -7,6 +7,7 @@ order: 3
 principles: [Automation must reduce risk, Reliability is a feature, Testing comes before trust]
 repo: https://github.com/jackson-asmith/email-alignment-checker
 mermaid: true
+image: /assets/img/social/email-alignment-checker.png
 ---
 
 ## Problem

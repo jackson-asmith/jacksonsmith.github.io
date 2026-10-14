@@ -7,6 +7,7 @@ order: 4
 principles: [Testing comes before trust, Modernize incrementally]
 repo: https://github.com/jackson-asmith/jacksonsmith.github.io
 mermaid: true
+image: /assets/img/social/site-performance.png
 ---
 
 ## Problem
