@@ -6,7 +6,7 @@ description: Jackson Smith is a software engineer who spent a decade operating p
 
 # Hi, I'm Jackson
 
-I'm a software engineer in Philadelphia. Before moving into software, I spent ten years running production infrastructure, and that experience shaped how I write code: I care about correctness, testability, and systems that are invisible when they work and recoverable when they break.
+I'm a software engineer in Philadelphia. Before moving into software, I spent ten years running production infrastructure, and that experience shaped how I write code: I think about failure modes first — what happens when the API throttles, a retry sends a duplicate, or nobody is watching at 3am. I care about correctness, testability, and systems that are invisible when they work and recoverable when they break.
 
 This site is less a résumé than a look at how I approach engineering: the principles I work by, the thinking behind my projects, and what I'd do differently next time.
 
@@ -40,6 +40,8 @@ Context for each number is on the [experience](/experience/) page.
 [Read the full principles, with examples →](/principles/)
 
 ## Current focus
+
+I'm most interested in internal platforms, developer tooling, and reliability engineering.
 
 * Bringing test coverage and CI quality gates to existing codebases
 * Reliable, unattended API integrations — Microsoft Graph, GitHub, identity platforms

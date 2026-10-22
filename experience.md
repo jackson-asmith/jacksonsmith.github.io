@@ -10,7 +10,7 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 
 ## Key Projects & Initiatives
 
-* **FinOps & BI Engineering**: Designed end-to-end BI solution for GitHub Enterprise billing — ETL pipeline consuming the GitHub REST API (built in PowerShell, then re-platformed to Python for the data team), star schema semantic model, and DAX measures powering Power BI dashboards for cost visibility. Paired with automated GitHub Copilot budget governance (per-user overrides, cost center management) via the billing API.
+* **Shared Library Engineering**: Replaced copy-pasted helpers across 12 repos with shared, versioned modules (retry, email, HTTP resilience, GitHub platform primitives). The email module is now the mail standard for other Corporate Technology teams. Brought core automation to library standards — manifests, versioning, public/private API separation, docs, and the team's first unit tests with CI on every push and PR.
 
 * **High Availability Architecture**: Part of the operations team that removed the single point of failure in core SQL infrastructure with a three-node availability group (sub-15-minute RTO), one piece of taking the platform from 40–60% to 99.99% availability.
 
@@ -22,35 +22,26 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 
 ### Software Engineer | Public Consulting Group; Remote -- March 2026–Present
 
-#### Systems Integration & Analytics
+Technical owner of all code for prodapps, the Corporate Technology team that turns PCG's enterprise platforms into reliable, governed services and automation (four engineers, 12 repos). I turn one-off automation into reusable, tested engineering components.
 
-* Designed end-to-end BI solution for GitHub Enterprise billing: GitHub REST API ingestion, star schema semantic model, and DAX measures powering curated Power BI dashboards for cost visibility and budget governance.
-* Re-platformed the ETL pipeline from PowerShell to Python so the data team could read, maintain, and extend it in their own stack.
-* Built orchestration workflows connecting GitHub Enterprise and Entra ID REST APIs, implementing rate-limit handling, exponential backoff retry logic, and structured event logging for reliable unattended execution.
-* Automated GitHub Copilot cost governance via the GitHub billing API, including per-user budget overrides and cost center management.
+#### Shared Libraries & Engineering Standards
 
-#### Testing & Code Quality
+* Replaced copy-pasted helpers with shared, versioned modules. Each app had its own retry and email logic, causing drift and unclear ownership. I made the case and built the modules; the email module is now the mail standard for other Corporate Technology teams and is rolling out across all 12 of our repos.
+* Standardized HTTP resilience (bounded retries, backoff, Retry-After handling), ending per-app reimplementations.
+* Modernized email with a backward-compatible drop-in for Send-MailMessage: Graph by default, SMTP fallback, transport hidden from callers.
+* Brought core automation to library standards: manifests, versioning, public/private API separation, docs, and the team's first unit tests with CI on every push and PR.
 
-* Established foundational Pester unit test suite and reusable shared test infrastructure for an existing codebase, creating automated quality gates where none previously existed.
-* Configured CI pipeline executing Pester tests on push and pull request events, enforcing code quality standards across the development workflow from day one.
-* Authored a GitHub Copilot custom-instructions file codifying a team PowerShell style guide and Microsoft's recommended development practices, substantially reducing recurring AI-generated anti-patterns (e.g., non-idiomatic `return $var` usage) across the team's codebase before code reaches review.
-* Adopted a structured AI-assisted development workflow — documenting research findings and implementation plans before generating code, with explicit review checkpoints to correct assumptions and scope, and the same Pester tests and CI gates as any other change — keeping architectural control over AI-authored changes rather than accepting output wholesale.
+#### GitHub Platform & Governance
 
-#### Platform Reliability & Modernization
+* Built a shared GitHub platform layer (discovery, REST/GraphQL access, normalization) so governance and access-review tools share primitives instead of parallel implementations.
+* Automated recurring GitHub access reviews on that layer, replacing manual examination.
+* Put GitHub Copilot administration on a data-driven footing: consumption and seat-utilization reporting, policy assessment, governance standards for leadership, and cost controls automated through the billing API.
+* Designed the BI solution for GitHub Enterprise billing (API ingestion, star-schema model, Power BI dashboards) and re-platformed the ETL to Python so the data team could own it.
 
-* Centralized shared mail delivery on the Microsoft Graph API, migrating email delivery away from legacy SMTP dependencies.
-* Implemented targeted input validation and hardening on critical workflows, reducing attack surface and improving operational resilience of production systems.
+#### Beyond the Team
 
-#### Architecture & Modernization Strategy
-
-* Conducted architectural assessment of existing codebase, identifying strengths, gaps, and a prioritized improvement roadmap — balancing modernization velocity against production risk.
-* Planned and began a phased modularization strategy: extracting notification and directory lookup logic from monolithic orchestration scripts before touching destructive workflows, ensuring each extraction is independently unit-testable and carries no production side effects.
-* Built the team's internal PowerShell standard library of core, modular functions for automation shared across four engineers, now used in 24 production scripts (47 call sites) in its first repository, with shared test infrastructure and CI.
-* Identified and fixed a latent production bug in a directory lookup, surfaced by the new test suite during refactoring.
-
-#### Documentation
-
-* Authored focused documentation for shared function helpers and the test system, improving developer onboarding and long-term maintainability.
+* Partnered with a junior engineer outside prodapps to make Corporate Technology's license-assignment automation reliable.
+* Identified a credential-exposure risk while reviewing onboarding automation, treating security as part of correctness.
 
 ### Operations Engineer | Lincoln Investment; Remote -- April 2022–January 2026
 
