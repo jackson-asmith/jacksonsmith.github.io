@@ -38,6 +38,13 @@ Technical owner of all code for prodapps, the Corporate Technology team that tur
 * Put GitHub Copilot administration on a data-driven footing: consumption and seat-utilization reporting, policy assessment, governance standards for leadership, and cost controls automated through the billing API.
 * Designed the BI solution for GitHub Enterprise billing (API ingestion, star-schema model, Power BI dashboards) and re-platformed the ETL to Python so the data team could own it.
 
+#### Testing, CI & AI-Assisted Development
+
+* Established the team's first Pester unit test suite and reusable shared test infrastructure for an existing codebase, creating automated quality gates where none previously existed.
+* Configured CI executing Pester tests on every push and PR, enforcing code quality standards from day one.
+* Authored a GitHub Copilot custom-instructions file codifying the team's PowerShell style guide, substantially reducing recurring AI-generated anti-patterns across the codebase before changes reach review.
+* Use a structured AI-assisted development workflow daily: documenting research findings and implementation plans before generating code, with explicit review checkpoints to correct assumptions and scope, and the same tests and CI gates as any other change — keeping architectural control over AI-authored changes rather than accepting output wholesale.
+
 #### Beyond the Team
 
 * Partnered with a junior engineer outside prodapps to make Corporate Technology's license-assignment automation reliable.
