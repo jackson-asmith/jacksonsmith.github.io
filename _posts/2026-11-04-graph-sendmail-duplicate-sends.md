@@ -78,7 +78,9 @@ finally {
 }
 ```
 
-One caveat: the SDK's request context is process-wide, so while that call is in flight, other Graph calls in the same process also run without SDK retries.
+One caveat: the SDK's request context is process-wide, shared by every runspace, so while that call is in flight, other Graph calls in the same process also run without SDK retries.
+
+**Update, November 2026:** if one process sends in parallel, for example with `ForEach-Object -Parallel`, this snippet isn't enough on its own. Two overlapping sends can undo each other: one restores retries while the other's request is going out, and the SDK resends it after a 504. Run sends one at a time, or hold one lock shared by the whole process around saving, changing, and restoring the settings. keel does the latter as of [1.1.1](https://github.com/jackson-asmith/keel/releases/tag/v1.1.1); [PR #12](https://github.com/jackson-asmith/keel/pull/12) has the details.
 
 The trade-off is deliberate. Some messages that a retry would have delivered now fail instead. I'd rather a job fail loudly than send a quiet duplicate. The full reasoning is in [ADR 0002](https://github.com/jackson-asmith/keel/blob/main/docs/adr/0002-no-resend-after-ambiguous-graph-failure.md).
 
