@@ -97,6 +97,8 @@ Log mode doesn't help you predict blocks either. Every entry in my log-mode run 
 
 I now keep a comment in the policy file: a DNS or connection error in CI means check the `firewall-decisions-*` artifact first.
 
+I've reported both to GitHub's early-access program: [blocks aren't attributed to the firewall in the job log](https://github.com/github-early-access/actions-native-egress-firewall/issues/40), and [`wouldBlock` is false in log mode for hosts that enforce mode blocks](https://github.com/github-early-access/actions-native-egress-firewall/issues/41).
+
 ## Cost: barely measurable
 
 After the first run, firewall runs took 13–23 seconds, no slower than without the firewall.
