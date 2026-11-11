@@ -118,6 +118,7 @@ Plan limits are classified once, in the collector: a 403 on a private repository
 * **A cleanup broke installation, and every check stayed green.** One round of changes deleted the release workflow. Tests passed and CI passed, but with no release binaries, the install command in the README would have failed. Review caught it before the first release, and an ADR now says why the workflow exists.
 * **A constraint became a principle.** I started with no dependencies partly because the environment I built it in couldn't download Go modules. Once I thought it through, it was the right call anyway, and ADR 0001 records why, along with its cost: workflow files are read line by line instead of parsed as YAML.
 * **The cleanup is done.** I deleted the fork, made the Ruby repository private, and confirmed my GitHub account has no live personal access tokens.
+* **CI runs behind GitHub's egress firewall.** It's in enforce mode, with one host allowed beyond GitHub's own endpoints. [What I learned setting it up](/writing/2026/actions-egress-firewall-field-report/).
 
 ## Principles demonstrated
 
