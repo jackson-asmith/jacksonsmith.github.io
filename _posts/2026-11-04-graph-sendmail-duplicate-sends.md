@@ -103,4 +103,6 @@ The tests assert that a `504` produces exactly one request, that a `429` is retr
 
 I've reported the retry behavior to the Kiota maintainers in [microsoft/kiota-dotnet#851](https://github.com/microsoft/kiota-dotnet/issues/851), with a reproduction script, and suggested not retrying `504` for POST requests by default. Until something changes, `MaxRetry 0` around your sends is the workaround.
 
+**Update, November 13, 2026:** the Kiota maintainers merged a fix in [microsoft/kiota-dotnet#864](https://github.com/microsoft/kiota-dotnet/pull/864). It adds a `RetryUnprocessedMutationsOnly` setting to the retry handler. When it's on, POST and PATCH requests are retried only after a `429` or `503`, so a `504` or other ambiguous failure goes back to the caller instead of being resent. It's off by default, so nothing changes unless you turn it on. It's expected in kiota-dotnet 2.2.0. Once that's released, .NET code that builds its own Graph client can enable it through `RetryHandlerOption`. PowerShell can't set it yet, because `Set-MgRequestContext` only exposes `MaxRetry`, `RetryDelay`, and `RetriesTimeLimit`. So for PowerShell scripts, `MaxRetry 0` around your sends is still the workaround. The maintainers have also opened issues to add the same setting to Kiota's other languages.
+
 Keel is [on GitHub](https://github.com/jackson-asmith/keel) under the MIT license.
