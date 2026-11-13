@@ -1,6 +1,7 @@
 ---
 title: "One retry fix, eight Kiota SDKs"
 description: I fixed a duplicate-send bug in Kiota's .NET retry handler, and the maintainer asked me to port it to every other language. The fix was the same everywhere. The code around it wasn't.
+date: 2026-11-13
 principles: [Reliability is a feature, Testing comes before trust]
 ---
 
@@ -18,7 +19,7 @@ That name isn't perfectly precise: PUT and DELETE are mutations too, but they're
 
 ## Eight days, then a few hours
 
-The issue sat for eight days with no response. The pull request, [microsoft/kiota-dotnet#864](https://github.com/microsoft/kiota-dotnet/pull/864), was reviewed within hours and merged the next morning. Then the maintainer asked whether I'd port it to Python, PHP, TypeScript, Go, Dart, Ruby and Java, and opened an issue in each repository with a checklist of the tests they wanted.
+The issue sat for eight days with no response. The pull request, [microsoft/kiota-dotnet#864](https://github.com/microsoft/kiota-dotnet/pull/864), was reviewed within hours and merged the next morning. Then the maintainer asked whether I'd port it to Python, PHP, TypeScript, Go, Dart, Ruby and Java, and opened an issue in each repository with a checklist of the tests they wanted. All seven ports were merged by the end of that same day.
 
 If you're hoping to get a bug fixed in a busy open source project, that's the lesson I'd pass on: an issue asks maintainers for their time, while a tested pull request asks for much less of it.
 
@@ -64,7 +65,7 @@ Two habits came out of that. When a maintainer gives you a test checklist, write
 
 ## If you use the Graph SDKs
 
-[TODO: once kiota-dotnet 2.2.0 ships, link the release and confirm the version number.] For .NET, the setting ships in kiota-dotnet 2.2.0. Code that builds its own Graph client can turn it on through `RetryHandlerOption`:
+For .NET, the setting is merged and will ship in the next kiota-dotnet release, 2.2.0 in the [open release pull request](https://github.com/microsoft/kiota-dotnet/pull/854). Once it's out, code that builds its own Graph client can turn it on through `RetryHandlerOption`:
 
 ```csharp
 var retryOption = new RetryHandlerOption
@@ -73,6 +74,6 @@ var retryOption = new RetryHandlerOption
 };
 ```
 
-The other languages have the same setting under their own naming conventions. [TODO: confirm the Dart and Ruby pull requests merged, and link their releases if available.]
+The other seven SDKs have the same setting under their own naming conventions, merged in [Go](https://github.com/microsoft/kiota-http-go/pull/312), [Python](https://github.com/microsoft/kiota-python/pull/897), [Java](https://github.com/microsoft/kiota-java/pull/2251), [TypeScript](https://github.com/microsoft/kiota-typescript/pull/2230), [PHP](https://github.com/microsoft/kiota-php/pull/143), [Dart](https://github.com/microsoft/kiota-dart/pull/179) and [Ruby](https://github.com/microsoft/kiota-ruby/pull/225). Each arrives with that SDK's next release.
 
 Two caveats. The generated SDKs don't turn it on for you, so you have to opt in. And the Graph PowerShell SDK can't set it yet: `Set-MgRequestContext` only exposes `MaxRetry`, `RetryDelay` and `RetriesTimeLimit`. For PowerShell scripts, [turning off SDK retries around your sends](/writing/2026/graph-sendmail-duplicate-sends/) is still the workaround, and it's what [keel](https://github.com/jackson-asmith/keel) keeps doing for now.
