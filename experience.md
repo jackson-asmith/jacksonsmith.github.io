@@ -82,7 +82,11 @@ Core member of the operations team that took a 1,200-server hybrid Azure/VMware 
 * Partnered with InfoSec on the Zscaler Zero Trust rollout and incident response.
 * Worked with developers on Java production issues, cutting MTTR 40%.
 
+<div class="early-roles" markdown="1">
+
 ### Network Analyst | Chester County Library System; Remote -- February 2019–April 2022
+
+<div class="no-print" markdown="1">
 
 #### Infrastructure Automation & Efficiency
 
@@ -96,20 +100,36 @@ Core member of the operations team that took a 1,200-server hybrid Azure/VMware 
 * Served as technical lead for County Disaster Recovery and Business Continuity planning, architecting high-availability solutions including VPN failover, ISP redundancy, and remote work enablement that ensured seamless operations during 2020 pandemic transition.
 * Mentored two junior system administrators.
 
+</div>
+
 ### Service Analyst | County of Chester; West Chester, PA -- October 2016–February 2019
+
+<div class="no-print" markdown="1">
 
 * Delivered technical support for 2,500+ users across hybrid VMware/Windows/Linux environment while maintaining 95%+ CSAT scores through consistent communication and rapid resolution.
 * Acted as technical advisor to County Disaster Recovery and Business Continuity committees, providing expertise on high-availability architecture, network redundancy strategies, and ISP failover configurations to ensure operational resilience.
 
+</div>
+
 ### IT Consultant | Robert Half Technology; Philadelphia, PA -- February 2016–October 2016
+
+<div class="no-print" markdown="1">
 
 * Executed cloud migration projects for multi-site clients, successfully transitioning from on-premise Active Directory/Exchange to Azure AD and Microsoft 365 with zero data loss.
 * Maintained 99.9% uptime across diverse Windows and Linux server environments through proactive configuration management and optimized patching workflows.
 * Coordinated infrastructure deployments with vendor partners, ensuring structured cabling and equipment installations met performance and compliance standards.
 
+</div>
+
 ### Technician | County of Chester; West Chester, PA -- April 2015–April 2016
 
+<div class="no-print" markdown="1">
+
 * Provided Level 2 technical support to 900+ users across county agencies, developing PowerShell automation scripts and documentation that reduced ticket escalations by 25%.
+
+</div>
+
+</div>
 
 ## Projects
 
@@ -143,22 +163,22 @@ Board member of a nonprofit professional association for systems administrators:
 * **Cloud & Infrastructure:** AWS, Azure; VMware vSphere, Hyper-V, VirtualBox
 * **Automation & Infrastructure as Code:** Ansible, Terraform; PowerShell, Bash, Ruby, Python, HCL; Chef (familiar with Puppet and Salt)
 * **API Integration:** REST APIs: Microsoft Graph, GitHub, Atlassian, CrowdStrike, Power BI
-* **Configuration Management:** SCCM, Satellite
+* {: .no-print} **Configuration Management:** SCCM, Satellite
 * **Monitoring & Observability:** New Relic, Zabbix; Prometheus, Grafana; OpenTelemetry; rsyslog, Logstash (ELK Stack)
 * **AI-Assisted Development:** Claude Code, GitHub Copilot with custom instructions (daily development); Ollama with Qwen and DeepSeek (local models); Mixtral 8x7B (prior fine-tuning work)
-* **Application Support:** Java application troubleshooting; XML configuration; Application server middleware
+* {: .no-print} **Application Support:** Java application troubleshooting; XML configuration; Application server middleware
 * **Containerization:** Docker
 * **Databases:** Microsoft SQL Server; PostgreSQL, MySQL, MariaDB; MongoDB, Cassandra
-* **Data & Analytics:** Power BI, DAX; Semantic modeling (star schema); ETL pipeline design (Python, Jupyter, PowerShell)
-* **Networking & Security:** Cisco, Meraki; DNS, PKI/Certificate Management; SSL/TLS Automation (Certbot, Let's Encrypt, ACME Protocol); OpenVPN, AnyConnect, GlobalProtect, Zscaler
-* **Web Services & Load Balancers:** NGINX, HAProxy; Apache httpd, IIS
-* **Backup Solutions:** Veritas NetBackup; Veritas HubStor (NetBackup SaaS Protection); Dell Avamar, Dell NetWorker; Veeam
-* **Directory Services & IAM:** Active Directory; 389 Directory Service, Samba; OneLogin, Okta
-* **Email & Messaging Platforms:** Microsoft Exchange (On-Premises & Online); Microsoft 365 & Teams Administration; Google Workspace Administration; Slack Administration (SAML/SSO Integration); Cisco Unified Communications; Email Authentication (DMARC, SPF, DKIM); SMTP Protocol & Relay Configuration (SendGrid, Mailgun, IIS); Compliance & eDiscovery (Purview, Smarsh)
-* **Operating Systems:** Linux: Debian, CentOS, RHEL; Unix: macOS, OpenBSD, FreeBSD; Windows: NT 3.1-11, Server 2003-2025
+* {: .no-print} **Data & Analytics:** Power BI, DAX; Semantic modeling (star schema); ETL pipeline design (Python, Jupyter, PowerShell)
+* {: .no-print} **Networking & Security:** Cisco, Meraki; DNS, PKI/Certificate Management; SSL/TLS Automation (Certbot, Let's Encrypt, ACME Protocol); OpenVPN, AnyConnect, GlobalProtect, Zscaler
+* {: .no-print} **Web Services & Load Balancers:** NGINX, HAProxy; Apache httpd, IIS
+* {: .no-print} **Backup Solutions:** Veritas NetBackup; Veritas HubStor (NetBackup SaaS Protection); Dell Avamar, Dell NetWorker; Veeam
+* {: .no-print} **Directory Services & IAM:** Active Directory; 389 Directory Service, Samba; OneLogin, Okta
+* {: .no-print} **Email & Messaging Platforms:** Microsoft Exchange (On-Premises & Online); Microsoft 365 & Teams Administration; Google Workspace Administration; Slack Administration (SAML/SSO Integration); Cisco Unified Communications; Email Authentication (DMARC, SPF, DKIM); SMTP Protocol & Relay Configuration (SendGrid, Mailgun, IIS); Compliance & eDiscovery (Purview, Smarsh)
+* {: .no-print} **Operating Systems:** Linux: Debian, CentOS, RHEL; Unix: macOS, OpenBSD, FreeBSD; Windows: NT 3.1-11, Server 2003-2025
 * **Version Control & Development Tools:** Git, GitHub, GitLab, Bitbucket; VS Code, Vim; Vagrant, VirtualBox; strace/truss, Valgrind; PowerCLI, MDT; Pester
-* **Package Managers:** apt, dpkg, pkg, yum; chocolatey, nuget, winget (Windows)
-* **Collaboration Tools:** Jira, Confluence; Slack, Rocket.Chat, Microsoft Teams
+* {: .no-print} **Package Managers:** apt, dpkg, pkg, yum; chocolatey, nuget, winget (Windows)
+* {: .no-print} **Collaboration Tools:** Jira, Confluence; Slack, Rocket.Chat, Microsoft Teams
 
 ## Education
 
