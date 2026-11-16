@@ -2,11 +2,15 @@
 title: Experience
 description: Ten-plus years across software, platform, and infrastructure engineering — roles, projects, and technical skills.
 permalink: /experience/
+print_resume: true
 ---
 
 # Experience
 
-Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasmith.com) or connect on [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/).
+Need a résumé? <button type="button" class="print-button">Save this page as a PDF</button> For a quick chat, [email me](mailto:jackson@jacksonasmith.com) or connect on [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/).
+{: .no-print}
+
+<div class="no-print" markdown="1">
 
 ## Key Projects & Initiatives
 
@@ -17,6 +21,8 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 * **Legacy Infrastructure Modernization**: Led strategic refactoring of critical systems (internal DNS, certificate lifecycle, syslog normalization) reducing operational escalations by 50% over 12 months through systematic reliability improvements and automation.
 
 * **Security Engineering**: Partnered with InfoSec as a trusted technical contributor across Zero Trust network deployment (Zscaler), certificate authority migration (Entrust → DigiCert with Azure KeyVault automation), PKI lifecycle management, and major security incident response.
+
+</div>
 
 ## Roles
 
@@ -76,7 +82,11 @@ Core member of the operations team that took a 1,200-server hybrid Azure/VMware 
 * Partnered with InfoSec on the Zscaler Zero Trust rollout and incident response.
 * Worked with developers on Java production issues, cutting MTTR 40%.
 
+<div class="early-roles" markdown="1">
+
 ### Network Analyst | Chester County Library System; Remote -- February 2019–April 2022
+
+<div class="no-print" markdown="1">
 
 #### Infrastructure Automation & Efficiency
 
@@ -90,20 +100,36 @@ Core member of the operations team that took a 1,200-server hybrid Azure/VMware 
 * Served as technical lead for County Disaster Recovery and Business Continuity planning, architecting high-availability solutions including VPN failover, ISP redundancy, and remote work enablement that ensured seamless operations during 2020 pandemic transition.
 * Mentored two junior system administrators.
 
+</div>
+
 ### Service Analyst | County of Chester; West Chester, PA -- October 2016–February 2019
+
+<div class="no-print" markdown="1">
 
 * Delivered technical support for 2,500+ users across hybrid VMware/Windows/Linux environment while maintaining 95%+ CSAT scores through consistent communication and rapid resolution.
 * Acted as technical advisor to County Disaster Recovery and Business Continuity committees, providing expertise on high-availability architecture, network redundancy strategies, and ISP failover configurations to ensure operational resilience.
 
+</div>
+
 ### IT Consultant | Robert Half Technology; Philadelphia, PA -- February 2016–October 2016
+
+<div class="no-print" markdown="1">
 
 * Executed cloud migration projects for multi-site clients, successfully transitioning from on-premise Active Directory/Exchange to Azure AD and Microsoft 365 with zero data loss.
 * Maintained 99.9% uptime across diverse Windows and Linux server environments through proactive configuration management and optimized patching workflows.
 * Coordinated infrastructure deployments with vendor partners, ensuring structured cabling and equipment installations met performance and compliance standards.
 
+</div>
+
 ### Technician | County of Chester; West Chester, PA -- April 2015–April 2016
 
+<div class="no-print" markdown="1">
+
 * Provided Level 2 technical support to 900+ users across county agencies, developing PowerShell automation scripts and documentation that reduced ticket escalations by 25%.
+
+</div>
+
+</div>
 
 ## Projects
 
@@ -112,10 +138,14 @@ Core member of the operations team that took a 1,200-server hybrid Azure/VMware 
 * **Microsoft Kiota retry safety:** Took the rule behind [Keel](/projects/keel/), my PowerShell automation modules (never resend a request that may already have been processed), upstream to Microsoft Kiota, the HTTP runtime under the Microsoft Graph SDKs. After I reported the bug and fixed it in .NET, the maintainer asked me to port it to every language. Designed an opt-in option so a non-idempotent request (POST, PATCH) is retried only when the server is known not to have processed it, and implemented it in all 8 language SDKs ([.NET](https://github.com/microsoft/kiota-dotnet/pull/864), [Go](https://github.com/microsoft/kiota-http-go/pull/312), [Java](https://github.com/microsoft/kiota-java/pull/2251), [Python](https://github.com/microsoft/kiota-python/pull/897), [TypeScript](https://github.com/microsoft/kiota-typescript/pull/2230), [PHP](https://github.com/microsoft/kiota-php/pull/143), [Ruby](https://github.com/microsoft/kiota-ruby/pull/225), [Dart](https://github.com/microsoft/kiota-dart/pull/179)), tracing how each runtime orders its redirect and retry middleware, what a retry actually resends, and which extension points exist.
 * Found a 303-redirect edge case in Go and Dart where the same rule could resend an already-accepted POST; fixed it, and documented a library-level limitation in Dart. All 8 PRs merged upstream. [Write-up: one retry fix, eight SDKs](/writing/2026/one-retry-fix-eight-sdks/).
 
+<div class="no-print" markdown="1">
+
 ### Home Projects
 
 * Local LLM Infrastructure & Fine-Tuning: Run local models through Ollama (currently Qwen and DeepSeek) for private experimentation. Previously ran Mixtral 8x7B and 8x22B and fine-tuned a custom Mixtral 8x7B model, gaining hands-on experience with model architecture, quantization, and GPU resource optimization.
 * Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX) with automated SSL/TLS certificate lifecycle via Certbot/Let's Encrypt. Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana.
+
+</div>
 
 ## Community
 
@@ -133,22 +163,22 @@ Board member of a nonprofit professional association for systems administrators:
 * **Cloud & Infrastructure:** AWS, Azure; VMware vSphere, Hyper-V, VirtualBox
 * **Automation & Infrastructure as Code:** Ansible, Terraform; PowerShell, Bash, Ruby, Python, HCL; Chef (familiar with Puppet and Salt)
 * **API Integration:** REST APIs: Microsoft Graph, GitHub, Atlassian, CrowdStrike, Power BI
-* **Configuration Management:** SCCM, Satellite
+* {: .no-print} **Configuration Management:** SCCM, Satellite
 * **Monitoring & Observability:** New Relic, Zabbix; Prometheus, Grafana; OpenTelemetry; rsyslog, Logstash (ELK Stack)
 * **AI-Assisted Development:** Claude Code, GitHub Copilot with custom instructions (daily development); Ollama with Qwen and DeepSeek (local models); Mixtral 8x7B (prior fine-tuning work)
-* **Application Support:** Java application troubleshooting; XML configuration; Application server middleware
+* {: .no-print} **Application Support:** Java application troubleshooting; XML configuration; Application server middleware
 * **Containerization:** Docker
 * **Databases:** Microsoft SQL Server; PostgreSQL, MySQL, MariaDB; MongoDB, Cassandra
-* **Data & Analytics:** Power BI, DAX; Semantic modeling (star schema); ETL pipeline design (Python, Jupyter, PowerShell)
-* **Networking & Security:** Cisco, Meraki; DNS, PKI/Certificate Management; SSL/TLS Automation (Certbot, Let's Encrypt, ACME Protocol); OpenVPN, AnyConnect, GlobalProtect, Zscaler
-* **Web Services & Load Balancers:** NGINX, HAProxy; Apache httpd, IIS
-* **Backup Solutions:** Veritas NetBackup; Veritas HubStor (NetBackup SaaS Protection); Dell Avamar, Dell NetWorker; Veeam
-* **Directory Services & IAM:** Active Directory; 389 Directory Service, Samba; OneLogin, Okta
-* **Email & Messaging Platforms:** Microsoft Exchange (On-Premises & Online); Microsoft 365 & Teams Administration; Google Workspace Administration; Slack Administration (SAML/SSO Integration); Cisco Unified Communications; Email Authentication (DMARC, SPF, DKIM); SMTP Protocol & Relay Configuration (SendGrid, Mailgun, IIS); Compliance & eDiscovery (Purview, Smarsh)
-* **Operating Systems:** Linux: Debian, CentOS, RHEL; Unix: macOS, OpenBSD, FreeBSD; Windows: NT 3.1-11, Server 2003-2025
+* {: .no-print} **Data & Analytics:** Power BI, DAX; Semantic modeling (star schema); ETL pipeline design (Python, Jupyter, PowerShell)
+* {: .no-print} **Networking & Security:** Cisco, Meraki; DNS, PKI/Certificate Management; SSL/TLS Automation (Certbot, Let's Encrypt, ACME Protocol); OpenVPN, AnyConnect, GlobalProtect, Zscaler
+* {: .no-print} **Web Services & Load Balancers:** NGINX, HAProxy; Apache httpd, IIS
+* {: .no-print} **Backup Solutions:** Veritas NetBackup; Veritas HubStor (NetBackup SaaS Protection); Dell Avamar, Dell NetWorker; Veeam
+* {: .no-print} **Directory Services & IAM:** Active Directory; 389 Directory Service, Samba; OneLogin, Okta
+* {: .no-print} **Email & Messaging Platforms:** Microsoft Exchange (On-Premises & Online); Microsoft 365 & Teams Administration; Google Workspace Administration; Slack Administration (SAML/SSO Integration); Cisco Unified Communications; Email Authentication (DMARC, SPF, DKIM); SMTP Protocol & Relay Configuration (SendGrid, Mailgun, IIS); Compliance & eDiscovery (Purview, Smarsh)
+* {: .no-print} **Operating Systems:** Linux: Debian, CentOS, RHEL; Unix: macOS, OpenBSD, FreeBSD; Windows: NT 3.1-11, Server 2003-2025
 * **Version Control & Development Tools:** Git, GitHub, GitLab, Bitbucket; VS Code, Vim; Vagrant, VirtualBox; strace/truss, Valgrind; PowerCLI, MDT; Pester
-* **Package Managers:** apt, dpkg, pkg, yum; chocolatey, nuget, winget (Windows)
-* **Collaboration Tools:** Jira, Confluence; Slack, Rocket.Chat, Microsoft Teams
+* {: .no-print} **Package Managers:** apt, dpkg, pkg, yum; chocolatey, nuget, winget (Windows)
+* {: .no-print} **Collaboration Tools:** Jira, Confluence; Slack, Rocket.Chat, Microsoft Teams
 
 ## Education
 
