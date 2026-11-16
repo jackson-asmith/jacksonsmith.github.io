@@ -19,11 +19,10 @@ This site is less a résumé than a look at how I approach engineering: the prin
 ## Impact
 
 <ul class="impact">
+  <li><strong>8 SDKs</strong><span>my retry-safety fix, <a href="/writing/2026/one-retry-fix-eight-sdks/">merged into Microsoft’s Kiota</a> in every language</span></li>
   <li><strong>24 scripts</strong><span>(47 call sites) now running on the internal standard library I built for my team</span></li>
-  <li><strong>$400K+</strong><span>annual outsourcing cost eliminated through automated patching</span></li>
-  <li><strong>−70%</strong><span>monthly vulnerability exposure from the same pipeline</span></li>
+  <li><strong>$400K+</strong><span>annual outsourcing cost eliminated, and 70% less vulnerability exposure, through automated patching</span></li>
   <li><strong>40–60% → 99.99%</strong><span>availability on a 1,200-server platform our ops team stabilized</span></li>
-  <li><strong>24h → 4h</strong><span>recovery time objective on a hybrid-cloud backup rebuild</span></li>
 </ul>
 
 Context for each number is on the [experience](/experience/) page.
