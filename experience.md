@@ -107,6 +107,11 @@ Core member of the operations team that took a 1,200-server hybrid Azure/VMware 
 
 ## Projects
 
+### Open Source
+
+* **Microsoft Kiota retry safety:** Took the rule behind [Keel](/projects/keel/), my PowerShell automation modules (never resend a request that may already have been processed), upstream to Microsoft Kiota, the HTTP runtime under the Microsoft Graph SDKs. After I reported the bug and fixed it in .NET, the maintainer asked me to port it to every language. Designed an opt-in option so a non-idempotent request (POST, PATCH) is retried only when the server is known not to have processed it, and implemented it in all 8 language SDKs ([.NET](https://github.com/microsoft/kiota-dotnet/pull/864), [Go](https://github.com/microsoft/kiota-http-go/pull/312), [Java](https://github.com/microsoft/kiota-java/pull/2251), [Python](https://github.com/microsoft/kiota-python/pull/897), [TypeScript](https://github.com/microsoft/kiota-typescript/pull/2230), [PHP](https://github.com/microsoft/kiota-php/pull/143), [Ruby](https://github.com/microsoft/kiota-ruby/pull/225), [Dart](https://github.com/microsoft/kiota-dart/pull/179)), tracing how each runtime orders its redirect and retry middleware, what a retry actually resends, and which extension points exist.
+* Found a 303-redirect edge case in Go and Dart where the same rule could resend an already-accepted POST; fixed it, and documented a library-level limitation in Dart. All 8 PRs merged upstream. [Write-up: one retry fix, eight SDKs](/writing/2026/one-retry-fix-eight-sdks/).
+
 ### Home Projects
 
 * Local LLM Infrastructure & Fine-Tuning: Run local models through Ollama (currently Qwen and DeepSeek) for private experimentation. Previously ran Mixtral 8x7B and 8x22B and fine-tuned a custom Mixtral 8x7B model, gaining hands-on experience with model architecture, quantization, and GPU resource optimization.
