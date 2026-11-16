@@ -1,0 +1,5 @@
+# Local drafts (never published)
+draft*
+
+# macOS Finder metadata
+.DS_Store
