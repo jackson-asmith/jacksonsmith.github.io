@@ -2,11 +2,15 @@
 title: Experience
 description: Ten-plus years across software, platform, and infrastructure engineering — roles, projects, and technical skills.
 permalink: /experience/
+print_resume: true
 ---
 
 # Experience
 
-Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasmith.com) or connect on [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/).
+Need a résumé? <button type="button" class="print-button">Save this page as a PDF</button> For a quick chat, [email me](mailto:jackson@jacksonasmith.com) or connect on [LinkedIn](https://www.linkedin.com/in/jackson-a-smith/).
+{: .no-print}
+
+<div class="no-print" markdown="1">
 
 ## Key Projects & Initiatives
 
@@ -17,6 +21,8 @@ Want a copy of my résumé or a quick chat? [Email me](mailto:jackson@jacksonasm
 * **Legacy Infrastructure Modernization**: Led strategic refactoring of critical systems (internal DNS, certificate lifecycle, syslog normalization) reducing operational escalations by 50% over 12 months through systematic reliability improvements and automation.
 
 * **Security Engineering**: Partnered with InfoSec as a trusted technical contributor across Zero Trust network deployment (Zscaler), certificate authority migration (Entrust → DigiCert with Azure KeyVault automation), PKI lifecycle management, and major security incident response.
+
+</div>
 
 ## Roles
 
@@ -112,10 +118,14 @@ Core member of the operations team that took a 1,200-server hybrid Azure/VMware 
 * **Microsoft Kiota retry safety:** Took the rule behind [Keel](/projects/keel/), my PowerShell automation modules (never resend a request that may already have been processed), upstream to Microsoft Kiota, the HTTP runtime under the Microsoft Graph SDKs. After I reported the bug and fixed it in .NET, the maintainer asked me to port it to every language. Designed an opt-in option so a non-idempotent request (POST, PATCH) is retried only when the server is known not to have processed it, and implemented it in all 8 language SDKs ([.NET](https://github.com/microsoft/kiota-dotnet/pull/864), [Go](https://github.com/microsoft/kiota-http-go/pull/312), [Java](https://github.com/microsoft/kiota-java/pull/2251), [Python](https://github.com/microsoft/kiota-python/pull/897), [TypeScript](https://github.com/microsoft/kiota-typescript/pull/2230), [PHP](https://github.com/microsoft/kiota-php/pull/143), [Ruby](https://github.com/microsoft/kiota-ruby/pull/225), [Dart](https://github.com/microsoft/kiota-dart/pull/179)), tracing how each runtime orders its redirect and retry middleware, what a retry actually resends, and which extension points exist.
 * Found a 303-redirect edge case in Go and Dart where the same rule could resend an already-accepted POST; fixed it, and documented a library-level limitation in Dart. All 8 PRs merged upstream. [Write-up: one retry fix, eight SDKs](/writing/2026/one-retry-fix-eight-sdks/).
 
+<div class="no-print" markdown="1">
+
 ### Home Projects
 
 * Local LLM Infrastructure & Fine-Tuning: Run local models through Ollama (currently Qwen and DeepSeek) for private experimentation. Previously ran Mixtral 8x7B and 8x22B and fine-tuned a custom Mixtral 8x7B model, gaining hands-on experience with model architecture, quantization, and GPU resource optimization.
 * Rocket.Chat Cloud Deployment: Deployed and managed Rocket.Chat in the public cloud on a Debian cluster (Node.js, MongoDB, NGINX) with automated SSL/TLS certificate lifecycle via Certbot/Let's Encrypt. Provisioned with Ruby/Shell (Chef) and monitored via Prometheus + Grafana.
+
+</div>
 
 ## Community
 

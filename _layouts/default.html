@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="{{ "/assets/css/github-markdown.css?v=" | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
   </head>
-  <body>
+  <body{% if page.print_resume %} class="resume-page"{% endif %}>
     <div class="container-lg px-3 my-5 markdown-body">
       {% include nav.html %}
       <main>
+        {% if page.print_resume %}{% include resume-print-header.html %}{% endif %}
         {{ content }}
       </main>
       <footer class="site-footer">
@@ -20,5 +21,18 @@
         <a href="https://www.linkedin.com/in/jackson-a-smith/">LinkedIn</a>
       </footer>
     </div>
+    {% if page.print_resume %}
+    <script>
+      // Name the saved PDF after the résumé, not the page title.
+      document.querySelectorAll(".print-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const title = document.title;
+          document.title = "Jackson Smith - Resume";
+          window.addEventListener("afterprint", () => { document.title = title; }, { once: true });
+          window.print();
+        });
+      });
+    </script>
+    {% endif %}
   </body>
 </html>
