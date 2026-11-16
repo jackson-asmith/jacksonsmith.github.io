@@ -1,5 +1,6 @@
 ---
 title: "Running GitHub's Actions egress firewall on a small Go project"
+image: /assets/img/social/post-egress-firewall.png
 description: What I learned putting gh-baseline's CI behind GitHub's native egress firewall in enforce mode, from a one-host allow list to a passing test that proved nothing.
 date: 2026-11-10
 principles: [Testing comes before trust, Automation must reduce risk]
