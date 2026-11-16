@@ -1,5 +1,6 @@
 ---
 title: "Your Send-MailMessage replacement might be sending email twice"
+image: /assets/img/social/post-graph-sendmail.png
 description: Microsoft Graph's sendMail isn't safe to repeat, and the Graph PowerShell SDK retries it after a 504 by default. Here's how one failed send became four, and how to stop it.
 date: 2026-11-04
 principles: [Reliability is a feature, Automation must reduce risk, Testing comes before trust]

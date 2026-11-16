@@ -148,3 +148,13 @@ card("email-alignment-checker.png", "Case study",
      "Email alignment checker: quiet, honest, and self-sustaining DNS monitoring")
 card("site-performance.png", "Case study",
      "Making this site faster on mobile")
+card("post-testing-automation.png", "Writing",
+     "Testing automation you didn’t write",
+     "Adding Pester tests to an existing PowerShell script before touching a single line of logic.")
+card("post-graph-sendmail.png", "Writing",
+     "Your Send-MailMessage replacement might be sending email twice")
+card("post-egress-firewall.png", "Writing",
+     "Running GitHub’s Actions egress firewall on a small Go project")
+card("post-kiota-eight-sdks.png", "Writing",
+     "One retry fix, eight Kiota SDKs",
+     "The fix was the same everywhere. The code around it wasn’t.")

@@ -1,5 +1,6 @@
 ---
 title: "Testing automation you didn't write"
+image: /assets/img/social/post-testing-automation.png
 description: A practical approach to adding Pester tests to an existing PowerShell script — before you touch a single line of logic.
 date: 2026-10-27
 principles: [Testing comes before trust, Automation must reduce risk, Modernize incrementally]

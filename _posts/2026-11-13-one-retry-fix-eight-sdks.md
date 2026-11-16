@@ -1,5 +1,6 @@
 ---
 title: "One retry fix, eight Kiota SDKs"
+image: /assets/img/social/post-kiota-eight-sdks.png
 description: I fixed a duplicate-send bug in Kiota's .NET retry handler, and the maintainer asked me to port it to every other language. The fix was the same everywhere. The code around it wasn't.
 date: 2026-11-13
 principles: [Reliability is a feature, Testing comes before trust]
