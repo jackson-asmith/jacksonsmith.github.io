@@ -160,15 +160,20 @@ Board member of a nonprofit professional association for systems administrators:
 
 ## Technical Skills
 
-* **Cloud & Infrastructure:** AWS, Azure; VMware vSphere, Hyper-V, VirtualBox
-* **Automation & Infrastructure as Code:** Ansible, Terraform; PowerShell, Bash, Ruby, Python, HCL; Chef (familiar with Puppet and Salt)
-* **API Integration:** REST APIs: Microsoft Graph, GitHub, Atlassian, CrowdStrike, Power BI
-* {: .no-print} **Configuration Management:** SCCM, Satellite
-* **Monitoring & Observability:** New Relic, Zabbix; Prometheus, Grafana; OpenTelemetry; rsyslog, Logstash (ELK Stack)
+* **Languages:** PowerShell, Python, Bash, Ruby; contributed upstream in C#, Go, Java, TypeScript, PHP, and Dart (Microsoft Kiota)
+* **Testing & CI:** Pester, bats, ShellCheck, Go testing; GitHub Actions (CI quality gates, egress firewall); local HTTP stubs for failure testing
+* **HTTP & API Engineering:** Retry and backoff policy, Retry-After, idempotency and duplicate-send safety, redirect handling; REST and GraphQL; Microsoft Graph, GitHub, Atlassian, CrowdStrike, Power BI APIs
+* **GitHub Platform & Governance:** GitHub Enterprise, rulesets and required checks, secret scanning, `gh` CLI extensions, Copilot administration and billing API
+* **Library Engineering:** Versioned modules, public/private API separation, architecture decision records (ADRs), documentation as part of the deliverable
 * **AI-Assisted Development:** Claude Code, GitHub Copilot with custom instructions (daily development); Ollama with Qwen and DeepSeek (local models); Mixtral 8x7B (prior fine-tuning work)
+* **Cloud & Infrastructure:** AWS, Azure; VMware vSphere, Hyper-V, VirtualBox
+* **Automation & Infrastructure as Code:** Ansible, Terraform, HCL; Chef (familiar with Puppet and Salt)
+* **Monitoring & Observability:** New Relic, Zabbix; Prometheus, Grafana; OpenTelemetry; rsyslog, Logstash (ELK Stack)
+* {: .no-print} **Containerization:** Docker
+* {: .no-print} **Databases:** Microsoft SQL Server; PostgreSQL, MySQL, MariaDB; MongoDB, Cassandra
+* {: .no-print} **Version Control & Development Tools:** Git, GitHub, GitLab, Bitbucket; VS Code, Vim; Vagrant, VirtualBox; strace/truss, Valgrind; PowerCLI, MDT
+* {: .no-print} **Configuration Management:** SCCM, Satellite
 * {: .no-print} **Application Support:** Java application troubleshooting; XML configuration; Application server middleware
-* **Containerization:** Docker
-* **Databases:** Microsoft SQL Server; PostgreSQL, MySQL, MariaDB; MongoDB, Cassandra
 * {: .no-print} **Data & Analytics:** Power BI, DAX; Semantic modeling (star schema); ETL pipeline design (Python, Jupyter, PowerShell)
 * {: .no-print} **Networking & Security:** Cisco, Meraki; DNS, PKI/Certificate Management; SSL/TLS Automation (Certbot, Let's Encrypt, ACME Protocol); OpenVPN, AnyConnect, GlobalProtect, Zscaler
 * {: .no-print} **Web Services & Load Balancers:** NGINX, HAProxy; Apache httpd, IIS
@@ -176,7 +181,6 @@ Board member of a nonprofit professional association for systems administrators:
 * {: .no-print} **Directory Services & IAM:** Active Directory; 389 Directory Service, Samba; OneLogin, Okta
 * {: .no-print} **Email & Messaging Platforms:** Microsoft Exchange (On-Premises & Online); Microsoft 365 & Teams Administration; Google Workspace Administration; Slack Administration (SAML/SSO Integration); Cisco Unified Communications; Email Authentication (DMARC, SPF, DKIM); SMTP Protocol & Relay Configuration (SendGrid, Mailgun, IIS); Compliance & eDiscovery (Purview, Smarsh)
 * {: .no-print} **Operating Systems:** Linux: Debian, CentOS, RHEL; Unix: macOS, OpenBSD, FreeBSD; Windows: NT 3.1-11, Server 2003-2025
-* **Version Control & Development Tools:** Git, GitHub, GitLab, Bitbucket; VS Code, Vim; Vagrant, VirtualBox; strace/truss, Valgrind; PowerCLI, MDT; Pester
 * {: .no-print} **Package Managers:** apt, dpkg, pkg, yum; chocolatey, nuget, winget (Windows)
 * {: .no-print} **Collaboration Tools:** Jira, Confluence; Slack, Rocket.Chat, Microsoft Teams
 
