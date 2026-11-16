@@ -7,6 +7,8 @@ Usage:
 Inter (SIL Open Font License) comes from https://github.com/rsms/inter/releases.
 Cards are written to assets/img/social/. To add one for a new case study,
 add a card(...) line at the bottom and set `image:` in the page's front matter.
+The LinkedIn profile background (linkedin-banner.png, 1584x396) comes from banner(...);
+it isn't referenced by the site. Upload it on LinkedIn by hand after regenerating.
 """
 import os
 import sys
@@ -95,6 +97,43 @@ def card(path, eyebrow, title, subtitle=None):
     print(path, os.path.getsize(os.path.join(OUT, path)) // 1024, "KB")
 
 
+def banner(path, eyebrow, title, url):
+    """1584x396 LinkedIn background. The profile photo covers the left side
+    (bottom-left on desktop, left-center on mobile), so text sits right-aligned
+    in the right ~60%."""
+    bw, bh, pad = 1584, 396, 72
+    img = Image.new("RGB", (bw, bh), BG)
+    d = ImageDraw.Draw(img)
+    d.rectangle((0, bh - 12, bw, bh), fill=ACCENT)
+
+    right = bw - pad
+    efont = font("Inter-SemiBold.ttf", 24)
+    tfont = font("InterDisplay-Bold.ttf", 54)
+    ufont = font("Inter-SemiBold.ttf", 30)
+    # Pass an explicit "\n" to control line breaks; otherwise wrap to width.
+    lines = title.split("\n") if "\n" in title else wrap(d, title, tfont, int(bw * 0.55))
+    line_h = int(tfont.size * 1.18)
+    block = 24 + 26 + len(lines) * line_h + 22 + 30
+    y = (bh - 12 - block) // 2
+
+    def right_text(text, fnt, fill, y):
+        d.text((right - d.textlength(text, font=fnt), y), text, font=fnt, fill=fill)
+
+    right_text(eyebrow.upper(), efont, ACCENT, y)
+    y += 24 + 26
+    for line in lines:
+        right_text(line, tfont, INK, y)
+        y += line_h
+    right_text(url, ufont, MUTED, y + 22)
+
+    os.makedirs(OUT, exist_ok=True)
+    img.save(os.path.join(OUT, path), optimize=True)
+    print(path, os.path.getsize(os.path.join(OUT, path)) // 1024, "KB")
+
+
+banner("linkedin-banner.png", "Platform & reliability engineering",
+       "Building systems that\nhold up in production",
+       "jacksonasmith.com")
 card("default.png", "Software engineer",
      "Reliable automation, testable code, and systems that don’t page someone at 3am",
      None)
