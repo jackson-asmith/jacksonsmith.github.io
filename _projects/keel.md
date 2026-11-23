@@ -61,14 +61,16 @@ flowchart TD
   D -- "429 / 503" --> E{Retries left?}
   E -- yes --> C
   E -- no --> R
-  D -- "other 4xx" --> R
+  D -- "400 / 401 / 403 / 404<br/>413 / 415" --> R
   D -- "connection never opened<br/>DNS, refused, TLS, proxy" --> R
-  D -- "500 / 502 / 504<br/>timeout, dropped mid-request" --> U[Unknown:<br/>GraphDeliveryUnknown<br/>no retry, no fallback]
+  D -- "500 / 502 / 504, 408,<br/>any other status,<br/>timeout, dropped mid-request" --> U[Unknown:<br/>GraphDeliveryUnknown<br/>no retry, no fallback]
 ```
 
-*In words: a problem found before sending, like a bad attachment or failed authentication, is a refusal, and SMTP fallback is allowed. After the POST, a 202 means the message was accepted once. A 429 or 503 is retried while retries remain, then treated as a refusal. Any other 4xx, or a connection that never opened, is a refusal. A 500, 502, 504, timeout, or dropped connection is unknown: no retry and no fallback.*
+*In words: a problem found before sending, like a bad attachment or failed authentication, is a refusal, and SMTP fallback is allowed. After the POST, a 202 means the message was accepted once. A 429 or 503 is retried while retries remain, then treated as a refusal. A 400, 401, 403, 404, 413, or 415, or a connection that never opened, is a refusal. A 500, 502, 504, 408, any other status, a timeout, or a dropped connection is unknown: no retry and no fallback.*
 
-**Resend only when Graph clearly refused the message.** Keel treats three outcomes as refusals: any 4xx response, a 503, and a connection that never opened. A 4xx means Graph rejected the request. A 503, by HTTP convention, means the service was unavailable and didn't act on it. A connection that never opened means the request never left the machine. The first two are deliberate assumptions rather than guarantees: HTTP doesn't promise that nothing behind a 503 acted on the request. But they're the plainest "not accepted" signals Graph gives, so Keel allows a resend after them, through Graph or SMTP. Everything else is treated as possibly delivered.
+**Resend only when Graph clearly refused the message.** Keel treats a response as a refusal only if its status is on an explicit list, and also treats a connection that never opened as one. A 400, 401, 403, 404, 413, or 415 means Graph rejected the request before a message existed: it was malformed, unauthorized, aimed at a mailbox that doesn't exist, too large, or the wrong content type. A 429 or 503 means Graph throttled the request or was unavailable, and by HTTP convention a server that sends them didn't act on the request. That's a convention, not a guarantee: HTTP doesn't promise that nothing behind a 503 acted on the request. But they're the plainest "not accepted" signals Graph gives, and throttling and outages are what SMTP fallback is for, so Keel allows a resend after them, through Graph or SMTP. A connection that never opened means the request never left the machine. Every other status, and every other failure, is treated as possibly delivered.
+
+**Update, November 2026:** the first version treated *any* 4xx as a refusal. An outside review pointed out that this claims something about every 4xx, including ones that don't support it. A gateway in front of Graph can send 408 Request Timeout after it has already forwarded the request, and most 4xx statuses mean nothing in particular for `sendMail`. Keel now uses the explicit list above, so a 408, or any status nobody has checked, is treated as possibly delivered ([PR #14](https://github.com/jackson-asmith/keel/pull/14)).
 
 **"I don't know" is its own outcome.** When delivery is uncertain, `Send-Email` throws a `GraphDeliveryUnknown` error and sets `Exception.Data['KeelDeliveryState']` to `Unknown`. The message tells the operator to check message trace before resending. The job fails loudly instead of guessing.
 
@@ -112,6 +114,6 @@ The full reasoning, including a dated amendment for the SDK path, is in an archi
 * **Mocks can't show you what a dependency does on the wire.** Mocking the SDK made its retry handler invisible to more than 240 passing unit tests. A stub endpoint needed no tenant and found it in a minute.
 * **"Unknown" keeps coming back.** In the [email alignment checker](/projects/email-alignment-checker/), the lesson was that an empty DNS answer isn't a missing record. Here it's that a timeout isn't a failure. Both times, the fix was to give "I couldn't tell" its own outcome and let it block the risky action.
 * **What I'd do next:**
-  * Confirm the 408 and 503 classifications against observed Graph behavior. Both currently rest on what the HTTP specification says those statuses mean.
+  * Confirm the 429 and 503 classifications against observed Graph behavior. Both currently rest on what the HTTP specification says those statuses mean.
   * Settle command naming (`Send-Email` versus a prefixed `Send-KeelMail`) in an ADR before a 1.0 release.
   * Support Graph upload sessions for attachments over 3 MB, instead of relying on SMTP for large files.
