@@ -51,11 +51,11 @@ Creating a release for an older version raised a question I hadn't considered: w
 
 The release action creates releases without saying. GitHub's REST API documents new releases as becoming Latest by default. The `gh` CLI describes its default as automatic, based on date and version. Those don't obviously agree, and the place to find out which one wins isn't the install path for everyone using the tool.
 
-So a manual run ends with one more job: it finds the highest released version and marks it Latest. It runs even if a smoke test fails, as long as a release was created.
+So a manual run ends with one more job: it finds the highest released version and marks it Latest. It runs even if a smoke test fails, as long as a release was created. That doesn’t remove a release whose binaries fail a smoke test; it only makes sure a failed backfill can’t leave an older version as Latest.
 
 ## The result
 
-Four manual runs, one tag at a time. Each passed all six jobs: resolving the tag, building, a smoke test on each of three operating systems, and restoring Latest. Each release has its 12 binaries, and v0.11.0 stayed Latest throughout.
+Four manual runs, one tag at a time. Each passed all six jobs: resolving the tag, building, a smoke test on each of three operating systems, and restoring Latest. Each release has its 12 binaries, and v0.11.0 was still Latest after each run completed.
 
 The validation got its first real test the same afternoon. A run was started with the tag `vX.Y.Z`, a placeholder I'd written in an example command and that got pasted as-is. The first job rejected it, and nothing after it ran.
 
