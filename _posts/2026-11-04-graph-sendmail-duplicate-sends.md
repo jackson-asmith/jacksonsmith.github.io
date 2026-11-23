@@ -14,7 +14,7 @@ That migration has a trap I didn't see coming: with default settings, one failed
 
 `POST /users/{id}/sendMail` returns `202 Accepted` and nothing else. There's no message ID in the response and no idempotency key you can send. If a request fails, you can't ask Graph "did that one go through?" and resend only if it didn't.
 
-Most failures are clear about that. A `400` or `403` means Graph rejected the request. A `429` or `503` means Graph is busy and didn't process it. Resending those is safe.
+Most failures are clear enough. A `400` or `403` means Graph rejected the request. A `429` or `503` means Graph is busy and, by HTTP convention, didn't act on it. That's a convention rather than a guarantee, but it's the plainest "not processed" signal Graph gives, so treating those as safe to resend is reasonable.
 
 A `504 Gateway Timeout` isn't clear. A gateway gave up waiting for the service behind it, and that service may already have accepted the message. The same goes for a `500`, a `502`, or a connection that drops after the request was sent. After any of those, resending might deliver a second copy.
 
@@ -53,7 +53,7 @@ In practice:
 - **Possibly delivered:** `500`, `502`, `504`, timeouts, and connections dropped mid-request. Keel doesn't retry and doesn't fall back to SMTP. It throws a `GraphDeliveryUnknown` error telling the operator to check message trace before resending.
 - **Anything it doesn't recognize** counts as possibly delivered, so gaps fail safe.
 
-Then it turns off the SDK's own retries for each send, so Keel is the only thing deciding what to retry:
+Then it turns off the SDK's own retries for each send, so Keel is the only thing deciding what to retry. This version assumes one send at a time; if a process sends in parallel, see the update below the snippet:
 
 ```powershell
 $saved = Get-MgRequestContext

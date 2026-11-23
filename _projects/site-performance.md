@@ -71,7 +71,9 @@ flowchart TB
   Before ~~~ After
 ```
 
-**Let the data decide on analytics.** Google Analytics had been on the site for a while, but I rarely looked at it. Ninety days of data showed **31 sessions and 2 engaged sessions**. The 20 "direct" visits averaged about a second each with no engagement, which is mostly bots, link-preview fetchers, and me. Both engaged sessions came from Google search. That's a question Google Search Console answers better (which searches showed the site, and which got clicks), and it does so without putting any JavaScript on the page. Analytics was the largest script on the page and was measuring mostly noise.
+*In words: before, each page loaded two render-blocking stylesheets, an avatar from GitHub over a new connection, and Google Analytics. After, it loads one stylesheet and a 6 KB avatar from the site itself.*
+
+**Let the data decide on analytics.** Google Analytics had been on the site for a while, but I rarely looked at it. Ninety days of data showed **31 sessions and 2 engaged sessions**. The 20 "direct" visits averaged about a second each with no engagement, which looks like mostly bots, link-preview fetchers, and me, though 31 sessions is too few to say for sure. Both engaged sessions came from Google search. That's a question Google Search Console answers better (which searches showed the site, and which got clicks), and it does so without putting any JavaScript on the page. Analytics was the largest script on the page and was measuring mostly noise.
 
 **Remove the theme's stylesheet, not just its unused rules.** Once `github-markdown-css` was handling all the content styling, the theme was only providing page centering and spacing. Stripping unused rules would have meant maintaining a modified copy of a theme. Instead, the four rules the layout depended on (`box-sizing`, the 1012 px content column, and its padding and margins) are now three lines of CSS in the site's own stylesheet, with the theme's exact values.
 
