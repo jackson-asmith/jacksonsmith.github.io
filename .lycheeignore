@@ -1,0 +1,8 @@
+# Links the link checker skips. One regular expression per line; keep each
+# entry explained.
+
+# LinkedIn answers automated requests with status 999, even for live pages.
+^https://(www\.)?linkedin\.com/
+
+# Cloudflare rewrites mailto links on the live site; the source has no such path.
+/cdn-cgi/l/email-protection
