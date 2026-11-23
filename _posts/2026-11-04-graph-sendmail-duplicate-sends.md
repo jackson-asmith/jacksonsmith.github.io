@@ -3,6 +3,7 @@ title: "Your Send-MailMessage replacement might be sending email twice"
 image: /assets/img/social/post-graph-sendmail.png
 description: Microsoft Graph's sendMail isn't safe to repeat, and the Graph PowerShell SDK retries it after a 504 by default. Here's how one failed send became four, and how to stop it.
 date: 2026-11-04
+updated: 2026-11-23
 principles: [Reliability is a feature, Automation must reduce risk, Testing comes before trust]
 ---
 
@@ -109,3 +110,5 @@ I've reported the retry behavior to the Kiota maintainers in [microsoft/kiota-do
 **Update, November 23, 2026:** the setting shipped in [kiota-dotnet 2.2.0](https://github.com/microsoft/kiota-dotnet/releases/tag/v2.2.0) on November 16, and it's now merged in Kiota's other seven languages too. [One retry fix, eight Kiota SDKs](/writing/2026/one-retry-fix-eight-sdks/) covers how. PowerShell still can't set it, so I've asked the Graph PowerShell SDK maintainers to expose it in [microsoftgraph/msgraph-sdk-powershell#3917](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/3917). Until then, `MaxRetry 0` around your sends is still the workaround.
 
 Keel is [on GitHub](https://github.com/jackson-asmith/keel) under the MIT license.
+
+{% include retry-series.html current="graph" %}

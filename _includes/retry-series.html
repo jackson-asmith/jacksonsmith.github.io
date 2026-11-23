@@ -1,0 +1,18 @@
+{%- comment -%}
+  Routes readers between the three pieces about the Graph duplicate-send bug,
+  which overlap. Usage: {% include retry-series.html current="graph|keel|kiota" %}
+{%- endcomment -%}
+{%- assign items = "graph|/writing/2026/graph-sendmail-duplicate-sends/|Your Send-MailMessage replacement might be sending email twice|what to change in PowerShell scripts that send mail through Graph;keel|/projects/keel/|Keel: the retry that could send one alert four times|how the library around it was redesigned, and the safeguards it gained;kiota|/writing/2026/one-retry-fix-eight-sdks/|One retry fix, eight Kiota SDKs|the upstream fix in Microsoft’s SDKs, ported to eight languages" | split: ";" -%}
+<aside class="series" aria-label="Related pieces">
+  <p><strong>This bug from three angles</strong></p>
+  <ul>
+  {%- for item in items %}
+    {%- assign f = item | split: "|" %}
+    {%- if f[0] == include.current %}
+    <li><strong>{{ f[2] }}</strong> (you’re here): {{ f[3] }}</li>
+    {%- else %}
+    <li><a href="{{ f[1] | relative_url }}">{{ f[2] }}</a>: {{ f[3] }}</li>
+    {%- endif %}
+  {%- endfor %}
+  </ul>
+</aside>

@@ -1,5 +1,6 @@
 ---
 title: "Checks that parsed their own evidence"
+image: /assets/img/social/post-checks-evidence.png
 description: Using an LLM code review to surface a real architectural flaw in gh-baseline — and knowing which ten percent of the review was right.
 date: 2026-11-17
 principles: [Automation must reduce risk, Testing comes before trust]
