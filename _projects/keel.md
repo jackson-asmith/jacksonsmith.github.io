@@ -1,7 +1,7 @@
 ---
 title: "Keel: the retry that could send one alert four times"
-description: How a PowerShell mail library that retried and fell back on every failure could send one alert four times, and the redesign that makes it resend only when Graph provably refused the message.
-summary: Why "retry on server errors" isn't safe for a request that can't be repeated, and the redesign that makes a PowerShell mail library resend only when Microsoft Graph provably refused the message.
+description: How a PowerShell mail library that retried and fell back on every failure could send one alert four times, and the redesign that makes it resend only when Graph clearly refused the message.
+summary: Why "retry on server errors" isn't safe for a request that can't be repeated, and the redesign that makes a PowerShell mail library resend only when Microsoft Graph clearly refused the message.
 show_summary: false
 date: 2026-09-28
 order: 2
@@ -41,7 +41,7 @@ The same review found a quieter bug in the retry helper: output an attempt wrote
 | Decision point | Options | Chosen |
 |---|---|---|
 | Which Graph failures to retry | All transient statuses · none · only statuses where Graph refused the request | Only 429 and 503 |
-| When to fall back to SMTP | Any Graph failure · never · only when Graph provably didn't accept the message | Only on proven refusal |
+| When to fall back to SMTP | Any Graph failure · never · only when Graph clearly didn't accept the message | Only on a clear refusal |
 | What to do when delivery is uncertain | Resend anyway · check Sent Items first · stop and report | Stop with a typed `GraphDeliveryUnknown` error |
 | Output from a failed attempt | Stream it · buffer each attempt and return only the successful one | Buffer per attempt |
 | The Graph SDK's own retries | Leave them on · send through REST only · turn them off for each send | Off for each send, caller's settings restored |
@@ -65,7 +65,9 @@ flowchart TD
   D -- "500 / 502 / 504<br/>timeout, dropped mid-request" --> U[Unknown:<br/>GraphDeliveryUnknown<br/>no retry, no fallback]
 ```
 
-**Resend only when Graph provably refused the message.** A 4xx means Graph rejected the request. A 503 means Graph was unavailable and didn't process it. A connection that never opened means the request never left the machine. In all of those cases, resending, through Graph or SMTP, can't create a duplicate. Everything else is treated as possibly delivered.
+*In words: a problem found before sending, like a bad attachment or failed authentication, is a refusal, and SMTP fallback is allowed. After the POST, a 202 means the message was accepted once. A 429 or 503 is retried while retries remain, then treated as a refusal. Any other 4xx, or a connection that never opened, is a refusal. A 500, 502, 504, timeout, or dropped connection is unknown: no retry and no fallback.*
+
+**Resend only when Graph clearly refused the message.** Keel treats three outcomes as refusals: any 4xx response, a 503, and a connection that never opened. A 4xx means Graph rejected the request. A 503, by HTTP convention, means the service was unavailable and didn't act on it. A connection that never opened means the request never left the machine. The first two are deliberate assumptions rather than guarantees: HTTP doesn't promise that nothing behind a 503 acted on the request. But they're the plainest "not accepted" signals Graph gives, so Keel allows a resend after them, through Graph or SMTP. Everything else is treated as possibly delivered.
 
 **"I don't know" is its own outcome.** When delivery is uncertain, `Send-Email` throws a `GraphDeliveryUnknown` error and sets `Exception.Data['KeelDeliveryState']` to `Unknown`. The message tells the operator to check message trace before resending. The job fails loudly instead of guessing.
 
@@ -74,6 +76,8 @@ flowchart TD
 **Discard output from failed attempts.** The retry helper now returns only the successful attempt's output, trading streaming for no duplicates.
 
 **Turn off the SDK's retries, not just Keel's.** The Graph PowerShell SDK retries 429, 503, and 504 on its own, so Keel sets the SDK's `MaxRetry` to 0 for each send and restores the caller's settings afterward. Those settings are process-wide: while a message is in flight, other Graph calls in the same PowerShell process also run without SDK retries. I accepted that for the length of one request rather than lose control of what gets resent.
+
+**Update, November 2026:** process-wide also meant two overlapping sends in one process could undo each other: one restored the SDK's retries while the other's request was going out. Since [1.1.1](https://github.com/jackson-asmith/keel/releases/tag/v1.1.1), Keel holds a single process-wide lock around saving, changing, and restoring those settings, so overlapping sends take turns ([PR #12](https://github.com/jackson-asmith/keel/pull/12)).
 
 The full reasoning, including a dated amendment for the SDK path, is in an architecture decision record (ADR), [ADR 0002](https://github.com/jackson-asmith/keel/blob/main/docs/adr/0002-no-resend-after-ambiguous-graph-failure.md).
 

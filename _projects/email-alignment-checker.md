@@ -51,6 +51,8 @@ flowchart TD
   G --> H
 ```
 
+*In words: every six hours the workflow queries MX, SPF, DMARC, and DKIM with timeouts and retries. If any query failed, it logs a warning and leaves the README alone. If the records match what's published, it doesn't commit. Otherwise it rewrites the table and pushes. Every run ends by writing a summary and re-enabling its own schedule.*
+
 **Compare records, not output.** The fix for the commit noise was to compare only the MX, SPF, DMARC, and DKIM rows against what's already in the README. A new timestamp alone never triggers a commit.
 
 **A resolver error is not a missing record.** In the original version, a DNS timeout left the value empty, which the workflow then reported as "not configured". A transient network error would have been published as a misconfiguration. The hardened version tracks query failures separately and refuses to update the README when any query failed.
@@ -71,7 +73,8 @@ flowchart TD
 ## Outcome
 
 * Commit noise went from **about 350 commits in three months to one** in the months since the fix: the single commit came when the table format itself changed.
-* The public status can no longer be wrong because of a flaky resolver.
+* A resolver failure can no longer overwrite the published status with a false missing-record result. The flip side: if every run fails, the last good status stays up, so the status shows what was last confirmed, not necessarily what's true right now.
+* It checks what's published in DNS: the MX, SPF, and DMARC records and a set of common DKIM selectors. It doesn't send and inspect a real message, so it can't confirm alignment for mail as actually delivered, or for a DKIM selector it doesn't know to check.
 * The workflow keeps its own schedule alive without any manual intervention.
 * **Update, September 29: it moved to [its own repository](https://github.com/jackson-asmith/email-alignment-checker), with its commit history.** The profile README can't keep showing a table this workflow writes unless the workflow gets a credential that can write to another repository. A long-lived token with write access, used by a job that runs unattended four times a day, is more risk than a status table is worth. So the workflow now also publishes a small `status.json`, and the profile shows it as a badge that reads that file. It follows the same rules as the table: it changes only when the records do, and a run with any resolver error publishes nothing. The trade-offs are recorded in an architecture decision record, [ADR 0001](https://github.com/jackson-asmith/email-alignment-checker/blob/main/docs/adr/0001-publish-status-as-a-badge.md).
 

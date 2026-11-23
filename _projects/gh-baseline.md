@@ -81,6 +81,8 @@ flowchart LR
   B[baseline.json<br/>tiers per repository] --> E
 ```
 
+*In words: collection reads each repository through read-only GET requests and writes one JSON snapshot, noting anything it couldn't read. From there, nothing touches the API: eleven checks evaluate the snapshot against the tiers in `baseline.json`, and the report marks each result pass, fail, unknown, or skip, exiting with 1 if anything failed.*
+
 Because no check calls the API, every check is tested against fixture snapshots, and a saved snapshot can be re-evaluated after editing the baseline without collecting again.
 
 The baseline names the tiers and assigns repositories to them. Every tier requires the default branch to block deletion and force pushes; the higher tiers add a pull request and required checks:
