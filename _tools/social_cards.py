@@ -160,3 +160,5 @@ card("post-kiota-eight-sdks.png", "Writing",
      "The fix was the same everywhere. The code around it wasn’t.")
 card("post-checks-evidence.png", "Writing",
      "Checks that parsed their own evidence")
+card("post-four-releases.png", "Writing",
+     "Four releases GitHub never built")
