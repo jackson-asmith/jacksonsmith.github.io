@@ -38,4 +38,4 @@ Copilot told me upfront it couldn't read the source. That meant every implementa
 
 The value wasn't in the review. It was in having enough context to know which ten percent of the review was right.
 
-gh-baseline is at [github.com/jacksonasmith/gh-baseline](https://github.com/jacksonasmith/gh-baseline). The `WorkflowEvidence` change landed in v0.8.0.
+gh-baseline is at [github.com/jackson-asmith/gh-baseline](https://github.com/jackson-asmith/gh-baseline). The `WorkflowEvidence` change landed in v0.8.0.

@@ -19,7 +19,7 @@ If a system only stays up because one engineer knows its quirks, it isn't reliab
 
 **In practice:** eliminating single points of failure, graceful failure and recovery, alerting tied to meaningful service levels, and validating disaster recovery instead of assuming it works.
 
-**Where it shows up:** a three-node SQL availability group our team built to remove a single point of failure (sub-15-minute RTO), part of taking the platform from 40–60% to 99.99% availability; disaster-recovery validation twice a year for core line-of-business applications; SLI/SLO-based alerting that cut unplanned downtime by 35%. ([Experience](/experience/))
+**Where it shows up:** a three-node SQL availability group our team built to remove a single point of failure (sub-15-minute RTO), part of taking the platform from 40–60% to 99.99% availability; disaster-recovery validation twice a year for core line-of-business applications; SLI/SLO-based alerting that cut unplanned downtime by 35%. (See [Email alignment checker](/projects/email-alignment-checker/) · [Experience](/experience/))
 
 ## 2. Automation must reduce risk, not create it
 
@@ -29,7 +29,7 @@ Removing manual steps doesn't count as success on its own. Good automation is mo
 
 **In practice:** validating input before acting, bounded retries with backoff, structured logs that leave out sensitive data, failure states that tell you what to do next, and keeping a human in the loop for consequential decisions.
 
-**Where it shows up:** API orchestration across GitHub Enterprise, Entra ID, and Microsoft Graph with rate-limit handling, exponential backoff, and structured event logging; input validation and hardening on critical workflows; a patching pipeline that reduced vulnerability exposure by 70%. ([Experience](/experience/))
+**Where it shows up:** API orchestration across GitHub Enterprise, Entra ID, and Microsoft Graph with rate-limit handling, exponential backoff, and structured event logging; input validation and hardening on critical workflows; a patching pipeline that reduced vulnerability exposure by 70%. (See [Keel](/projects/keel/) · [Experience](/experience/))
 
 ## 3. Modernize incrementally
 
@@ -39,7 +39,7 @@ A rewrite isn't automatically the responsible choice. I weigh technical improvem
 
 **In practice:** assess the current state first, tackle the highest-risk dependencies early, introduce seams that make existing code testable, and deliver changes in stages that can each be verified independently.
 
-**Where it shows up:** a phased modularization plan that extracts notification and directory-lookup logic *before* touching destructive workflows, so each extraction is unit-testable and has no production side effects; platform upgrades completed 18–24 months ahead of end-of-life deadlines. ([Experience](/experience/))
+**Where it shows up:** a phased modularization plan that extracts notification and directory-lookup logic *before* touching destructive workflows, so each extraction is unit-testable and has no production side effects; platform upgrades completed 18–24 months ahead of end-of-life deadlines. (See [Making this site faster on mobile](/projects/site-performance/) · [Experience](/experience/))
 
 ## 4. Governance should enable engineers
 
@@ -49,7 +49,7 @@ Standards and guardrails should reduce the number of decisions each engineer has
 
 **In practice:** clear ownership, minimum standards encoded in templates, tests, CI, and repository configuration, self-service for common needs, and dropping controls that add friction without reducing risk.
 
-**Where it shows up:** a GitHub Copilot custom-instructions file that encodes the team's PowerShell style guide so common anti-patterns are caught before review; automated Copilot budget governance through the GitHub billing API. ([Experience](/experience/))
+**Where it shows up:** a GitHub Copilot custom-instructions file that encodes the team's PowerShell style guide so common anti-patterns are caught before review; automated Copilot budget governance through the GitHub billing API. (See [gh-baseline](/projects/gh-baseline/) · [Experience](/experience/))
 
 ## 5. Testing comes before trust
 
@@ -59,7 +59,7 @@ Code isn't correct just because it's been running for a long time. Until its imp
 
 **In practice:** characterization tests before refactoring, separating side effects from decision logic, testing failure paths as well as success paths, and CI that catches regressions on every push.
 
-**Where it shows up:** the first Pester unit-test suite and shared test infrastructure for an existing codebase, with CI running on every push and pull request. Refactoring behind those tests turned up a latent production bug. ([Experience](/experience/))
+**Where it shows up:** the first Pester unit-test suite and shared test infrastructure for an existing codebase, with CI running on every push and pull request. Refactoring behind those tests turned up a latent production bug. (See [Testing automation you didn't write](/writing/2026/testing-automation-you-didnt-write/) · [Experience](/experience/))
 
 ## 6. Documentation is engineering work
 
@@ -69,7 +69,7 @@ Documentation is part of a system's operational interface, so it's maintained al
 
 **In practice:** recording purpose, assumptions, and ownership; runbooks for operations and recovery; recording design decisions and the tradeoffs behind them; and handoffs that don't rely on knowledge that lives in one person's head.
 
-**Where it shows up:** organization-wide documentation and handover standards, consolidated into one place; clean handoffs of identity automation and certificate lifecycle management to other teams; documentation for shared helpers and the test system. ([Experience](/experience/))
+**Where it shows up:** organization-wide documentation and handover standards, consolidated into one place; clean handoffs of identity automation and certificate lifecycle management to other teams; documentation for shared helpers and the test system. (See [gh-baseline](/projects/gh-baseline/) · [Experience](/experience/))
 
 ---
 

@@ -58,7 +58,7 @@ flowchart TD
 
 **A resolver error is not a missing record.** In the original version, a DNS timeout left the value empty, which the workflow then reported as "not configured". A transient network error would have been published as a misconfiguration. The hardened version tracks query failures separately and refuses to update the README when any query failed.
 
-**Stay alive without fake activity.** GitHub disables scheduled workflows after 60 days without repository activity. Once the commit noise was fixed, the workflow was *designed* to go quiet, which meant it would eventually switch itself off. Rather than adding meaningless keepalive commits (the same noise I'd just removed), each run calls the Actions API to re-enable its own schedule.
+**Stay alive without fake activity.** GitHub disables scheduled workflows after 60 days without repository activity. Once the commit noise was fixed, the workflow was *designed* to go quiet, which meant it would eventually switch itself off. Rather than adding meaningless keepalive commits (the same noise I'd just removed), each run calls the Actions API to re-enable its own schedule. That only works while it's still running: if GitHub disables it anyway, nothing runs to turn it back on, and it has to be re-enabled by hand from the repository's Actions tab.
 
 ## Safeguards
 
