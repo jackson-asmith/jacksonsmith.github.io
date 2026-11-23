@@ -18,6 +18,11 @@ concurrency:
   group: check-links-${{ github.event_name }}
   cancel-in-progress: true
 
+# Both checks accept 429 Too Many Requests as well as lychee's defaults.
+# GitHub throttles automated requests for file pages (blob URLs) even
+# with a token, and a 429 means the server is there and asking us to slow
+# down, not that the page is gone: a missing page still returns 404.
+# lychee 0.24 can't set accepted codes per host, so this applies to all.
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -37,6 +42,7 @@ jobs:
         with:
           args: >-
             --no-progress
+            --accept '100..=103,200..=299,429'
             --base-url https://jacksonasmith.com/
             --exclude '^https://jacksonasmith\.com'
             './**/*.md'
@@ -52,6 +58,7 @@ jobs:
         with:
           args: >-
             --no-progress
+            --accept '100..=103,200..=299,429'
             --base-url https://jacksonasmith.com/
             './**/*.md'
           fail: true
