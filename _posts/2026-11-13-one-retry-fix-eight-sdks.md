@@ -3,6 +3,7 @@ title: "One retry fix, eight Kiota SDKs"
 image: /assets/img/social/post-kiota-eight-sdks.png
 description: I fixed a duplicate-send bug in Kiota's .NET retry handler, and the maintainer asked me to port it to every other language. The fix was the same everywhere. The code around it wasn't.
 date: 2026-11-13
+updated: 2026-11-23
 principles: [Reliability is a feature, Testing comes before trust]
 ---
 
@@ -80,3 +81,5 @@ var retryOption = new RetryHandlerOption
 The other seven SDKs have the same setting under their own naming conventions, merged in [Go](https://github.com/microsoft/kiota-http-go/pull/312), [Python](https://github.com/microsoft/kiota-python/pull/897), [Java](https://github.com/microsoft/kiota-java/pull/2251), [TypeScript](https://github.com/microsoft/kiota-typescript/pull/2230), [PHP](https://github.com/microsoft/kiota-php/pull/143), [Dart](https://github.com/microsoft/kiota-dart/pull/179) and [Ruby](https://github.com/microsoft/kiota-ruby/pull/225). Each arrives with that SDK's next release.
 
 Two caveats. The generated SDKs don't turn it on for you, so you have to opt in. And the Graph PowerShell SDK can't set it yet: `Set-MgRequestContext` only exposes `MaxRetry`, `RetryDelay` and `RetriesTimeLimit`. For PowerShell scripts, [turning off SDK retries around your sends](/writing/2026/graph-sendmail-duplicate-sends/) is still the workaround, and it's what [keel](https://github.com/jackson-asmith/keel) keeps doing for now.
+
+{% include retry-series.html current="kiota" %}

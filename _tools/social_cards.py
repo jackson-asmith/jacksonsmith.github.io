@@ -158,3 +158,5 @@ card("post-egress-firewall.png", "Writing",
 card("post-kiota-eight-sdks.png", "Writing",
      "One retry fix, eight Kiota SDKs",
      "The fix was the same everywhere. The code around it wasn’t.")
+card("post-checks-evidence.png", "Writing",
+     "Checks that parsed their own evidence")

@@ -4,6 +4,7 @@ description: How a PowerShell mail library that retried and fell back on every f
 summary: Why "retry on server errors" isn't safe for a request that can't be repeated, and the redesign that makes a PowerShell mail library resend only when Microsoft Graph clearly refused the message.
 show_summary: false
 date: 2026-09-28
+updated: 2026-11-23
 order: 2
 principles: [Automation must reduce risk, Testing comes before trust, Documentation is engineering work]
 repo: https://github.com/jackson-asmith/keel
@@ -94,6 +95,8 @@ The full reasoning, including a dated amendment for the SDK path, is in an archi
 * The suite grew from 198 to 261 passing test cases, 7 of them against the real SDK. Every commit passes on its own, except the one that adds the SDK test ahead of its fix, which fails on purpose.
 * Two ADRs record the decisions a reader would otherwise have to reverse-engineer: why configuration comes from `KEEL_` environment variables, and why the library never resends after an ambiguous failure, with an amendment for the SDK path.
 * **Update, September 29: CI checked the other runtime, and it found a bug.** GitHub Actions now runs PSScriptAnalyzer and the Pester suite on PowerShell 7 across Linux, macOS, and Windows, plus Windows PowerShell 5.1. The first 5.1 run failed five tests. Most came from test assumptions that only held on PowerShell 7, but one exposed a real bug: 5.1's `Send-MailMessage` has no `-ReplyTo`, so SMTP delivery threw whenever a Reply-To was set. Keel now leaves Reply-To out on 5.1 and writes a warning naming the dropped addresses, so the message still goes out. The new tests for this brought the suite to 263 test cases. The failure classification passed on a real 5.1 host unchanged. A weekly job also runs the SDK integration tests against the latest Microsoft.Graph.Authentication, so a change in the SDK's retry behavior shows up before an upgrade.
+
+{% include retry-series.html current="keel" %}
 
 ## Principles demonstrated
 
