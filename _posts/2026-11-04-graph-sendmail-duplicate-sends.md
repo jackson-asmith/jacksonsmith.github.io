@@ -50,9 +50,11 @@ Keel now follows one rule: resend, through Graph or SMTP, only when the failure 
 
 In practice:
 
-- **Safe to resend:** any `4xx`, `503`, and connection failures that happen before the request is sent, such as DNS lookups, refused connections, and TLS errors. Keel retries `429` and `503`, honoring `Retry-After`.
-- **Possibly delivered:** `500`, `502`, `504`, timeouts, and connections dropped mid-request. Keel doesn't retry and doesn't fall back to SMTP. It throws a `GraphDeliveryUnknown` error telling the operator to check message trace before resending.
+- **Safe to resend:** `400`, `401`, `403`, `404`, `413`, `415`, `429`, `503`, and connection failures that happen before the request is sent, such as DNS lookups, refused connections, and TLS errors. Keel retries `429` and `503`, honoring `Retry-After`.
+- **Possibly delivered:** `500`, `502`, `504`, `408`, timeouts, and connections dropped mid-request. Keel doesn't retry and doesn't fall back to SMTP. It throws a `GraphDeliveryUnknown` error telling the operator to check message trace before resending.
 - **Anything it doesn't recognize** counts as possibly delivered, so gaps fail safe.
+
+**Update, November 2026:** this list used to say any `4xx` was safe to resend. That was too broad: a gateway in front of Graph can send `408` after it has already forwarded the request, and most `4xx` statuses mean nothing in particular for `sendMail`. Since [1.2.0](https://github.com/jackson-asmith/keel/releases/tag/v1.2.0), Keel only resends after the statuses listed above.
 
 Then it turns off the SDK's own retries for each send, so Keel is the only thing deciding what to retry. This version assumes one send at a time; if a process sends in parallel, see the update below the snippet:
 
