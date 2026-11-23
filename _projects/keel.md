@@ -115,5 +115,4 @@ The full reasoning, including a dated amendment for the SDK path, is in an archi
 * **"Unknown" keeps coming back.** In the [email alignment checker](/projects/email-alignment-checker/), the lesson was that an empty DNS answer isn't a missing record. Here it's that a timeout isn't a failure. Both times, the fix was to give "I couldn't tell" its own outcome and let it block the risky action.
 * **What I'd do next:**
   * Confirm the 429 and 503 classifications against observed Graph behavior. Both currently rest on what the HTTP specification says those statuses mean.
-  * Settle command naming (`Send-Email` versus a prefixed `Send-KeelMail`) in an ADR before a 1.0 release.
   * Support Graph upload sessions for attachments over 3 MB, instead of relying on SMTP for large files.
