@@ -4,6 +4,7 @@ description: How a one-day audit of my GitHub repositories turned up checks anyo
 summary: A gh extension that reports where repositories drift from a declared security baseline. I built it in Go, a language I don't work in day to day, with an LLM writing most of the code, and the judgment mattered more than the language.
 show_summary: false
 date: 2026-10-13
+updated: 2026-11-23
 order: 1
 principles: [Governance should enable engineers, Testing comes before trust, Automation must reduce risk, Documentation is engineering work]
 repo: https://github.com/jackson-asmith/gh-baseline
@@ -58,7 +59,7 @@ I fixed the 8 repositories I still care about the same afternoon, through settin
 | What to do with a setting it can't read | Treat it as passing · fail the run · report it | Report it as `unknown`, never `pass` |
 | One repository can't be read | Stop the whole run · record it and continue | Record it; stop only for a rate limit or cancellation |
 | A 403 on a private repo's rules | Any 403 means free plan · look up the account's plan · classify by GitHub's message | Classify by message, in one place |
-| Dependencies | `go-gh` and a YAML parser · standard library only | Standard library only |
+| Dependencies | `go-gh` and a YAML parser · standard library only | Standard library only (amended in v0.4.0: see below) |
 | Existing tools | Use OpenSSF Scorecard · build something owner-focused | Build it, and say how it differs |
 | Distribution | `go install` · a script extension · precompiled release binaries | Precompiled binaries through `gh extension install` |
 
@@ -98,7 +99,7 @@ The baseline names the tiers and assigns repositories to them. Every tier requir
 }
 ```
 
-Each check reports one of four outcomes. `fail` comes with the fix. `unknown` means the data couldn't be read, and it's listed but doesn't fail the run. `skip` means the check doesn't apply, such as secret scanning on a private repository, where it's a paid feature. A repository that can't be read at all is `unknown` for every check rather than stopping the run, but an exhausted rate limit does stop it, with exit code 2 and the reset time, because every later request would fail the same way.
+Each check reports one of four outcomes. `fail` comes with the fix. `unknown` means the data couldn't be read, and it's listed but doesn't fail the run unless you pass `--fail-on-unknown`. `skip` means the check doesn't apply, such as secret scanning on a private repository, where it's a paid feature. A repository that can't be read at all is `unknown` for every check rather than stopping the run, but an exhausted rate limit does stop it, with exit code 2 and the reset time, because every later request would fail the same way.
 
 Plan limits are classified once, in the collector: a 403 on a private repository whose message says to upgrade is recorded as "rulesets unavailable" and skipped. Any other failure is an error, and the checks report it as `unknown`. The checks never read error text.
 
@@ -109,16 +110,16 @@ Plan limits are classified once, in the collector: a 403 on a private repository
 * **Retries can't repeat a change.** Every request is a GET, so retrying a timeout or a 5xx is safe. Retries follow the same bounded policy as [Keel](/projects/keel/): three attempts, exponential backoff with jitter, and `Retry-After` honored up to 60 seconds.
 * **Blind spots are labeled.** Anything the API won't show is `unknown`, and the README lists what the tool can't see at all.
 * **It follows its own baseline.** Its workflows pin actions by SHA, default to a read-only token, and grant `contents: write` only to the release job.
-* **Decisions are written down.** Three [architecture decision records](https://github.com/jackson-asmith/gh-baseline/tree/main/docs/adr) explain the choices a reader would otherwise have to reverse-engineer: standard library only, how plan-limited rulesets are classified, and why releases ship precompiled binaries.
+* **Decisions are written down.** [Architecture decision records](https://github.com/jackson-asmith/gh-baseline/tree/main/docs/adr) explain the choices a reader would otherwise have to reverse-engineer: standard library only, how plan-limited rulesets are classified, why releases ship precompiled binaries, and, since v0.4.0, the YAML parser that replaced the line-based workflow reader.
 
 ## Outcome
 
 * **It reproduces the audit in one command.** On the 3 repositories I didn't fix, gh-baseline reproduced every finding the manual audit made, including both stale repositories and each secret their workflows reference, by name. The 8 repositories I hardened pass, except for two workflow findings in a fork that come from its upstream.
-* **v0.1.0 is released.** Tagging it built 12 binaries for macOS, Linux, Windows, and FreeBSD, so `gh extension install jackson-asmith/gh-baseline` works without Go installed.
-* **11 checks, about 100 passing test cases, no dependencies.** Roughly 1,400 lines of Go and 1,000 lines of tests. CI runs `gofmt`, `go vet`, and the tests under the race detector.
+* **v0.1.0 is released.** (It's now at v0.11.0; see [Since the first release](#since-the-first-release).) Tagging it built 12 binaries for macOS, Linux, Windows, and FreeBSD, so `gh extension install jackson-asmith/gh-baseline` works without Go installed.
+* **At v0.1.0: 11 checks, about 100 passing test cases, no dependencies.** Roughly 1,400 lines of Go and 1,000 lines of tests. CI runs `gofmt`, `go vet`, and the tests under the race detector.
 * **A test asserted something GitHub doesn't do.** Reviewing an early version, the LLM suggested deciding whether a private repository was on a free plan from the status code alone. A test already in the suite had a private repository returning 403 because the token lacked access, and I took that as proof the suggestion was wrong. It was an assumption, not proof. When I checked against the live API, the plan message matched exactly, but a token without access got 404, not 403. The design held up, since checking the message only ever errs toward `unknown`. The decision record now carries an amendment saying its original reasoning was wrong, and the tests say where each response came from.
 * **A cleanup broke installation, and every check stayed green.** One round of changes deleted the release workflow. Tests passed and CI passed, but with no release binaries, the install command in the README would have failed. Review caught it before the first release, and an ADR now says why the workflow exists.
-* **A constraint became a principle.** I started with no dependencies partly because the environment I built it in couldn't download Go modules. Once I thought it through, it was the right call anyway, and ADR 0001 records why, along with its cost: workflow files are read line by line instead of parsed as YAML.
+* **A constraint became a principle.** I started with no dependencies partly because the environment I built it in couldn't download Go modules. Once I thought it through, it was the right call anyway, and ADR 0001 records why, along with its cost: workflow files are read line by line instead of parsed as YAML. That cost turned out to be real, and v0.4.0 paid it down.
 * **The cleanup is done.** I deleted the fork, made the Ruby repository private, and confirmed my GitHub account has no live personal access tokens.
 * **CI runs behind GitHub's egress firewall.** It's in enforce mode, with one host allowed beyond GitHub's own endpoints. [What I learned setting it up](/writing/2026/actions-egress-firewall-field-report/).
 
@@ -127,7 +128,7 @@ Plan limits are classified once, in the collector: a 403 on a private repository
 * **[Governance should enable engineers](/principles/#4-governance-should-enable-engineers):** the baseline is a file with tiers, not a single rulebook, so a repository gets the protection that fits how it's actually used, and every failure comes with the fix.
 * **[Testing comes before trust](/principles/#5-testing-comes-before-trust):** checks are pure functions of a saved snapshot, tested against fixtures, and the tool was trusted only after it reproduced a manual audit's findings on real repositories.
 * **[Automation must reduce risk, not create it](/principles/#2-automation-must-reduce-risk-not-create-it):** it's read-only, keeps its token on one host, and reports what it can't see instead of guessing.
-* **[Documentation is engineering work](/principles/#6-documentation-is-engineering-work):** the design doc and three ADRs explain the trade-offs, so the next person doesn't "fix" the line-based workflow reader or the message match without knowing why they're there.
+* **[Documentation is engineering work](/principles/#6-documentation-is-engineering-work):** the design doc and the ADRs explain the trade-offs, including why the line-based workflow reader was kept at first and why it was replaced, so the next person doesn't change either without knowing why.
 
 ## Lessons learned
 
@@ -142,3 +143,13 @@ Plan limits are classified once, in the collector: a 403 on a private repository
   * Choose tiers by topic or by whether a repository has CI, instead of listing names in the baseline.
   * Test against the real thing: a fixture snapshot whose expected findings come from the manual audit, fuzzing for the workflow parser, and a smoke test that runs the released binary.
   * Check whether referenced secrets exist. The API lists a repository's secret names without their values, so the stale-secrets check can separate a live credential from an empty reference.
+
+## Since the first release
+
+*Updated November 23, 2026.* The sections above describe v0.1.0. gh-baseline is now at [v0.11.0](https://github.com/jackson-asmith/gh-baseline/releases/tag/v0.11.0), and some of what they say has changed:
+
+* **Workflow files are parsed as YAML.** The line-based reader's cost turned out to be real: a `uses:` line inside a `run:` script looked like an action reference, and flow-style YAML and anchors were invisible to it. In v0.4.0, the two workflow checks that depend on structure switched to `gopkg.in/yaml.v3`, the project's first third-party dependency. [ADR 0004](https://github.com/jackson-asmith/gh-baseline/blob/main/docs/adr/0004-yaml-parser-for-workflows.md) records the change and supersedes ADR 0001 for workflow parsing. Finding `${{ secrets.NAME }}` references still uses a regular expression, because a parser hands back the string, not the expressions inside it.
+* **Workflows are parsed once, at collection time.** Since v0.8.0, the collector stores structured facts about each workflow (triggers, permissions, actions, and secrets) in the snapshot (schema v3), and the checks read those facts instead of raw YAML. Re-evaluating a saved snapshot gets the same answers without fetching anything, and older snapshots are migrated when they're loaded.
+* **"Unknown" can fail the run.** `unknown` results still don't fail a run by default, but `--fail-on-unknown` makes them failures, so a scheduled check can't stay green when it couldn't see something. `--max-snapshot-age` rejects a saved snapshot older than a limit you set, so an old snapshot can't pass for a current audit.
+* **More checks and outputs.** New checks cover a public repository with no `SECURITY.md`, workflows granting `permissions: write-all`, and reusable workflows called without a pinned commit. `--format sarif` writes findings for GitHub code scanning.
+* **Most of "What I'd do next" is done.** SARIF output, the real-world fixture from the manual audit, fuzz tests for the workflow parser, a smoke test that runs the built binary, and checking that referenced secrets exist all shipped between v0.2.0 and v0.3.0. The [changelog](https://github.com/jackson-asmith/gh-baseline/blob/main/CHANGELOG.md) has the details.
