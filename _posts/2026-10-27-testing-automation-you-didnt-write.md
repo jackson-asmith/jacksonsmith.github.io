@@ -3,6 +3,7 @@ title: "Testing automation you didn't write"
 image: /assets/img/social/post-testing-automation.png
 description: A practical approach to adding Pester tests to an existing PowerShell script — before you touch a single line of logic.
 date: 2026-10-27
+updated: 2026-11-23
 principles: [Testing comes before trust, Automation must reduce risk, Modernize incrementally]
 ---
 
@@ -23,6 +24,9 @@ A characterization test captures what the code *does* before you fully understan
 ```powershell
 Describe 'Get-UserStatus' {
     BeforeAll {
+        # Load the code under test. For a module, use Import-Module instead.
+        . $PSScriptRoot/../src/Get-UserStatus.ps1
+
         Mock Get-ADUser {
             return [pscustomobject]@{ SamAccountName = 'jsmith'; Enabled = $false }
         }
@@ -36,6 +40,8 @@ Describe 'Get-UserStatus' {
 ```
 
 That test might encode a bug. That's fine. The goal at this stage is a stable baseline, not a specification. You can fix correctness once you can verify behavior.
+
+If the code lives in a module, mocking gets one extra step: a mock defined in the test doesn't replace a command the module calls internally unless you scope it with `Mock -ModuleName`, or run the test inside `InModuleScope`. When a mock "doesn't work", that's usually why.
 
 ## Find the seams
 
@@ -65,15 +71,23 @@ The staleness check is untestable here — it's tangled with the AD query and th
 ```powershell
 function Test-AccountIsStale {
     param(
-        [datetime]$LastLogonDate,
+        [Nullable[datetime]]$LastLogonDate,
         [int]$ThresholdDays = 90,
         [datetime]$AsOf = (Get-Date)
     )
+    # An account that has never logged on has no LastLogonDate at all.
+    # Counting it as stale is a business rule, so it's stated here
+    # instead of falling out of how $null happens to compare.
+    if ($null -eq $LastLogonDate) { return $true }
     return $LastLogonDate -lt $AsOf.AddDays(-$ThresholdDays)
 }
 ```
 
-Now `Test-AccountIsStale` has no external dependencies. It takes data and returns a boolean. The `$AsOf` parameter is worth calling out: without it, `Get-Date` is an implicit dependency and tests near the exact threshold boundary will be flaky. Injecting the reference date keeps the function pure and the threshold edge cases reliable. You can test every scenario — accounts inactive for 91 days, accounts active yesterday, accounts that have never logged on — without touching Active Directory or a mock.
+Now `Test-AccountIsStale` has no external dependencies. It takes data and returns a boolean. The `$AsOf` parameter is worth calling out: without it, `Get-Date` is an implicit dependency and tests near the exact threshold boundary will be flaky. Injecting the reference date keeps the function pure and the threshold edge cases reliable.
+
+The `[Nullable[datetime]]` is there on purpose. Active Directory leaves `LastLogonDate` empty for an account that has never logged on, so the real value is `$null`. The original inline comparison treated that as stale, because `$null -lt` a date is `$true` in PowerShell. A plain `[datetime]` parameter can't accept `$null` and would throw instead, so the extraction would have quietly changed behavior for exactly the accounts most likely to be stale.
+
+You can now test every scenario — accounts inactive for 91 days, exactly 90 days, active yesterday, never logged on — without touching Active Directory or a mock.
 
 ```powershell
 Describe 'Test-AccountIsStale' {
@@ -86,19 +100,25 @@ Describe 'Test-AccountIsStale' {
         $result | Should -Be $true
     }
 
+    It 'returns false for an account inactive for exactly 90 days' {
+        # -lt means the threshold day itself isn't stale yet. This test pins that choice.
+        $result = Test-AccountIsStale -LastLogonDate $now.AddDays(-90) -AsOf $now
+        $result | Should -Be $false
+    }
+
     It 'returns false for an account active yesterday' {
         $result = Test-AccountIsStale -LastLogonDate $now.AddDays(-1) -AsOf $now
         $result | Should -Be $false
     }
 
     It 'returns true for an account that has never logged on' {
-        $result = Test-AccountIsStale -LastLogonDate ([datetime]::MinValue) -AsOf $now
+        $result = Test-AccountIsStale -LastLogonDate $null -AsOf $now
         $result | Should -Be $true
     }
 }
 ```
 
-You haven't changed the behavior of `Disable-StaleAccounts`. You've extracted a piece of it that you can now verify.
+Once `Disable-StaleAccounts` calls `Test-AccountIsStale` instead of comparing inline, the extraction is meant to preserve behavior. That's an intention, not a guarantee: the `$null` case above is exactly the kind of change PowerShell's type conversion and parameter binding can introduce. Run the characterization tests from the first step before and after the extraction. That's how you know it didn't change anything.
 
 ## Mock the boundary, not the logic
 
@@ -117,18 +137,41 @@ Describe 'Get-StaleAccountReport' {
                 [pscustomobject]@{ SamAccountName = 'alee';   LastLogonDate = [datetime]'2024-05-22' }
             )
         }
-        Mock Get-Date { return [datetime]'2024-06-01' }
     }
 
     It 'includes only accounts inactive beyond the threshold' {
-        $report = Get-StaleAccountReport -ThresholdDays 90
+        $report = Get-StaleAccountReport -ThresholdDays 90 -AsOf ([datetime]'2024-06-01')
         $report.Count | Should -Be 1
         $report[0].SamAccountName | Should -Be 'jsmith'
     }
 }
 ```
 
-`Get-ADUser` is mocked because it crosses a boundary (the domain). The filtering logic is real. If the filtering logic breaks, this test fails.
+`Get-ADUser` is mocked because it crosses a boundary (the domain). The filtering logic is real. If the filtering logic breaks, this test fails. The report takes `-AsOf` the same way `Test-AccountIsStale` does. If you've inherited a function that calls `Get-Date` itself and you can't change its signature yet, `Mock Get-Date` works as a stopgap, but move to a parameter when you can.
+
+For a function with side effects, also assert what it did and didn't do. Checking return values isn't enough when the consequence is a disabled account:
+
+```powershell
+Describe 'Disable-StaleAccounts' {
+    BeforeAll {
+        Mock Get-ADUser {
+            return @(
+                [pscustomobject]@{ SamAccountName = 'jsmith'; LastLogonDate = [datetime]'2024-02-01' }
+                [pscustomobject]@{ SamAccountName = 'alee';   LastLogonDate = [datetime]'2024-05-22' }
+            )
+        }
+        Mock Set-ADUser {}
+        Mock Write-Log {}
+    }
+
+    It 'disables the stale account and leaves the active one alone' {
+        Disable-StaleAccounts -AsOf ([datetime]'2024-06-01')
+
+        Should -Invoke Set-ADUser -Times 1 -Exactly -ParameterFilter { $Identity.SamAccountName -eq 'jsmith' }
+        Should -Invoke Set-ADUser -Times 0 -Exactly -ParameterFilter { $Identity.SamAccountName -eq 'alee' }
+    }
+}
+```
 
 ## Cover the failure paths
 
@@ -143,10 +186,13 @@ Describe 'Invoke-GraphRequest' {
         Mock Invoke-RestMethod {
             $script:callCount++
             if ($script:callCount -lt 3) {
-                throw [System.Net.WebException]::new('Too Many Requests')
+                # PowerShell 7's Invoke-RestMethod throws this, with the status code attached.
+                $response = [System.Net.Http.HttpResponseMessage]::new([System.Net.HttpStatusCode]::TooManyRequests)
+                throw [Microsoft.PowerShell.Commands.HttpResponseException]::new('Too Many Requests', $response)
             }
             return @{ value = @() }
         }
+        Mock Start-Sleep {}   # don't actually wait between retries
 
         { Invoke-GraphRequest -Uri 'https://example.com/api' } | Should -Not -Throw
         $script:callCount | Should -Be 3
@@ -155,6 +201,10 @@ Describe 'Invoke-GraphRequest' {
 ```
 
 That test validates that the retry logic actually runs. If someone removes the retry loop later, this test fails. That's the point.
+
+Two details make it honest. The mock throws the exception type `Invoke-RestMethod` really throws, carrying a real 429 status. A generic exception whose message says "Too Many Requests" only models a 429 if your code decides by reading the message, and it shouldn't. And `Start-Sleep` is mocked so the test doesn't wait out real backoff delays.
+
+Production retry logic needs more than this test shows: honor `Retry-After`, cap the number of attempts, back off exponentially with jitter, don't retry failures that won't go away (a 400 or 404), and surface the final error instead of swallowing it. Each of those deserves its own test. [Keel](/projects/keel/) is my worked example, including why a request that isn't safe to repeat needs a narrower rule.
 
 ## Make the tests part of the pipeline
 
@@ -165,7 +215,9 @@ Once you have meaningful coverage, add a CI step. In GitHub Actions, running Pes
 ```yaml
 - name: Install Pester
   shell: pwsh
-  run: Install-Module Pester -Force -MinimumVersion 5.0
+  # Pin the version you've tested. -SkipPublisherCheck lets Pester 5
+  # install alongside the Pester 3.4 that ships with Windows PowerShell.
+  run: Install-Module Pester -RequiredVersion 5.7.1 -Scope CurrentUser -Force -SkipPublisherCheck
 
 - name: Run Pester tests
   shell: pwsh
@@ -178,7 +230,7 @@ Once you have meaningful coverage, add a CI step. In GitHub Actions, running Pes
     Invoke-Pester -Configuration $config
 ```
 
-The install step matters: Windows runners ship with Pester 3.x, and `New-PesterConfiguration` is Pester 5+. Without it, the old version runs silently and nothing gets tested.
+The install step matters. Windows PowerShell ships with Pester 3.4, `New-PesterConfiguration` needs Pester 5, and whatever else a hosted runner image includes can change without notice. Installing an exact version means a new Pester release can't change your results until you choose to upgrade. `-MinimumVersion` would let it. Publishing `test-results.xml` (as a build artifact, or through a test-report action) means a failure shows up with the failing test's name, not just a red X.
 
 Set the branch protection rule to require the check to pass. Now the tests enforce themselves.
 
