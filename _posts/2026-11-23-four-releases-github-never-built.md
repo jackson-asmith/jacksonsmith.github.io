@@ -1,7 +1,8 @@
 ---
 title: "Four releases GitHub never built"
+image: /assets/img/social/post-four-releases.png
 description: Four gh-baseline tags never got releases, and nothing failed, because nothing ran. Why GitHub skipped them, why the obvious fix was blocked, and the release-workflow change that filled the gap without touching a tag.
-date: 2026-11-24
+date: 2026-11-23
 principles: [Automation must reduce risk, Testing comes before trust]
 ---
 
