@@ -99,7 +99,7 @@ The baseline names the tiers and assigns repositories to them. Every tier requir
 }
 ```
 
-Each check reports one of four outcomes. `fail` comes with the fix. `unknown` means the data couldn't be read, and it's listed but doesn't fail the run unless you pass `--fail-on-unknown`. `skip` means the check doesn't apply, such as secret scanning on a private repository, where it's a paid feature. A repository that can't be read at all is `unknown` for every check rather than stopping the run. An exhausted rate limit does stop it, with exit code 2 and the reset time, because every later request would fail the same way.
+Each check reports one of four outcomes. `fail` comes with the fix. `unknown` means the data couldn't be read, and it's listed but doesn't fail the run unless you pass `--fail-on-unknown`. `skip` means the check doesn't apply, such as secret scanning on a private repository, where it's a paid feature. A repository that can't be read at all is `unknown` for every check rather than stopping the run, but an exhausted rate limit does stop it, with exit code 2 and the reset time, because every later request would fail the same way.
 
 Plan limits are classified once, in the collector: a 403 on a private repository whose message says to upgrade is recorded as "rulesets unavailable" and skipped. Any other failure is an error, and the checks report it as `unknown`. The checks never read error text.
 
