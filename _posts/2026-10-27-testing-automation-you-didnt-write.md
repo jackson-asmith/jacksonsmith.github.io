@@ -15,11 +15,11 @@ Here's how I approach it.
 
 ## Start with characterization, not coverage
 
-Before writing a single test, get clear on what you're actually trying to achieve. You're not aiming for 80% coverage. You're trying to make it safe to change something.
+Before writing a single test, decide what you need. For a script like this, it's the ability to change one thing without breaking anything else, and a coverage target like 80% won't tell you whether you have it.
 
 That means identifying the behavior that, if it broke, would cause a real problem: the thing that fires a notification, modifies an account, or deletes a record. Everything else is secondary.
 
-A characterization test captures what the code *does* before you fully understand why. You run it, observe the output, and write a test that asserts exactly that output. You're not validating that the behavior is correct. You're creating a regression wire. If your change alters the behavior, the test will tell you.
+A characterization test captures what the code *does* before you fully understand why. You run it, observe the output, and write a test that asserts that exact output. It won't tell you whether the behavior is correct, but it works as a regression wire, so if your change alters the behavior, the test will tell you.
 
 ```powershell
 Describe 'Get-UserStatus' {
@@ -118,7 +118,7 @@ Describe 'Test-AccountIsStale' {
 }
 ```
 
-Once `Disable-StaleAccounts` calls `Test-AccountIsStale` instead of comparing inline, the extraction is meant to preserve behavior. That's an intention, not a guarantee: the `$null` case above is exactly the kind of change PowerShell's type conversion and parameter binding can introduce. Run the characterization tests from the first step before and after the extraction. That's how you know it didn't change anything.
+Once `Disable-StaleAccounts` calls `Test-AccountIsStale` instead of comparing inline, the extraction is meant to preserve behavior, but you have to check that, because the `$null` case above is exactly the kind of change PowerShell's type conversion and parameter binding can introduce. Run the characterization tests from the first step before and after the extraction. That's how you know it didn't change anything.
 
 ## Mock the boundary, not the logic
 
@@ -200,9 +200,9 @@ Describe 'Invoke-GraphRequest' {
 }
 ```
 
-That test validates that the retry logic actually runs. If someone removes the retry loop later, this test fails. That's the point.
+That test proves the retry logic runs. If someone removes the retry loop later, this test fails. That's the point.
 
-Two details make it honest. The mock throws the exception type `Invoke-RestMethod` really throws, carrying a real 429 status. A generic exception whose message says "Too Many Requests" only models a 429 if your code decides by reading the message, and it shouldn't. And `Start-Sleep` is mocked so the test doesn't wait out real backoff delays.
+Two details make it honest. The mock throws the exception type `Invoke-RestMethod` throws, carrying a real 429 status. A generic exception whose message says "Too Many Requests" only models a 429 if your code decides by reading the message, and it shouldn't. And `Start-Sleep` is mocked so the test doesn't wait out real backoff delays.
 
 Production retry logic needs more than this test shows: honor `Retry-After`, cap the number of attempts, back off exponentially with jitter, don't retry failures that won't go away (a 400 or 404), and surface the final error instead of swallowing it. Each of those deserves its own test. [Keel](/projects/keel/) is my worked example, including why a request that isn't safe to repeat needs a narrower rule.
 
@@ -236,8 +236,8 @@ Set the branch protection rule to require the check to pass. Now the tests enfor
 
 ---
 
-You won't have complete coverage after this. You're not trying to. You're trying to reach the point where you can make a specific change with confidence, and know within a few minutes if something broke.
+You won't have complete coverage after this, and you don't need it. You'll be able to make a specific change with confidence and know within a few minutes if something broke.
 
-That's what "testing comes before trust" actually means in practice. Not perfect coverage, but enough verified behavior that the next engineer (or future you) can move without fear.
+That's what I mean by "testing comes before trust": enough verified behavior that the next engineer (or future you) can move without fear.
 
 Start with the thing most likely to cause a problem if it breaks. Extract it so it's testable. Write the obvious cases plus the failure path. Add CI. Then change what you came to change.

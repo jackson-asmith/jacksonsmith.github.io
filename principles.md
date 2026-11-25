@@ -7,7 +7,7 @@ image: /assets/img/social/principles.png
 
 # How I approach engineering
 
-I want the infrastructure I build to be invisible when it works and recoverable when it breaks. I don't chase hype. I try to build systems that last, and I mentor, document, and automate so that others can pick up where I left off.
+I want the infrastructure I build to be invisible when it works and recoverable when it breaks. I try to build systems that last, and I mentor, document, and automate so that others can pick up where I left off.
 
 These principles came out of a decade of running production systems. Each one links to work where I applied it.
 
@@ -25,7 +25,7 @@ If a system only stays up because one engineer knows its quirks, it isn't reliab
 
 > Automating a bad process just produces bad outcomes faster.
 
-Removing manual steps doesn't count as success on its own. Good automation is more repeatable, more visible, and more secure than the process it replaced, and it's safe to run unattended. Security is part of the job, not someone else's review step.
+Good automation is more repeatable, more visible, and more secure than the process it replaced, and safe to run unattended, so removing the manual steps is where the work starts. I treat security as part of that work instead of leaving it to someone else's review.
 
 **In practice:** validating input before acting, bounded retries with backoff, structured logs that leave out sensitive data, failure states that tell you what to do next, and keeping a human in the loop for consequential decisions.
 
@@ -35,7 +35,7 @@ Removing manual steps doesn't count as success on its own. Good automation is mo
 
 > Improve what exists first. Rewrite only when the evidence supports it.
 
-A rewrite isn't automatically the responsible choice. I weigh technical improvement against production risk, how much change the team can absorb, and the value delivered at each step.
+Before I choose a rewrite, I weigh technical improvement against production risk, how much change the team can absorb, and the value delivered at each step.
 
 **In practice:** assess the current state first, tackle the highest-risk dependencies early, introduce seams that make existing code testable, and deliver changes in stages that can each be verified independently.
 
@@ -55,7 +55,7 @@ Standards and guardrails should reduce the number of decisions each engineer has
 
 > Confidence should come from evidence, not familiarity.
 
-Code isn't correct just because it's been running for a long time. Until its important behavior is verified, I treat it as unproven, and that applies equally to AI-generated code.
+However long code has been running, I treat it as unproven until its important behavior is verified, and I hold AI-generated code to the same standard.
 
 **In practice:** characterization tests before refactoring, separating side effects from decision logic, testing failure paths as well as success paths, and CI that catches regressions on every push.
 
