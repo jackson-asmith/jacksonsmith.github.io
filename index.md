@@ -23,9 +23,7 @@ I'm always happy to talk shop, or to help if you're earlier in your career. [Ema
 
 Context for each number is on the [experience](/experience/) page.
 
-## How I approach engineering
-
-Six principles shape how I work. Each one links to what it means in practice and where it shows up in my projects.
+## Principles I work by
 
 1. [Reliability is a feature](/principles/#1-reliability-is-a-feature)
 2. [Automation must reduce risk, not create it](/principles/#2-automation-must-reduce-risk-not-create-it)
