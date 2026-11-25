@@ -1,6 +1,6 @@
 ---
 title: Experience
-description: Ten-plus years across software, platform, and infrastructure engineering — roles, projects, and technical skills.
+description: Ten-plus years across software, platform, and infrastructure engineering: roles, projects, and technical skills.
 permalink: /experience/
 print_resume: true
 ---
@@ -14,7 +14,7 @@ Need a résumé? <button type="button" class="print-button">Save this page as a 
 
 ## Key Projects & Initiatives
 
-* **Shared Library Engineering**: Replaced copy-pasted helpers across 12 repos with shared, versioned modules (retry, email, HTTP resilience, GitHub platform primitives). The email module is now the mail standard for other Corporate Technology teams. Brought core automation to library standards — manifests, versioning, public/private API separation, docs, and the team's first unit tests with CI on every push and PR.
+* **Shared Library Engineering**: Replaced copy-pasted helpers across 12 repos with shared, versioned modules (retry, email, HTTP resilience, GitHub platform primitives). The email module is now the mail standard for other Corporate Technology teams. Brought core automation to library standards: manifests, versioning, public/private API separation, docs, and the team's first unit tests with CI on every push and PR.
 
 * **High Availability Architecture**: Part of the operations team that removed the single point of failure in core SQL infrastructure with a three-node availability group (sub-15-minute RTO), one piece of taking the platform from 40–60% to 99.99% availability.
 
@@ -49,7 +49,7 @@ Technical owner of all code for prodapps, the Corporate Technology team that tur
 * Established the team's first Pester unit test suite and reusable shared test infrastructure for an existing codebase, creating automated quality gates where none previously existed.
 * Configured CI executing Pester tests on every push and PR, enforcing code quality standards from day one.
 * Authored a GitHub Copilot custom-instructions file codifying the team's PowerShell style guide, substantially reducing recurring AI-generated anti-patterns across the codebase before changes reach review.
-* Use a structured AI-assisted development workflow daily: documenting research findings and implementation plans before generating code, with explicit review checkpoints to correct assumptions and scope, and the same tests and CI gates as any other change — keeping architectural control over AI-authored changes rather than accepting output wholesale.
+* Use a structured AI-assisted development workflow daily: documenting research findings and implementation plans before generating code, with explicit review checkpoints to correct assumptions and scope, and the same tests and CI gates as any other change, so I keep architectural control over AI-authored code instead of accepting output wholesale.
 
 #### Beyond the Team
 

@@ -1,7 +1,7 @@
 ---
 title: Email alignment checker
 description: How a scheduled GitHub Actions workflow that monitors SPF, DKIM, and DMARC went from 350 noisy commits to quiet, fail-safe, and self-sustaining.
-summary: A scheduled GitHub Actions workflow that monitors this domain's mail authentication records — and the three iterations it took to make it quiet, honest, and self-sustaining.
+summary: A scheduled GitHub Actions workflow that monitors this domain's mail authentication records, and the three iterations it took to make it quiet, honest, and self-sustaining.
 date: 2026-06-12
 updated: 2026-11-23
 order: 3
