@@ -1,7 +1,7 @@
 ---
 title: "Testing automation you didn't write"
 image: /assets/img/social/post-testing-automation.png
-description: A practical approach to adding Pester tests to an existing PowerShell script — before you touch a single line of logic.
+description: A practical approach to adding Pester tests to an existing PowerShell script, before you touch a single line of logic.
 date: 2026-10-27
 updated: 2026-11-23
 principles: [Testing comes before trust, Automation must reduce risk, Modernize incrementally]
@@ -19,7 +19,7 @@ Before writing a single test, get clear on what you're actually trying to achiev
 
 That means identifying the behavior that, if it broke, would cause a real problem: the thing that fires a notification, modifies an account, or deletes a record. Everything else is secondary.
 
-A characterization test captures what the code *does* before you fully understand why. You run it, observe the output, and write a test that asserts exactly that output. You're not validating that the behavior is correct — you're creating a regression wire. If your change alters the behavior, the test will tell you.
+A characterization test captures what the code *does* before you fully understand why. You run it, observe the output, and write a test that asserts exactly that output. You're not validating that the behavior is correct. You're creating a regression wire. If your change alters the behavior, the test will tell you.
 
 ```powershell
 Describe 'Get-UserStatus' {
@@ -47,7 +47,7 @@ If the code lives in a module, mocking gets one extra step: a mock defined in th
 
 Most inherited scripts fail the same way: side effects are everywhere. An API call happens in the middle of a decision. A file write is buried inside a transformation. There's no clean boundary between "figure out what to do" and "do it."
 
-You can't easily test code in that shape. But you don't have to rewrite it to make it testable — you need to find the seams.
+You can't easily test code in that shape. But you don't have to rewrite it to make it testable. You need to find the seams.
 
 A seam is a place where you can change what happens without changing the code around it. The most common form in PowerShell is a function boundary. If the script is a single long function, your first move is to extract the decision logic into its own function that takes data and returns data, with no side effects.
 
@@ -66,7 +66,7 @@ function Disable-StaleAccounts {
 }
 ```
 
-The staleness check is untestable here — it's tangled with the AD query and the mutation. Extract it:
+The staleness check is untestable here, because it's tangled with the AD query and the mutation. Extract it:
 
 ```powershell
 function Test-AccountIsStale {
@@ -87,7 +87,7 @@ Now `Test-AccountIsStale` has no external dependencies. It takes data and return
 
 The `[Nullable[datetime]]` is there on purpose. Active Directory leaves `LastLogonDate` empty for an account that has never logged on, so the real value is `$null`. The original inline comparison treated that as stale, because `$null -lt` a date is `$true` in PowerShell. A plain `[datetime]` parameter can't accept `$null` and would throw instead, so the extraction would have quietly changed behavior for exactly the accounts most likely to be stale.
 
-You can now test every scenario — accounts inactive for 91 days, exactly 90 days, active yesterday, never logged on — without touching Active Directory or a mock.
+You can now test every scenario without touching Active Directory or a mock: accounts inactive for 91 days, exactly 90 days, active yesterday, or never logged on.
 
 ```powershell
 Describe 'Test-AccountIsStale' {
@@ -122,7 +122,7 @@ Once `Disable-StaleAccounts` calls `Test-AccountIsStale` instead of comparing in
 
 ## Mock the boundary, not the logic
 
-At some point you'll need to test something that calls an external system. The instinct is to mock heavily — mock everything, make the test run in isolation. Resist it.
+At some point you'll need to test something that calls an external system. The instinct is to mock heavily: mock everything, and make the test run in isolation. Resist it.
 
 Mocks are useful at the boundary: the function that calls the API, writes the file, sends the notification. They're not useful inside your business logic, because they start hiding the very behavior you're trying to verify. A mock that always returns the same value doesn't tell you anything about how your code handles unexpected input.
 
@@ -175,7 +175,7 @@ Describe 'Disable-StaleAccounts' {
 
 ## Cover the failure paths
 
-Production scripts fail. Networks time out, APIs return 429, files are locked. The most important tests to write aren't the happy paths — it's the failure paths, because that's where unattended automation becomes a problem.
+Production scripts fail. Networks time out, APIs return 429, files are locked. The most important tests to write aren't for the happy paths. They're for the failure paths, because that's where unattended automation becomes a problem.
 
 For every external call, ask: what happens if this fails? If the answer is "the script crashes and nobody knows," that's where you need a test.
 
@@ -238,6 +238,6 @@ Set the branch protection rule to require the check to pass. Now the tests enfor
 
 You won't have complete coverage after this. You're not trying to. You're trying to reach the point where you can make a specific change with confidence, and know within a few minutes if something broke.
 
-That's what "testing comes before trust" actually means in practice — not perfect coverage, but enough verified behavior that the next engineer (or future you) can move without fear.
+That's what "testing comes before trust" actually means in practice. Not perfect coverage, but enough verified behavior that the next engineer (or future you) can move without fear.
 
 Start with the thing most likely to cause a problem if it breaks. Extract it so it's testable. Write the obvious cases plus the failure path. Add CI. Then change what you came to change.
