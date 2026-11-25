@@ -1,7 +1,7 @@
 ---
 title: "Keel: the retry that could send one alert four times"
-description: How a PowerShell mail library that retried and fell back on every failure could send one alert four times, and the redesign that makes it resend only when Graph clearly refused the message.
-summary: Why "retry on server errors" isn't safe for a request that can't be repeated, and the redesign that makes a PowerShell mail library resend only when Microsoft Graph clearly refused the message.
+description: How a PowerShell mail library that retried and fell back on every failure could send one alert four times, and the redesign that makes it resend only after a clear refusal from Graph.
+summary: Why "retry on server errors" isn't safe for a request that can't be repeated, and the redesign that makes a PowerShell mail library resend only after a clear refusal from Microsoft Graph.
 show_summary: false
 date: 2026-09-28
 updated: 2026-11-23
@@ -42,7 +42,7 @@ The same review found a quieter bug in the retry helper: output an attempt wrote
 | Decision point | Options | Chosen |
 |---|---|---|
 | Which Graph failures to retry | All transient statuses · none · only statuses where Graph refused the request | Only 429 and 503 |
-| When to fall back to SMTP | Any Graph failure · never · only when Graph clearly didn't accept the message | Only on a clear refusal |
+| When to fall back to SMTP | Any Graph failure · never · only after a clear refusal from Graph | Only on a clear refusal |
 | What to do when delivery is uncertain | Resend anyway · check Sent Items first · stop and report | Stop with a typed `GraphDeliveryUnknown` error |
 | Output from a failed attempt | Stream it · buffer each attempt and return only the successful one | Buffer per attempt |
 | The Graph SDK's own retries | Leave them on · send through REST only · turn them off for each send | Off for each send, caller's settings restored |
@@ -68,11 +68,11 @@ flowchart TD
 
 *In words: a problem found before sending, like a bad attachment or failed authentication, is a refusal, and SMTP fallback is allowed. After the POST, a 202 means the message was accepted once. A 429 or 503 is retried while retries remain, then treated as a refusal. A 400, 401, 403, 404, 413, or 415, or a connection that never opened, is a refusal. A 500, 502, 504, 408, any other status, a timeout, or a dropped connection is unknown: no retry and no fallback.*
 
-**Resend only when Graph clearly refused the message.** Keel treats a response as a refusal only if its status is on an explicit list, and also treats a connection that never opened as one. A 400, 401, 403, 404, 413, or 415 means Graph rejected the request before a message existed: it was malformed, unauthorized, aimed at a mailbox that doesn't exist, too large, or the wrong content type. A 429 or 503 means Graph throttled the request or was unavailable, and by HTTP convention a server that sends them didn't act on the request. That's a convention, not a guarantee: HTTP doesn't promise that nothing behind a 503 acted on the request. But they're the plainest "not accepted" signals Graph gives, and throttling and outages are what SMTP fallback is for, so Keel allows a resend after them, through Graph or SMTP. A connection that never opened means the request never left the machine. Every other status, and every other failure, is treated as possibly delivered.
+**Resend only after a clear refusal from Graph.** Keel treats a response as a refusal only if its status is on an explicit list, and also treats a connection that never opened as one. A 400, 401, 403, 404, 413, or 415 means Graph rejected the request before a message existed: it was malformed, unauthorized, aimed at a mailbox that doesn't exist, too large, or the wrong content type. A 429 or 503 means Graph throttled the request or was unavailable, and by HTTP convention a server that sends them didn't act on the request. That's a convention, not a guarantee: HTTP doesn't promise that nothing behind a 503 acted on the request. But they're the plainest "not accepted" signals Graph gives, and throttling and outages are what SMTP fallback is for, so Keel allows a resend after them, through Graph or SMTP. A connection that never opened means the request never left the machine. Every other status, and every other failure, is treated as possibly delivered.
 
 **Update, November 2026:** the first version treated *any* 4xx as a refusal. An outside review pointed out that this claims something about every 4xx, including ones that don't support it. A gateway in front of Graph can send 408 Request Timeout after it has already forwarded the request, and most 4xx statuses mean nothing in particular for `sendMail`. Since [1.2.0](https://github.com/jackson-asmith/keel/releases/tag/v1.2.0), Keel uses the explicit list above, so a 408, or any status nobody has checked, is treated as possibly delivered ([PR #14](https://github.com/jackson-asmith/keel/pull/14)).
 
-**"I don't know" is its own outcome.** When delivery is uncertain, `Send-Email` throws a `GraphDeliveryUnknown` error and sets `Exception.Data['KeelDeliveryState']` to `Unknown`. The message tells the operator to check message trace before resending. The job fails loudly instead of guessing.
+**"I don't know" is its own outcome.** When delivery is uncertain, `Send-Email` throws a `GraphDeliveryUnknown` error and sets `Exception.Data['KeelDeliveryState']` to `Unknown`. The message tells the operator to check message trace before resending. The job fails instead of guessing.
 
 **Make the safe choice available.** `Invoke-WithBoundedRetry` gained a `-RetryableStatusCode` parameter, so any caller making a non-idempotent request can narrow its retries the same way.
 
@@ -86,7 +86,7 @@ The full reasoning, including a dated amendment for the SDK path, is in an archi
 
 ## Safeguards
 
-* Twice, to check that new tests actually guard a fix, I temporarily restored the old behavior: first the old retry list and output handling, later the direct SDK call. Each time, six tests failed.
+* Twice, to prove that new tests guard a fix, I temporarily restored the old behavior: first the old retry list and output handling, later the direct SDK call. Each time, six tests failed.
 * Anything the classifier doesn't recognize is treated as possibly delivered, so gaps in the classification fail safe. It's tested with the real exception types from both runtimes, and a connection reset mid-request is tested as *not* refused.
 
 ## Outcome
@@ -114,5 +114,5 @@ The full reasoning, including a dated amendment for the SDK path, is in an archi
 * **Mocks can't show you what a dependency does on the wire.** Mocking the SDK made its retry handler invisible to more than 240 passing unit tests. A stub endpoint needed no tenant and found it in a minute.
 * **"Unknown" keeps coming back.** In the [email alignment checker](/projects/email-alignment-checker/), the lesson was that an empty DNS answer isn't a missing record. Here it's that a timeout isn't a failure. Both times, the fix was to give "I couldn't tell" its own outcome and let it block the risky action.
 * **What I'd do next:**
-  * Confirm the 429 and 503 classifications against observed Graph behavior. Both currently rest on what the HTTP specification says those statuses mean.
+  * Confirm the 429 and 503 classifications against observed Graph behavior. Both rest on what the HTTP specification says those statuses mean.
   * Support Graph upload sessions for attachments over 3 MB, instead of relying on SMTP for large files.

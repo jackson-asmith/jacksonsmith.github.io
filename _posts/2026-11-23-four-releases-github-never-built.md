@@ -16,7 +16,7 @@ gh-baseline's release workflow runs when a `v*` tag is pushed. It builds binarie
 
 GitHub's [documentation for the push event](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#push) has a note I'd never read: when more than three tags are pushed at once, GitHub doesn't create events for them. No event, no workflow. The four tags went up together, so none of them started a release. v0.11.0 went up on its own and released normally.
 
-Installing was never broken. `gh extension install` takes the latest release, and that was v0.11.0. The gap only hurt someone who wanted a specific older version, which is exactly the kind of problem nobody reports.
+Installing was never broken. `gh extension install` takes the latest release, and that was v0.11.0. The gap only hurt someone who wanted a specific older version, which is the kind of problem nobody reports.
 
 ## The obvious fix was blocked, and it should have been
 

@@ -81,7 +81,7 @@ flowchart TB
 
 ## Safeguards
 
-The day before, the dark-mode change had shipped a bug: content was pinned to the left on wide screens. It had been checked by screenshot at one width, just above the content column's maximum, where the shift was only about 40 px and easy to miss. Removing a stylesheet is the same kind of change, so this one was verified differently:
+The day before, the dark-mode change had shipped a bug: content was pinned to the left on wide screens. It had been checked by screenshot at one width, just above the content column's maximum, where the shift was only about 40 px and easy to miss. Removing a stylesheet is the same kind of change, so this one was verified another way:
 
 * **Measured, not eyeballed.** A local preview of the site rendered every page through its real layouts and the real compiled theme CSS. A script then recorded the position, size, font size, line height, text color, and background of the main elements on each page, plus the page height, before and after the change: **728 measurements across 7 pages, 4 widths (390 to 2,560 px), and both color schemes. Zero differed.**
 * **Pixel comparison.** Full-page screenshots before and after were **pixel-identical** on every page, in both color schemes.
@@ -108,13 +108,13 @@ The day before, the dark-mode change had shipped a bug: content was pinned to th
 ## Principles demonstrated
 
 * **[Testing comes before trust](/principles/#5-testing-comes-before-trust):** "it looks the same" was replaced with 728 measurements and a pixel comparison, because the previous change had shown that looking at one screen size wasn't enough.
-* **[Modernize incrementally](/principles/#3-modernize-incrementally):** the theme wasn't replaced in one move. Dark mode moved the content styling to a maintained stylesheet first, and only then did the theme's stylesheet become safe to drop. Each step was independently verified.
+* **[Modernize incrementally](/principles/#3-modernize-incrementally):** the theme wasn't replaced in one move. Dark mode moved the content styling to a maintained stylesheet first, and only then did the theme's stylesheet become safe to drop. Each step was verified on its own.
 
 ## Lessons learned
 
 * **Measure what the user waits for, not what's easy to optimize.** Total Blocking Time and layout shift were already perfect. All the lost points were in the files the phone had to fetch before it could draw.
 * **Installed isn't the same as useful.** Analytics cost every visitor a script download, and 90 days of its own data showed it wasn't informing any decisions.
 * **A regression is a reason to change the test, not just the code.** The centering bug was fixed in three lines. The more durable fix was verifying the next change at several widths, by measurement.
-* **Know where to stop.** The remaining warnings are the one stylesheet the page genuinely needs and Cloudflare's email-obfuscation script, which hides the `mailto:` address from scrapers in exchange for 11 KiB of JavaScript. Past 99, run-to-run variation is larger than anything left to gain.
+* **Know where to stop.** The remaining warnings are the one stylesheet the page needs and Cloudflare's email-obfuscation script, which hides the `mailto:` address from scrapers in exchange for 11 KiB of JavaScript. Past 99, run-to-run variation is larger than anything left to gain.
 * **What I'd do next:**
   * Run PageSpeed on the case study pages, which load Mermaid for diagrams and may behave differently from the home page.

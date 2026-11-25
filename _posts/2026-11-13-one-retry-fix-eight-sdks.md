@@ -17,7 +17,7 @@ The change adds one setting to the retry handler. When it's on, POST and PATCH r
 
 It's off by default, so nobody's retries change unless they ask. My first version got there backwards: it was called `RetryNonIdempotentRequestsWhenOutcomeUnknown`, where the default of `true` kept today's retries and `false` turned the protection on. The maintainer pointed out that a default of `true` is counterintuitive. After two renames it became `RetryUnprocessedMutationsOnly`, where `true` turns the protection on and the default is `false`.
 
-That name isn't perfectly precise: PUT and DELETE are mutations too, but they're idempotent, so the setting leaves them alone. I said so in review, offered a longer exact name, and took theirs. The docs carry the nuance, and a short name the maintainers chose is worth more than a precise one they'd have to live with.
+That name isn't exact: PUT and DELETE are mutations too, but they're idempotent, so the setting leaves them alone. I said so in review, offered a longer exact name, and took theirs. The docs carry the nuance, and a short name the maintainers chose is worth more than a precise one they'd have to live with.
 
 ## Eight days, then a few hours
 
