@@ -1,0 +1,25 @@
+name: Check front matter
+
+on:
+  pull_request:
+    paths:
+      - "**.md"
+      - "**.markdown"
+      - "**.html"
+      - ".github/scripts/check-front-matter.rb"
+      - ".github/workflows/check-front-matter.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Parse front matter the way Jekyll does
+        run: ruby .github/scripts/check-front-matter.rb
