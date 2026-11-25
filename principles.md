@@ -9,7 +9,7 @@ image: /assets/img/social/principles.png
 
 I want the infrastructure I build to be invisible when it works and recoverable when it breaks. I try to build systems that last, and I mentor, document, and automate so that others can pick up where I left off.
 
-These principles came out of a decade of running production systems. Each one links to work where I applied it.
+These principles came out of a decade of running production systems.
 
 ## 1. Reliability is a feature
 
