@@ -6,7 +6,7 @@ description: Jackson Smith is a software engineer who spent a decade operating p
 
 # Hi, I'm Jackson
 
-I'm a software engineer in Philadelphia. Before moving into software, I spent ten years running production infrastructure, and that experience shaped how I write code, because I think about failure modes first, like what happens when the API throttles, a retry sends a duplicate, or nobody is watching at 3am. I care about correctness, testability, and systems that someone other than me can run.
+I'm a software engineer in Philadelphia. Before moving into software, I spent ten years running production infrastructure, and that experience shaped how I write code, because I think about failure modes first, like what happens when the API throttles, a retry sends a duplicate, or nobody is watching at 3am. I care about correctness, testability, and systems that run without me.
 
 This site is where I write up how I work: the principles I go by, the projects behind them, and what I'd do differently next time. If you're hiring, [experience](/experience/) has my career history and skills.
 
