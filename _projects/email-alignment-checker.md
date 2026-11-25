@@ -66,7 +66,7 @@ flowchart TD
 * Timeouts and bounded retries on every DNS query (`+time=5 +tries=3`)
 * DMARC policy parsing anchored to the start of a tag, so a subdomain policy (`sp=reject`) can't be mistaken for the domain policy (`p=`)
 * MX results sorted by priority so the reported primary is stable between runs
-* The workflow stops with an error if the README's start/end markers are missing, instead of mangling the file
+* The workflow fails if the README's start/end markers are missing, instead of mangling the file
 * A concurrency group plus rebase-before-push, so overlapping runs can't race each other
 * Least-privilege permissions: `contents: write` for its own README and status file, and `actions: write` for the keepalive, nothing else
 * A run summary written on every execution, even on failure
