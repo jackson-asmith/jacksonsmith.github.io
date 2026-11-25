@@ -49,7 +49,7 @@ Technical owner of all code for prodapps, the Corporate Technology team that tur
 * Established the team's first Pester unit test suite and reusable shared test infrastructure for an existing codebase, creating automated quality gates where none existed.
 * Configured CI executing Pester tests on every push and PR, enforcing code quality standards from day one.
 * Authored a GitHub Copilot custom-instructions file codifying the team's PowerShell style guide, cutting recurring AI-generated anti-patterns across the codebase before changes reach review.
-* Use a structured AI-assisted development workflow daily, documenting research findings and implementation plans before generating code and adding explicit review checkpoints to correct assumptions and scope. AI-authored code goes through the same tests and CI gates as any other change, so I keep architectural control instead of accepting output wholesale.
+* Use a structured AI-assisted development workflow daily: documenting research findings and implementation plans before generating code, with explicit review checkpoints to correct assumptions and scope, and the same tests and CI gates as any other change, so I keep architectural control over AI-authored code instead of accepting output wholesale.
 
 #### Beyond the Team
 
