@@ -1,6 +1,6 @@
 ---
 title: Experience
-description: Ten-plus years across software, platform, and infrastructure engineering: roles, projects, and technical skills.
+description: "Ten-plus years across software, platform, and infrastructure engineering: roles, projects, and technical skills."
 permalink: /experience/
 print_resume: true
 ---
@@ -51,10 +51,14 @@ Technical owner of all code for prodapps, the Corporate Technology team that tur
 * Authored a GitHub Copilot custom-instructions file codifying the team's PowerShell style guide, cutting recurring AI-generated anti-patterns across the codebase before changes reach review.
 * Use a structured AI-assisted development workflow daily: documenting research findings and implementation plans before generating code, with explicit review checkpoints to correct assumptions and scope, and the same tests and CI gates as any other change, so I keep architectural control over AI-authored code instead of accepting output wholesale.
 
+<div class="no-print" markdown="1">
+
 #### Beyond the Team
 
 * Partnered with a junior engineer outside prodapps to make Corporate Technology's license-assignment automation reliable.
 * Identified a credential-exposure risk while reviewing onboarding automation, treating security as part of correctness.
+
+</div>
 
 ### Operations Engineer | Lincoln Investment; Remote -- April 2022–January 2026
 
@@ -76,11 +80,15 @@ Core member of the operations team that took a 1,200-server hybrid Azure/VMware 
 * Federated identity across 20+ M365/Entra ID tenants from a single on-prem AD source.
 * Moved the certificate authority from Entrust to DigiCert in six months, with Azure Key Vault automating renewals.
 
+<div class="no-print" markdown="1">
+
 #### Also
 
 * Helped manage our Azure environment.
 * Partnered with InfoSec on the Zscaler Zero Trust rollout and incident response.
 * Worked with developers on Java production issues, cutting MTTR 40%.
+
+</div>
 
 <div class="early-roles" markdown="1">
 
@@ -153,10 +161,14 @@ Core member of the operations team that took a 1,200-server hybrid Azure/VMware 
 
 Board member of a nonprofit professional association for systems administrators: appointed in 2021 and re-elected in 2022, 2023, and 2024.
 
+<div class="no-print" markdown="1">
+
 * Spent several years with the board trying to revitalize the organization. When its local chapters had all gone inactive, I proposed finding a larger organization to carry our members forward rather than letting LOPSA fade out.
 * Helped lead the search, evaluating several potential partners before choosing the Association for Computing Machinery (ACM), the largest of them and the one that offered members the most.
 * Dissolved LOPSA in 2025 and moved every current member to two years of ACM membership, with access to ACM's monthly publication, its Digital Library, and discounted O'Reilly Online Learning, after an open AMA with members.
 * Quoted as a LOPSA board member in [Dice](https://www.dice.com/career-advice/systems-administrator-degree-do-you-need-one-to-succeed) on sysadmin careers.
+
+</div>
 
 ## Technical Skills
 

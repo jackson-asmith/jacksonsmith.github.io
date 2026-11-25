@@ -85,6 +85,21 @@
     .markdown-body li { break-inside: avoid; }
     /* Earlier roles print as a compact list of titles and dates. */
     .markdown-body .early-roles h3 { font-weight: 400; margin: .15rem 0; }
+    /* The résumé itself prints denser than other pages, to fit two pages. */
+    @page resume { margin: .45in .5in; }
+    .resume-page { page: resume; }
+    .resume-page .container-lg.markdown-body { font-size: 9.5pt; line-height: 1.3; }
+    .resume-page .markdown-body .resume-name { font-size: 16pt; }
+    .resume-page .resume-header { margin-bottom: .4rem; }
+    .resume-page .markdown-body h2 { font-size: 10.5pt; margin: .55rem 0 .2rem; padding-bottom: .05rem; }
+    .resume-page .markdown-body h3 { font-size: 9.5pt; margin: .4rem 0 .1rem; }
+    .resume-page .markdown-body h4 { font-size: 9pt; font-style: italic; margin: .2rem 0 .05rem; }
+    .resume-page .markdown-body :is(p, ul) { margin-bottom: .2rem; }
+    .resume-page .markdown-body ul { padding-left: 1.4em; }
+    .resume-page .markdown-body li + li { margin-top: 0; }
+    .resume-page .markdown-body .early-roles h3 { margin: 0; break-after: auto; }
+    .resume-page .markdown-body table { display: block; margin: 0; }
+    .resume-page .markdown-body :is(tr, td, th) { border: 0; padding: 0 .5em 0 0; }
   }
 </style>
 {% if page.mermaid %}

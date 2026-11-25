@@ -1,6 +1,6 @@
 ---
 title: Projects
-description: Case studies and open-source work by Jackson Smith: the problem, the constraints, the decision, and the lessons.
+description: "Case studies and open-source work by Jackson Smith: the problem, the constraints, the decision, and the lessons."
 permalink: /projects/
 ---
 
