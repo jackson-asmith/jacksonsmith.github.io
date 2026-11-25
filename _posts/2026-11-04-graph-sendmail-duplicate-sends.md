@@ -44,7 +44,7 @@ I ran into this while building [Keel](https://github.com/jackson-asmith/keel), a
 
 That first version made things worse. It retried `408`, `429`, `500`, `502`, `503`, and `504`, and then fell back to SMTP on any Graph failure. So one `504` could mean three Graph attempts, each possibly retried by the SDK underneath, followed by an SMTP send. For alerting, that isn't a cosmetic problem. Duplicate alerts teach people to ignore alerts, and a duplicated notice to a customer looks like a malfunction.
 
-## The fix: only resend when Graph clearly refused
+## The fix: resend only after a clear refusal
 
 Keel now follows one rule: resend, through Graph or SMTP, only when the failure proves Graph didn't accept the message. When delivery is uncertain, stop and say so.
 

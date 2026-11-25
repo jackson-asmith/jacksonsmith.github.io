@@ -18,7 +18,7 @@ The runtime cost was small: 13–23 seconds per run against a 19-second median w
 
 [gh-baseline](https://github.com/jackson-asmith/gh-baseline) is a small Go `gh` extension that audits GitHub repositories against a declared security baseline. Its CI is one job of about 20 seconds: checkout, `setup-go`, `gofmt`, `go vet`, `go test -race`, and a smoke test of the built binary. It has one third-party dependency, `gopkg.in/yaml.v3`.
 
-The security gain here is modest. CI has no secrets, its token is read-only, and all three actions are pinned to commit SHAs. I tried the firewall anyway: to see what CI actually talks to, and because a tool about checking your assumptions should check its own.
+The security gain here is modest. CI has no secrets, its token is read-only, and all three actions are pinned to commit SHAs. I tried the firewall anyway: to see what CI talks to, and because a tool about checking your assumptions should check its own.
 
 GitHub-hosted runners normally reach any host on the internet. The [firewall](https://github.com/github-early-access/actions-native-egress-firewall) sits outside the runner VM, logs DNS and HTTP(S) traffic, and in `enforce` mode blocks hosts not on an allow list.
 
@@ -47,7 +47,7 @@ Two details are easy to miss:
 - **The job needs `contents: read`** so the firewall can read the policy. Without it, no policy is enforced and nothing warns you.
 - **The policy is read from the run's own ref.** A tag gets the policy that existed when it was cut.
 
-## Log mode: what CI actually contacts
+## Log mode: what CI contacts
 
 One log-mode run was enough to build the allow list: every host but one was a GitHub default. The firewall writes a `firewall-decisions-*` artifact with one JSON entry per request, including the host, the URL, the process that made it and the response status.
 
@@ -115,14 +115,14 @@ The one slow firewall run was the first, which started with an empty Go module c
 ## If you try it
 
 1. **Start in `log` mode** and read the artifact, not just the run summary. Build the allow list from the hosts listed there.
-2. **Defeat your caches before trusting the list.** Clear the module or package cache in a temporary step, so the run actually has to reach every host it might need.
+2. **Defeat your caches before trusting the list.** Clear the module or package cache in a temporary step, so the run has to reach every host it might need.
 3. **Prove enforcement both ways.** Leave a needed host off and watch the run fail; add it back and watch it pass. A green enforce run on its own proves nothing.
 4. **Write down how to diagnose a block,** because the error won't say. A DNS or connection error in CI means check the artifact first.
 5. **Expect the list to grow** when your toolchain changes. My likely next addition is the Go download host, the first time `go.mod` needs a Go version the runner image doesn't have.
 
 Is it worth it on a project this small? For CI with no secrets and a read-only token, the protection is modest. Even in enforce mode, `github.com` stays allowed, so a malicious step could still send data to a GitHub repository it controls. What I got was visibility. I now know CI contacts exactly one host outside GitHub, and that will change only when a dependency does. That was worth one afternoon and a three-line policy.
 
-The job that would really benefit is a release job, whose token can write releases. I'll move gh-baseline's release job behind the firewall once it leaves technical preview.
+The job that would benefit most is a release job, whose token can write releases. I'll move gh-baseline's release job behind the firewall once it leaves technical preview.
 
 ## Caveats and sources
 

@@ -1,6 +1,6 @@
 ---
 title: "gh-baseline: the required checks that accepted any source"
-description: How a one-day audit of my GitHub repositories turned up checks anyone could satisfy and forgotten workflows that referenced credentials, and the read-only Go tool I built so it can't happen quietly again.
+description: How a one-day audit of my GitHub repositories turned up checks anyone could satisfy and forgotten workflows that referenced credentials, and the read-only Go tool I built so it can't happen again unnoticed.
 summary: A gh extension that reports where repositories drift from a declared security baseline. I built it in Go, a language I don't work in day to day, with an LLM writing most of the code, and the judgment mattered more than the language.
 show_summary: false
 date: 2026-10-13
@@ -125,7 +125,7 @@ Plan limits are classified once, in the collector: a 403 on a private repository
 
 ## Principles demonstrated
 
-* **[Governance should enable engineers](/principles/#4-governance-should-enable-engineers):** the baseline is a file with tiers, not a single rulebook, so a repository gets the protection that fits how it's actually used, and every failure comes with the fix.
+* **[Governance should enable engineers](/principles/#4-governance-should-enable-engineers):** the baseline is a file with tiers, not a single rulebook, so a repository gets the protection that fits how it's used, and every failure comes with the fix.
 * **[Testing comes before trust](/principles/#5-testing-comes-before-trust):** checks are pure functions of a saved snapshot, tested against fixtures, and the tool was trusted only after it reproduced a manual audit's findings on real repositories.
 * **[Automation must reduce risk, not create it](/principles/#2-automation-must-reduce-risk-not-create-it):** it's read-only, keeps its token on one host, and reports what it can't see instead of guessing.
 * **[Documentation is engineering work](/principles/#6-documentation-is-engineering-work):** the design doc and the ADRs explain the trade-offs, including why the line-based workflow reader was kept at first and why it was replaced, so the next person doesn't change either without knowing why.
